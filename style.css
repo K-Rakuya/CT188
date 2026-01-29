@@ -37,7 +37,7 @@ header nav {
     width: 128px;
     border-radius: 5px;
     filter: drop-shadow(0 0 50px rgba(0, 132, 255, 0.9));
-    transition: transform 0.25s ease;
+    transition: transform 0.5s ease;
 }
 
 #nav-left-logo:hover {
@@ -54,12 +54,9 @@ header nav {
 }
 
 .nav-bar a {
+    position: relative;
     display: flex;
     align-items: center;
-}
-
-.nav-bar > *{
-    position: relative;
     transition: transform .25s ease;
 }
 
@@ -70,6 +67,42 @@ header nav {
 .nav-bar > *:hover .nav-btn{
     opacity: 1;
     transform: translateX(0);
+}
+
+.nav-bar > *::before{
+    content: "";
+    position: absolute;
+    border-radius: 999px;
+    height: 30px;
+    width: calc(100% + 24px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.728),
+        rgb(255, 255, 255)
+    );
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0));
+    opacity: 0;
+    border: 2px solid rgba(255, 255, 255, .4);
+    transform-origin: center;
+    transition: 
+        opacity .35s ease, 
+        transform .35s ease,
+        filter .35s ease;
+    z-index: -1;
+}
+
+.nav-bar > *:hover::before{
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    filter: drop-shadow(1px 1px 5px rgba(0, 132, 255, 0.9));
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+    z-index: -1;
 }
 
 .nav-btn {
@@ -83,9 +116,15 @@ header nav {
 .nav-right-elements {
     display: flex;
     gap: 12px;
+    width: 152px;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
+    transition: width .25s ease;
+}
+
+.nav-right-elements.expand {
+    width: 400px;
 }
 
 .nav-right-elements a,button{
@@ -119,13 +158,38 @@ header nav {
     transform: translateX(-50%) scaleX(1);
 }
 
+.search-wrap {
+    position: relative;
+    display: inline-flex;;
+    gap: 6px;
+}
+
+.nav-right-elements form {
+}
+
 .nav-right-elements form input{
+    position: absolute;
+    opacity: 0;
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%) scale(.7);
+    pointer-events: none;
     width: 230px;
     height: 25px;
     border: 1px solid rgba(255, 255, 255, .4);
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.283);
+    transform-origin: right center;
     padding-left: 7px;
     border-radius: 999px;
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+#home-search-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) scale(1);
 }
 
 #home-search-button img {
@@ -166,7 +230,10 @@ main {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, .4);
     box-shadow: 0 20px 40px rgba(0,0,0,.15);
+    transform: translate(0, 0);
+    will-change: transform;
 }
+
 
 #home-banner {
     position: relative;
