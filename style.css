@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --main-color: rgb(99, 75, 11);
+    --line-header-color: rgb(160, 123, 20);
+    --background-btn-color: rgba(234, 215, 142, 0.564);
+}
+
+body{
+    margin: 0;
+}
+
+/* ===== HEADER ===== */
+
+.header{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--line-header-color);
+}
+
+.decoration{
+    height: 30px;
+    background-color: var(--main-color);
+}
+
+.header_top{
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.header_left,
+.header_right{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.header_left{ 
+    width: 600px; 
+}
+.header_right{
+    width: 300px;
+    justify-content: space-around;
+}
+
+/* ===== LOGO (GIỮ NGUYÊN) ===== */
+
+.container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.container_logo,
+.container_text{
+    gap: 15px;
+}
+
+.Logo,
+.Text{
+    height: 90%;
+}
+
+/* ===== BUTTON / ICON ===== */
+
+.shopping_cart{
+    width: 150px;
+    height: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+    background-color: white;
+    border: 1px solid var(--main-color);
+    border-radius: 50px;
+}
+
+.container_user_icon{
+    height: 75%;
+    display: flex;
+    align-items: center;
+}
+
+.container_user_icon img{
+    height: 70%;
+}
+
+/* ===== NAV ===== */
+
+.header_nav{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.feature{
+    width: 10%;
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--main-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* ===== HEADER ===== */
+
+
+/* ===== CONTENT ===== */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product{
+    height: 550px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.title-product{
+    height: 12%;
+    padding-top: 10px;
+    margin: 0;
+    color: var(--main-color);
+}
+
+/* ===== SLIDER ===== */
+
+.slider-window{
+    width: 60%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.slider-track{
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* ===== PRODUCT CARD ===== */
+
+.product-card-cafe{
+    width: 250px;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border: 1.5px solid var(--main-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card-cafe:hover{
+    transform: scale(1.05);
+}
+
+.container_images{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--main-color);
+}
+
+.images_product{
+    height: 100%;
+}
+
+.product-info{
+    height: 23%;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.product-info p{
+    margin: 0;
+    /* color: var(--main-color); */
+}
+
+.decription{
+    font-size: 20px;
+    text-align: center;
+}
+
+.price{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ===== BUTTON ===== */
+
+.container_btn{
+    height: 14%;
+    display: flex;
+    justify-content: center;
+}
+
+.order-btn{
+    width: 70%;
+    height: 100%;
+    font-weight: bold;
+    color: white;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+}
+
+.slider-nav{
+    width: 250px;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    width: 100px;
+    height: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--main-color);
+    background-color: var(--background-btn-color);
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+}
+/* ===== CONTENT ====== */
