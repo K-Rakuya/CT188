@@ -1,25 +1,43 @@
+// Lấy danh sách các nút dịch trái phải
+const btns_prev = document.querySelectorAll(".btn-prev");
+const btns_next = document.querySelectorAll(".btn-next");
 
-const buttons_prev = document.querySelector(".btn-prev");
-const buttons_next = document.querySelector(".btn-next");
-const list_cafe = document.querySelectorAll(".product-card-cafe");
+//Lấy các Slider track
+const slider_track_list = document.querySelectorAll(".slider-track");
 
-const width_card = list_cafe[0].offsetWidth;
+//Lấy độ rộng của card
+const product_card_width = document.querySelector(".product-card").offsetWidth
 
-let index = 0;
+//Lấy danh sách các sản phẩm cafe
+const cafe_list = document.querySelectorAll(".product-card-cafe");
 
-function slide_next() {
-    const slides = document.querySelector(".slider-track");
-    index++;
-    slides.style.transform = `translateX(-${index * width_card}px)`;
+//độ dài của khung cửa sổ
+const slider_Window_width = document.querySelector(".slider-window").offsetWidth;
+
+pds_in_window = Math.floor(slider_Window_width/product_card_width)
+
+let minOffset = - (cafe_list.length - pds_in_window) * product_card_width
+let maxOffset = 0;
+let offset = 0;
+
+//Hàm dành cho nút prev
+function slide_prev(){
+    if(offset >= maxOffset) return;
+    offset += product_card_width
+    slider_track_list[0].style.transform = `translateX(${offset}px)`;
+
 }
 
-function slide_prev() {
-    const slides = document.querySelector(".slider-track");
-    if (index > 0) index--;
-    slides.style.transform = `translateX(-${index * width_card}px)`;
+//Hàm dành cho nút next
+function slide_next(){
+    if(offset <= minOffset) return;
+    offset -= product_card_width
+    slider_track_list[0].style.transform = `translateX(${offset}px)`;
 }
 
-buttons_next.onclick = slide_next;
-buttons_prev.onclick = slide_prev;
+btns_prev[0].addEventListener("click", slide_prev)
+btns_next[0].addEventListener("click", slide_next)
+
+
 
 
