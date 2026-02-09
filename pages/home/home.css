@@ -1,0 +1,90 @@
+body {
+    position: relative;
+    margin: 0;
+    background: var(--bg-gradient);
+}
+
+/* Header */
+
+header {
+    position: sticky;
+    top: 0;
+    height: 90px;
+    z-index: 10;
+    width: 90%;
+    margin: auto;
+    transition: width .5s ease-out;
+}
+
+header:hover{
+    width: 97%;
+}
+
+/* Main */
+
+main {}
+
+#main-banner-spacer {
+    aspect-ratio: 16 / 9;
+}
+
+#main-banner-wrapper {
+    overflow: hidden;
+    box-shadow: var(--main-shadow);
+    border: 1px solid;
+    border-color: rgb(229, 231, 235);
+}
+
+/* Grid Items */
+
+#main-grid-items .item-card{
+    width: 100%;
+    box-shadow: var(--main-shadow);
+    transition: transform .5s ease;
+}
+
+#main-grid-items .item-card:hover{
+    transform: scale(1.05) translateY(-5px);
+    z-index: 9;
+}
+
+.item-wrapper{
+    margin: 12px 16px;
+}
+
+.item-banner{
+    width: 200px;
+    height: 200px;
+}
+
+.item-banner img {
+    width: 100%;
+}
+
+.before-sale{
+    text-decoration: line-through;
+}
+
+.after-sale{
+    color: red;
+}
+
+.item-buy-btn{
+    height: 35px;
+    width: 85%;
+    transform-origin: center;
+    transition: transform 0.3s ease,
+                box-shadow .3s ease,
+                font-weight 0.3s ease,
+                opacity 0.3s ease;
+}
+
+.item-buy-btn:hover{
+    transform: scale(1.05);
+    box-shadow:
+        0 0 5px rgb(99, 201, 252),
+        0 0 15px rgb(99, 201, 252),
+        0 0 30px rgb(99, 201, 252);
+    font-weight: 800;
+    opacity: 0.9;
+}

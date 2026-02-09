@@ -1,0 +1,16 @@
+.grid-auto-fit{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    width: var(--width-full);
+}
+
+.grid-center{
+    justify-items: center;
+    align-items: center;
+}
+
+.gap-4 {gap: 4px;}
+.gap-8 {gap: 8px;}
+.gap-12 {gap: 12px;}
+.gap-16 {gap: 16px;}

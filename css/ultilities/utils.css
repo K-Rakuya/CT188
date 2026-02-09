@@ -1,0 +1,65 @@
+.hidden { display: none; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+.text-center { text-align: center; }
+
+.width-max {
+    width: min(95%, 1600px);
+}
+
+.width-full {
+  width: min(80%, 1600px);
+}
+
+.radius-all-md {
+    border-radius: var(--radius-md);
+}
+
+.radius-top-md {
+    border-radius: var(--radius-md) var(--radius-md) 0px 0px;
+}
+
+.radius-bot-md {
+    border-radius: 0px 0px var(--radius-md) var(--radius-md);
+}
+
+.radius-all-sm {
+    border-radius: var(--radius-sm);
+}
+
+.radius-top-sm {
+    border-radius: var(--radius-sm) var(--radius-sm) 0px 0px;
+}
+
+.radius-bot-sm {
+    border-radius: 0px 0px var(--radius-sm) var(--radius-sm);
+}
+
+.radius-all-xs {
+    border-radius: var(--radius-xs);
+}
+
+.radius-top-xs {
+    border-radius: var(--radius-xs) var(--radius-xs) 0px 0px;
+}
+
+.radius-bot-xs {
+    border-radius: 0px 0px var(--radius-xs) var(--radius-xs);
+}
+
+.radius-all-infi{
+    border-radius: 99999px;
+}
+
+.liquid-background {
+    background:
+        linear-gradient(180deg,
+            rgba(255, 255, 255, .35),
+            rgba(255, 255, 255, 0.176)),
+        rgba(255, 255, 255, .1);
+}
+
+.hidden {
+    display: none;
+}
