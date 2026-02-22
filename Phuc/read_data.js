@@ -4,7 +4,7 @@ fetch("/Phuc/Cafe/products_coffe.json")
   .catch(err => console.error(err));
 
 function renderProducts(products) {
-  const container = document.getElementById("product-list-cafe");
+  const slider_track = document.getElementById("product-list-cafe");
   let html = "";
 
   products.forEach(p => {
@@ -28,7 +28,7 @@ function renderProducts(products) {
     `;
   });
 
-  container.innerHTML = html;
+  slider_track.innerHTML = html;
 }
 
 
