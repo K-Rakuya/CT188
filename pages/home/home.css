@@ -16,7 +16,7 @@ header {
     transition: width .5s ease-out;
 }
 
-header:hover{
+header:hover {
     width: 97%;
 }
 
@@ -24,62 +24,132 @@ header:hover{
 
 main {}
 
-#main-banner-spacer {
-    aspect-ratio: 16 / 9;
-}
+
+/* Banner */
 
 #main-banner-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
+    aspect-ratio: 16 / 9;
+    width: var(--width-full);
     box-shadow: var(--main-shadow);
     border: 1px solid;
     border-color: rgb(229, 231, 235);
 }
 
+#main-banner-wrapper>img {
+    position: absolute;
+    width: 110%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: grab;
+}
+
+
+
+#main-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 15%,
+            rgba(0, 0, 0, 0.85) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+#banner-item {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    left: 5%;
+    top: 45%;
+    width: 60%;
+    height: 45%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#banner-item>img {
+    width: auto;
+    height: 100%;
+    filter: drop-shadow(0 20px 40px rgba(213, 16, 16, 0.671));
+}
+
+#banner-item div {
+    color: white;
+}
+
+#banner-buy-btn {
+    position: absolute;
+    aspect-ratio: 16/7;
+    width: calc(max(10%, 100px));
+    top: 60%;
+    left: 120%;
+    z-index: 3;
+    pointer-events: all;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter .3s ease,
+        box-shadow .3s ease,
+        color .3s ease,
+        background-color .3s ease;
+}
+
+#banner-buy-btn:hover {
+    backdrop-filter: blur(8px);
+    color: white;
+    background: rgb(22, 181, 20);
+    box-shadow: 0 0 25px rgba(41, 157, 85, .6);
+}
+
 /* Grid Items */
 
-#main-grid-items .item-card{
+#main-grid-items .item-card {
     width: 100%;
     box-shadow: var(--main-shadow);
     transition: transform .5s ease;
 }
 
-#main-grid-items .item-card:hover{
+#main-grid-items .item-card:hover {
     transform: scale(1.05) translateY(-5px);
     z-index: 9;
 }
 
-.item-wrapper{
+.item-wrapper {
     margin: 12px 16px;
 }
 
-.item-banner{
-    width: 200px;
-    height: 200px;
+.item-banner {
+    width: 80%;
+    aspect-ratio: 9/9.5;
 }
 
 .item-banner img {
     width: 100%;
 }
 
-.before-sale{
+.before-sale {
     text-decoration: line-through;
 }
 
-.after-sale{
+.after-sale {
     color: red;
 }
 
-.item-buy-btn{
-    height: 35px;
+.item-buy-btn {
     width: 85%;
     transform-origin: center;
     transition: transform 0.3s ease,
-                box-shadow .3s ease,
-                font-weight 0.3s ease,
-                opacity 0.3s ease;
+        box-shadow .3s ease,
+        font-weight 0.3s ease,
+        opacity 0.3s ease;
 }
 
-.item-buy-btn:hover{
+.item-buy-btn:hover {
     transform: scale(1.05);
     box-shadow:
         0 0 5px rgb(99, 201, 252),

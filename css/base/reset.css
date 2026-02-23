@@ -17,11 +17,6 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-img {
-    max-width: 100%;
-    display: block;
-}
-
 a {
     text-decoration: none;
     color: inherit;
@@ -46,14 +41,6 @@ button {
   background: none;
   border: none;
 }
-
-img,
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;

@@ -76,3 +76,22 @@ searchBox.addEventListener("blur", () => {
         searchForm.classList.remove("expand");
     }, 200);
 });
+
+
+let x = 0, y = 0;
+let currentX = 0, currentY = 0;
+
+const avatar = document.getElementById("avatar-container");
+
+document.addEventListener("mousemove", (e) => {
+    x = (e.clientX / window.innerWidth - 0.5) * 20;
+    y = (e.clientY / window.innerHeight - 0.5) * 20;
+})
+
+function animate() {
+    currentX += (x - currentX) * 0.01;
+    currentY += (y - currentY) * 0.01;
+    avatar.style.transform = "translate(" + currentX + "px, " + currentY + "px)";
+    requestAnimationFrame(animate);
+}
+animate();

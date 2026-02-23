@@ -70,6 +70,10 @@
     animation: SearchBtnHoverOut 0.4s ease forwards;
 }
 
+#nav-right #searchBtn > img {
+    width: 100%;
+}
+
 #nav-right #searchBtn:hover {
     animation: SearchBtnHoverIn 0.4s ease forwards;
 }
@@ -162,6 +166,10 @@
     background-color: gray;
     border-radius: 999999px;
     overflow: hidden;
+}
+
+#nav-right #avatar #avatar-wrapper a > img {
+    width: 100%;
 }
 
 /* Color */
