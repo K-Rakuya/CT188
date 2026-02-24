@@ -13,3 +13,4 @@ window.addEventListener("resize", update_size);
 btn_menu.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
+
