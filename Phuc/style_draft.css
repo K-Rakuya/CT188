@@ -136,7 +136,7 @@ body{
 /* Tablet */
 @media (min-width: 768px) { 
     .header{
-        height: 120px;
+        height: 85px;
     }
 
     .header-menu-btn{
@@ -149,11 +149,25 @@ body{
     }
 
     .header-brand{
+        width: 65%;
+    }
+    .logo{
+        width: 55%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo_icon{
         width: 40%;
     }
 
+    .logo_text{
+        width: 40%;
+    }
+
+
     .header-actions{
-        width: 30%;
+        width: 20%;
     }
 
     .user-icon{
@@ -197,11 +211,11 @@ body{
         width: 25%;
     }
     .logo_icon{
-        width: 30%;
+        width: 35%;
     }
 
     .logo_text{
-        width: 30%;
+        width: 35%;
     }
 
     .header-actions{
@@ -226,7 +240,7 @@ body{
     .cart p{
         margin: 0;
         font-size: 20px;
-        width: 40%;
+        width: 60%;
     }
 
     .cart img{
@@ -256,7 +270,7 @@ body{
     }
 
     .feature{
-        width: 10%;
+        width: 15%;
         height: 100%;
         font-size: 18px;
         font-weight: bold;
@@ -288,7 +302,7 @@ body{
 }
 
 .product{
-    height: 500px;
+    height: 400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -299,15 +313,14 @@ body{
 
 .cafe{
     background-image:linear-gradient(0deg, rgba(255, 245, 245, 0.45), rgba(255, 245, 245, 0.45)), url(/Phuc/Cafe/background_coffee.png);
-    background-size: 1600px 550px;
+    background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
 }
 
 .title-product{
-    font-size: 30px;
+    font-size: 20px;
     text-shadow: 3px 3px white;
-    padding-top: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,8 +332,10 @@ body{
 /* ===== SLIDER ===== */
 
 .slider-window{
+    display: flex;
+    justify-content:space-around;
     width: 80%;
-    height: 70%;
+    height: 60%;
     overflow: hidden;
 }
 
@@ -339,7 +354,7 @@ body{
 
 .product-card{
     background-image: linear-gradient(0deg, rgba(255, 245, 245, 0.8), rgba(255, 245, 245, 0.8));
-    width: 300px;
+    width: 200px;
     height: 95%;
     display: flex;
     flex-direction: column;
@@ -349,6 +364,7 @@ body{
     overflow: hidden;
     transition: transform 0.3s ease;
 }
+
 
 .product-card:hover{
     transform: scale(1.05);
@@ -380,12 +396,12 @@ body{
 }
 
 .product-name{
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
 }
 
 .price{
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
 }
@@ -402,6 +418,7 @@ body{
     width: 70%;
     height: 100%;
     font-weight: bold;
+    font-size: 10px;
     color: white;
     background-color: var(--main-color);
     border: 1px solid var(--main-color);
@@ -418,14 +435,46 @@ body{
 }
 
 .btn{
-    width: 50px;
-    height: 100%;
+    width: 20%;
     font-family: "SN Pro", sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: rgba(80, 58, 39, 0.795);
     background-color: var(--btn-color);
     border: 1px solid white;
-    border-radius: 25px; 
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+@media(min-width: 1024px){
+    .product{
+        height: 500px;
+    }
+    .title-product{
+        font-size: 30px;
+    }
+    .slider-window{
+        height: 75%;
+    }
+    .product-card{
+        width: 250px;
+    }
+    .product-name{
+        font-size: 20px;
+    }
+
+    .price{
+        font-size: 20px;
+    }
+    .order-btn{
+        font-size: 15px;
+    }
+}
+
+@media(min-width: 768){
+
 }
 /* ===== CONTENT ====== */
+
