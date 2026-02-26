@@ -24,10 +24,10 @@
             </div>
 
             <div class="header-actions">
-                <button class="cart">
+                <a class="cart" href="#">
                     <img src="/Phuc/Header/Shopping_cart.png" alt="Giỏ Hàng">
                     <p>Giỏ hàng</p>
-                </button>
+                </a>
                 
                 <a class="user-icon" href="#">
                     <img src="/Phuc/Header/usericon.png" alt="Đăng Nhập">
@@ -47,9 +47,10 @@
     </header>
 
 
+
     <main class="content">
 
-    <section class="product cafe">
+    <section class="product cafe-product">
 
         <h1 class="title-product">CÀ PHÊ TRUYỀN THỐNG</h1>
         
@@ -83,8 +84,22 @@
         <h1 class="title-product">Trà</h1>
         
         <div class="slider-window">
-                <div class="slider-track">
-                </div>
+            <div class="slider-track" id ="product-list-tea">
+                <!-- <article class="product-card product-card-cafe">
+                    <div class = "container_images">
+                        <img class="images_product" src="/Phuc/Cafe/black_coffee.jpg" alt="">
+                    </div>
+
+                    <div class="product-info">
+                        <p class="product-name"></p>
+                        <p class="price"></p>
+                    </div>
+
+                    <div class="container_btn"> 
+                        <button class="order-btn"></button>
+                    </div>
+                </article> -->
+            </div>
         </div>
 
         <div class="slider-nav">
@@ -95,12 +110,12 @@
 
 
     <!-- ===== FREEZE ===== -->
-    <section class="product tea-product">
-        <h1 class="title-product">Freeze</h1>
+    <section class="product freeze-product">
+        <h1 class="title-product" id ="product-list-freeze">Freeze</h1>
         
         <div class="slider-window">
-                <div class="slider-track">
-                </div>
+            <div class="slider-track">
+            </div>
         </div>
 
         <div class="slider-nav">
@@ -115,6 +130,7 @@
     </footer>
 
     <script src="/Phuc/nav.js"></script>
-    <script src="/Phuc/read_data.js"></script>
+    <script type="module" src="/Phuc/read_data.js"></script>
+    <script src="/Phuc/add_control_slider.js"></script>
 </body>
 </html>
