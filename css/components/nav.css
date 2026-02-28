@@ -5,12 +5,13 @@
     padding: 10px 15px;
     align-items: center;
     justify-content: space-between;
-    border-radius: 99999px;
+    border-radius: 50px;
     box-shadow: var(--main-shadow);
     border: 1px solid;
     border-color: rgb(229, 231, 235);
     backdrop-filter: blur(20px) saturate(140%);
     z-index: 10;
+    transition: border-radius .5s ease;
 }
 
 /* Nav Left */
@@ -37,6 +38,7 @@
     justify-content: center;
     column-gap: 6%;
     flex-wrap: wrap;
+    transition: all .3s ease;
 }
 
 #nav-center .nav-center-element {

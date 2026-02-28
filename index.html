@@ -7,8 +7,8 @@
     <title>Drite</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/pages/home/home.css">
-    
     <script src="/pages/home/home.js" defer></script>
+    <script src="/js/components/nav.js" defer></script>
 </head>
 
 <body>
@@ -52,13 +52,121 @@
             </div>
         </nav>
     </header>
-    <main class="flex-center flex-col row-gap">
-            <div id="main-banner-wrapper" class="radius-all-md flyIn">
-                <div id="banner-item" class="gap-16"></div>
-                <div id="main-banner-overlay"></div>
-                <img class="" src="/assets/Banners/banner1.jpg" alt="" draggable="false">
+    <main id="main" class="flex-center flex-col row-gap">
+        <div id="main-banner-wrapper" class="radius-all-md flyIn">
+            <div id="banner-item" class="gap-16"></div>
+            <div class="banner-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
-        <div id="main-grid-items" class="grid-auto-fit grid-center">
+            <div id="main-banner-overlay"></div>
+            <img class="" src="/assets/Banners/banner1.jpg" alt="" draggable="false">
+        </div>
+        <div id="toolBar" class="width-full flex gap-12">
+            <img src="/assets/icons/menu.png" alt="">
+            <img id="filterPannel" src="/assets/icons/filter.png" alt="">
+        </div>
+        <div id="listItem" class="width-full flex gap-8">
+            <div id="main-grid-items" class="grid-auto-fit grid-center"></div>
+            <div id="listItem-side-pannel" class="flex gap-8">
+                <div id="side-pannel-tool-bar">
+                    <img id="clearCheckBoxBtn" src="/assets/icons/clear-filter.png" alt="">
+                </div>
+                <div id="" class="category">
+                    <fieldset>
+                        <legend>Danh muc 1</legend>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                    </fieldset>
+                </div>
+                <div id="" class="category">
+                    <fieldset>
+                        <legend>Danh muc 1</legend>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                    </fieldset>
+                </div>
+                <div id="" class="category">
+                    <fieldset>
+                        <legend>Danh muc 1</legend>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                        <label class="pop-checkbox">
+                            <input type="checkbox">
+                            <span class="box"></span>
+                            Loai 1
+                        </label>
+                    </fieldset>
+                </div>
+                <div id="filter-submit-wrapper" class="flex">
+                    <Button id="filter-submit-btn">Submit</Button>
+                </div>
+            </div>
         </div>
     </main>
 </body>

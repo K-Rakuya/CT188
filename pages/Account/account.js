@@ -84,8 +84,8 @@ let currentX = 0, currentY = 0;
 const avatar = document.getElementById("avatar-container");
 
 document.addEventListener("mousemove", (e) => {
-    x = (e.clientX / window.innerWidth - 0.5) * 20;
-    y = (e.clientY / window.innerHeight - 0.5) * 20;
+    x = (e.clientX / window.innerWidth - 0.5) * 15;
+    y = (e.clientY / window.innerHeight - 0.5) * 15;
 })
 
 function animate() {

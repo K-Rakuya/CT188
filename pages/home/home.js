@@ -52,7 +52,7 @@ const searchForm = document.getElementById("searchForm");
 
 let clickingSearchBtn = false;
 
-searchBtn.addEventListener("mousedown", () => {
+searchBtn.addEventListener("pointerdown", () => {
     clickingSearchBtn = true;
 });
 
@@ -88,10 +88,13 @@ let y = 0;
 let currentX = 0;
 let currentY = 0;
 
-document.addEventListener("mousemove", (e) => {
+function updatePointer(e) {
     x = (e.clientX / window.innerWidth - 0.5) * 20;
     y = (e.clientY / window.innerHeight - 0.5) * 20;
-});
+}
+
+document.addEventListener("pointermove", updatePointer);
+document.addEventListener("pointerdown", updatePointer);
 
 function animate() {
     currentX += (x - currentX) * 0.01;
@@ -107,6 +110,12 @@ animate();
 // Slide banner
 
 const banner = document.querySelector("#main-banner-wrapper > img");
+const banner_dots = document.querySelectorAll(".dot");
+
+function setActiveDot(index) {
+    banner_dots.forEach(dot => dot.classList.remove("active"));
+    banner_dots[index].classList.add("active");
+}
 
 const banner_images = [
     "/assets/Banners/banner1.jpg",
@@ -119,13 +128,13 @@ let bannerIsDrag = false;
 let bannerIndex = 0;
 let bannerOffset = 0;
 
-banner.addEventListener("mousedown", (e) => {
+banner.addEventListener("pointerdown", (e) => {
     bannerIsDrag = true;
     bannerStartX = e.clientX;
     banner.style.transition = "none";
 });
 
-document.addEventListener("mousemove", (e) => {
+document.addEventListener("pointermove", (e) => {
     if (!bannerIsDrag) return;
 
     let diff = e.clientX - bannerStartX;
@@ -136,7 +145,7 @@ document.addEventListener("mousemove", (e) => {
     banner.style.transform = 'translateX(' + bannerOffset + 'px)';
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("pointerup", () => {
     if (!bannerIsDrag) return;
     bannerIsDrag = false;
 
@@ -158,6 +167,7 @@ document.addEventListener("mouseup", () => {
     }, 100);
 
     setTimeout(() => {
+        setActiveDot(bannerIndex);
         banner.src = banner_images[bannerIndex];
 
         // đặt ảnh mới
@@ -242,7 +252,7 @@ function renderItems(grid_items) {
             '<span class="after-sale">' + item.newPrice + '$</span>' +
             '</div>' +
 
-            '<div class="flex gap-12" style="width: 85%"><button class="item-buy-btn flex-center btn-background radius-all-sm btn-shadow">Buy</button><button class="btn-background radius-all-md btn-shadow" style="width: 15%; aspect-ratio: 1/1">⋯</button></div>' +
+            '<div class="flex gap-12" style="width: 85%;"><button class="item-buy-btn btn-background radius-all-sm btn-shadow">Buy</button><button class="more-btn btn-background radius-all-md btn-shadow" style="aspect-ratio: 1/1">⋯</button></div>' +
 
             '</div>' +
             '</div>';
@@ -259,7 +269,7 @@ grid.addEventListener("mouseover", e => {
     if (auth.isLoged()) {
         btn.textContent = "Click to Add to Cart";
     } else {
-        btn.textContent = "Login / Register First";
+        btn.textContent = "Login / Register";
     }
 }, true);
 
@@ -270,5 +280,24 @@ grid.addEventListener("mouseleave", e => {
     btn.textContent = "Buy";
 }, true);
 
+// Toggle List Item Side Bar
 
+const listItemSideBarBtn = document.getElementById("filterPannel")
+const mainGridItem = document.getElementById("main-grid-items")
+const listItemSidePannel = document.getElementById("listItem-side-pannel")
 
+listItemSideBarBtn.addEventListener("click", () => {
+    mainGridItem.classList.toggle("collaps")
+    listItemSidePannel.classList.toggle("show")
+})
+
+// Clear check box
+
+const clearCheckbox = document.getElementById("clearCheckBoxBtn");
+const checkBoxs = listItemSidePannel.querySelectorAll("input")
+
+clearCheckbox.addEventListener("click", () => {
+    checkBoxs.forEach(checkBox => {
+        checkBox.checked = false;
+    })
+})
