@@ -6,7 +6,6 @@ html {
     box-sizing: border-box;
 }
 body {
-   
     font-size: 1.6rem;
     display: flex;
     justify-content: center;
@@ -24,32 +23,30 @@ a{
    display: grid;
 }
 
-
 .flex{
    display: flex;
 }
 
 .gap-10{
-   gap: 10px;
+   gap: 1rem;
 }
 .gap-20{
-   gap: 20px;
+   gap: 2rem;
 }
 .relative{
    position: relative;
 }
 
-/* ========Container======= */
 .container{
-   width: 850px;
-   height: 550px;
+   width: 100rem;
+   margin: 0 1.5rem;
+   height: 55rem;
    background: #fff;
-   border-radius: 30px;
-   box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+   border-radius: 3rem;
+   box-shadow: 0 0 3rem rgba(0, 0, 0, .2);
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: minmax(0, 40%) 60%;
    grid-template-rows: 1fr;
-   
 }
 .flex-colum{
    display: flex;
@@ -64,20 +61,19 @@ a{
    justify-content: center;
    align-items: center;
 }
-/* ==========form-login========= */
+
 .container-form{
    order: 2;
 }
 .form {   
-   width: 90%;
+   width: 85%;
    align-items: center;
    justify-content: center;
-
 }
 
 h1.title {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
     color: rgba(0, 0, 0, 0.737);
     font-weight: 700;
 }
@@ -85,22 +81,30 @@ h1.title {
    width: 100%;
 }
 .input-user input, .input-password input {
-   width: 100%;
-   padding: 13px 50px 13px 20px;
+    width: 100%;
+    padding: 1.3rem 5rem 1.3rem 2rem;
     background-color: #d1d4de4d;
-    border-radius: 13px;
+    border-radius: 1.3rem;
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .input-user i, .input-password i {
     position: absolute;
-    right: 20px;
+    right: 2rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
+    font-size: 2rem;
     color: #333;
+}
+.input-user i::after, .input-password i::after {
+    content: "";
+    position: absolute;
+    top: -0.7rem;
+    bottom: -0.7rem;
+    left: -1.5rem;
+    right: -1.5rem;
 }
 
 .a-forgot{
@@ -108,14 +112,13 @@ h1.title {
    font-weight: 500;
 }
 
-/* =====btn===== */
 .form .btn-login{
     width: 100%;
-    padding: 10px;
+    padding: 1rem;
     background-color: #1d4ff5cf;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     color: white;
-    font-size: 15px;
+    font-size: 1.5rem;
     border: none;
     font-weight: 600;
 }
@@ -123,56 +126,68 @@ h1.title {
 .btn-login:hover, .btn-register:hover {
     cursor: pointer;
     background-color: #1d4ff5;
-    box-shadow: 0 0 20px rgba(29, 79, 245, 0.6);
-    transform: translateY(-2px);
+    box-shadow: 0 0 2rem rgba(29, 79, 245, 0.6);
+    transform: translateY(-0.2rem);
 }
 
-/* ===forgot=== */
 .forgot-password:hover{
-   text-shadow: 0.5px 0 0 currentColor;
+   text-shadow: 0.05rem 0 0 currentColor;
 }
-/* ====platform-login===== */
 
 .platform-login .item{
-   border: 1px solid rgba(0, 0, 0, 0.171);
-   padding: 7px;
-   border-radius: 4px;
+   border: 0.1rem solid rgba(0, 0, 0, 0.171);
+   padding: 0.7rem;
+   border-radius: 0.4rem;
    color: black;
-   
 }
 
 .platform-login .item:hover{
    cursor: pointer;
    background-color: #e6e6e6;
-    box-shadow: 0 0 20px rgba(145, 145, 145, 0.6);
-    transform: translateY(-2px);
+   box-shadow: 0 0 2rem rgba(145, 145, 145, 0.6);
+   transform: translateY(-0.2rem);
 }
 
-
-
-/* ==panel=== */
 .container-panel{
    order: 1;
    overflow: hidden;
-   border-radius: 25px;
+   border-radius: 2rem;
 }
 .container-panel img{
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: 50% 50%;
-
-
+   height: 100%;
+   object-fit: fill;
+   border-radius: 2rem;
 }
 .container-panel img {
-    /* ... các thuộc tính trên ... */
-     transform: scale(0.95); 
-    border-radius: 25px;
-    transition: transform 0.5s ease; /* Tạo hiệu ứng mượt mà */
+    transform: scale(0.99); 
+    border-radius: 2.5rem;
+    transition: transform 0.5s ease;
 }
 
 .container-panel:hover img {
     transform: scale(0.98); 
 }
 
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr; 
+        height: auto; 
+        padding: 4rem 0; 
+        width: 95%; 
+    }
 
+    .container-panel {
+        display: none;
+    }
+
+    .container-form {
+        width: 100%;
+    }
+
+   .form {
+        width: 90%;
+    }
+}
+
+
+    
