@@ -2,11 +2,11 @@ import {isLogged} from "./checkLogin.js";
 const user_icon = document.querySelector(".user-icon");
 function changeLink(){
     if(isLogged()){
-        user_icon.href = ""
+        user_icon.href = "/UI/account.html";
     }
     else{
         user_icon.addEventListener("click", ()=>{
-            user_icon.href = "";
+            user_icon.href = "/Logic_login/test_reg.html";
         })
     }
 }

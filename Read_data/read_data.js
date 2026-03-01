@@ -1,5 +1,5 @@
-import { control_button_order, create_control_Slider } from "../Nav_and_button/control.js";
-fetch("Cafe/products_coffe.json")
+import { control_button_order, create_control_Slider } from "./Nav_and_button/control.js";
+fetch("data_coffee.json")
   .then(res => res.json())
   .then(data => renderProducts(data))
   .then(slider=> create_control_Slider(slider))

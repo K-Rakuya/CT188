@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "Trà chanh",
+        "price": 35000,
+        "image": "/Tea/Lemon_tea.jpg",
+        "category": "Tea"
+    },
+    {
+        "id": 2,
+        "name": "Tắc Thái Xanh",
+        "price": 35000,
+        "image": "/Tea/tac_thai_xanh.jpg",
+        "category": "Tea"
+    },
+    {
+        "id": 3,
+        "name": "Trà Đào",
+        "price": 35000,
+        "image": "/Tea/tra_dao.jpg",
+        "category": "Tea"
+    },
+    {
+        "id": 4,
+        "name": "Trà dâu",
+        "price": 35000,
+        "image": "/Tea/tra_dau.jpg",
+        "category": "Tea"
+    },
+    {
+        "id": 5,
+        "name": "Trà Vải",
+        "price": 35000,
+        "image": "/Tea/tra_vai.jpg",
+        "category": "Tea"
+    }
+]

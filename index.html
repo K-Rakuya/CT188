@@ -18,19 +18,19 @@
 
             <div class="header-brand">
                 <a class="logo" href="#">     
-                    <img class="logo_icon" src="/Phuc/Header/logo.png" alt="Logo Shop">   
-                    <img class="logo_text" src="/Phuc/Header/Logo_Text.png" alt="Logo Shop Text">        
+                    <img class="logo_icon" src="/Header/logo.png" alt="Logo Shop">   
+                    <img class="logo_text" src="/Header/Logo_Text.png" alt="Logo Shop Text">        
                 </a>
             </div>
 
             <div class="header-actions">
                 <a class="cart" href="#">
-                    <img src="/Phuc/Header/Shopping_cart.png" alt="Giỏ Hàng">
+                    <img src="/Header/Shopping_cart.png" alt="Giỏ Hàng">
                     <p>Giỏ hàng</p>
                 </a>
                 
-                <a class="user-icon" href="/Phuc/Logic_login/test_reg.html">
-                    <img src="/Phuc/Header/usericon.png" alt="Đăng Nhập">
+                <a class="user-icon" href="/Logic_login/test_reg.html">
+                    <img src="/Header/usericon.png" alt="Đăng Nhập">
                 </a>
             </div>
         </div>
@@ -46,8 +46,6 @@
         </nav>
     </header>
 
-
-
     <main class="content">
 
     <section class="product cafe-product">
@@ -57,18 +55,20 @@
         <div class="slider-window">
             <div class="slider-track" id ="product-list-cafe">
                 <!-- <article class="product-card product-card-cafe">
-                    <div class = "container_images">
-                        <img class="images_product" src="" alt="">
+                    <div class="container_images">
+                    <img class="images_product" src="./Cafe/black_coffee.jpg" alt="${p.name}">
                     </div>
 
                     <div class="product-info">
-                        <p class="product-name"></p>
-                        <p class="price"></p>
+                    <p class="product-name">${p.name}</p>
+                    <p class="price">${p.price.toLocaleString("vi-VN")} VNĐ</p>
                     </div>
 
-                    <div class="container_btn"> 
-                        <button class="order-btn"></button>
-                    </div>
+                    <div class="container_btn">
+                <button class="order-btn" data-id="${p.id}">
+                    Đặt Hàng
+                </button>
+                </div>
                 </article> -->
             </div>
         </div>
@@ -85,20 +85,6 @@
         
         <div class="slider-window">
             <div class="slider-track" id ="product-list-tea">
-                <!-- <article class="product-card product-card-cafe">
-                    <div class = "container_images">
-                        <img class="images_product" src="/Phuc/Cafe/black_coffee.jpg" alt="">
-                    </div>
-
-                    <div class="product-info">
-                        <p class="product-name"></p>
-                        <p class="price"></p>
-                    </div>
-
-                    <div class="container_btn"> 
-                        <button class="order-btn"></button>
-                    </div>
-                </article> -->
             </div>
         </div>
 
@@ -129,8 +115,9 @@
 
     </footer>
 
-    <script src="/Phuc/Nav_and_button/nav.js"></script>
-    <script type="module" src="Read_data/read_data.js"></script>
-    <script type="module" src="/Phuc/Logic_login/control_user_icon.js"></script>
+    <script src="Nav_and_button/nav.js"></script>
+    <script type="module" src="./Cafe/read_data_coffee.js"></script>
+    <script type="module" src="./Tea/read_data_tea.js"></script>
+    <script type="module" src="Logic_login/control_user_icon.js"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@ btnRegister.addEventListener("click", () => {
   const check = register(inputUser.value, inputPass.value);
   if(check){
     alert("Đã đăng ký thành công");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
   }
   else{
     alert("Vui lòng nhập đủ thông tin");

@@ -248,14 +248,14 @@ body{
 
 /* CAFE */
 .cafe-product{
-    background-image:url(/Phuc/Cafe/background_coffee.png);
+    background-image:url(/Cafe/background_coffee.png);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
 }
 /* TEA */
 .tea-product{
-    background-image:url(/Phuc/Tea/background_tea.jpg);
+    background-image:url(/Tea/background_tea.jpg);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -289,14 +289,15 @@ body{
 .slider-window{
     display: flex;
     justify-content:space-around;
-    width: 80%;
+    width: 65%;
     height: 65%;
     /* scrollbar-width: none; */
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .slider-track{
     height: 100%;
+    width: 100%;
     padding: 0 10px;
     display: flex;
     align-items: center;
@@ -427,7 +428,7 @@ body{
     }
     .product-card{
         height: 95%;
-        width: 250px;
+        width: 260px;
     }
     .product-card:hover{
         transform: scale(1.03);

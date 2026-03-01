@@ -1,9 +1,11 @@
-import { isLogged} from "../JS/checkLogin.js";
+import { isLogged} from "../Logic_login/checkLogin.js";
+
 export function create_control_Slider(Slider){
-  const slider_window = document.querySelector(".slider-window");
+  const slider_window = Slider.parentElement;
+  const container = slider_window.parentElement;
   const product_card = Slider.querySelector(".product-card");
-  const btn_prev = document.querySelector(".btn-prev");
-  const btn_next = document.querySelector(".btn-next");
+  const btn_prev = container.querySelector(".btn-prev");
+  const btn_next = container.querySelector(".btn-next");
   if(product_card == null) {
     return;
   }
@@ -58,7 +60,7 @@ export function control_button_order(Slider) {
     }
     else{
       btn.addEventListener("click", ()=>{
-        window.location.href = "test_reg.html";
+        window.location.href = "Logic_login/test_reg.html";
       })
     }
   })
