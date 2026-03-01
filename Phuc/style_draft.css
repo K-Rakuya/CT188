@@ -246,8 +246,23 @@ body{
     align-items: center;
 }
 
+/* CAFE */
+.cafe-product{
+    background-image:url(/Phuc/Cafe/background_coffee.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+/* TEA */
+.tea-product{
+    background-image:url(/Phuc/Tea/background_tea.jpg);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
 .product{
-    height: 320px;
+    height: 350px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -276,8 +291,8 @@ body{
     justify-content:space-around;
     width: 80%;
     height: 60%;
-    overflow-x: auto;
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
+    overflow-x: hidden;
 }
 
 .slider-track{
@@ -375,7 +390,7 @@ body{
     gap: 30px;
 }
 
-.btn{
+.btn-slider{
     width: 15%;
     font-family: "SN Pro", sans-serif;
     font-size: 18px;
@@ -389,8 +404,11 @@ body{
     justify-content: center;
 }
 @media(min-width: 768px){
-    .btn{
-        width: 10%;
+    .btn-slider{
+        width: 15%;
+    }
+    .product{
+        height: 400px;
     }
 }
 @media(min-width: 1024px) {
@@ -419,7 +437,7 @@ body{
     .order-btn{
         font-size: 15px;
     }
-    .btn{
+    .btn-slider{
         width: 10%;
         font-size: 30px;
     }
@@ -427,17 +445,3 @@ body{
 
 /* ===== CONTENT ====== */
 
-/* CAFE */
-.cafe-product{
-    background-image:url(/Phuc/Cafe/background_coffee.png);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-}
-/* TEA */
-.tea-product{
-    background-image:url(/Phuc/Tea/background_tea.jpg);
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-}

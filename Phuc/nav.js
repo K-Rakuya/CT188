@@ -14,5 +14,3 @@ btn_menu.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-
-

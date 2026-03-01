@@ -1,8 +1,9 @@
-import {create_control_Slider} from "./add_control_slider.js";
+import { control_button_order, create_control_Slider } from "./add_control_slider.js";
 fetch("/Phuc/Cafe/products_coffe.json")
   .then(res => res.json())
   .then(data => renderProducts(data))
   .then(slider=> create_control_Slider(slider))
+  .then(slider=> control_button_order(slider))
   .catch(err => console.error(err));
 
 function renderProducts(products) {
