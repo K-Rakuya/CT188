@@ -6,7 +6,7 @@ function changeLink(){
     }
     else{
         user_icon.addEventListener("click", ()=>{
-            user_icon.href = "/Logic_login/test_reg.html";
+            user_icon.href = "/control_register/test_reg.html";
         })
     }
 }

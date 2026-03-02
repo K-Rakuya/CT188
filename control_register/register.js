@@ -6,7 +6,6 @@ function register(username, password) {
   if (!username || !password) {
     return 0;
   }
-
   const user = {
     username: username,
     password: password

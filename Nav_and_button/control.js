@@ -1,4 +1,4 @@
-import { isLogged} from "../Logic_login/checkLogin.js";
+import { isLogged} from "../control_register/checkLogin.js";
 
 export function create_control_Slider(Slider){
   const slider_window = Slider.parentElement;
@@ -55,12 +55,12 @@ export function control_button_order(Slider) {
 
     if(isLogged()){
       btn.addEventListener("click", ()=>{
-        //thêm vào giỏ hàng
+        
       })
     }
     else{
       btn.addEventListener("click", ()=>{
-        window.location.href = "Logic_login/test_reg.html";
+        window.location.href = "control_register/test_reg.html";
       })
     }
   })

@@ -13,4 +13,3 @@ window.addEventListener("resize", update_header_height);
 btn_menu.addEventListener("click", () => {  
   menu.classList.toggle("active");
 });
-
