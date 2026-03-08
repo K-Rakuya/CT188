@@ -3,105 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="style_draft.css">
+    <title>Menu Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <!-- ===== HEADER ===== -->
+
+    <!-- HEADER -->
     <header class="header">
-        <div class="decoration"></div>
-        <div class="header_top">
-            <button class="header-menu-btn"> 
-                <img src="nav.svg">
+        <div class="logo">
+            <img src="./Header/Logo_Text.png" alt="Logo" class="logo-img">
+            <h1>MY COFFEE</h1>
+        </div>
+
+        <div class="nav">
+            <button class="burger-menu" style="background-color: black; border: none;">
+                <i style="color: white;" class="fa-solid fa-bars"></i>
             </button>
 
-            <div class="header-brand">
-                <a class="logo" href="#">     
-                    <img class="logo_icon" src="/Header/logo.png" alt="Logo Shop">   
-                    <img class="logo_text" src="/Header/Logo_Text.png" alt="Logo Shop Text">        
-                </a>
+            <div class="search-bar">
+                <button class="button search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input class="search-input" type="text" placeholder="Tìm kiếm sản phẩm...">
             </div>
-
-            <div class="header-actions">
-                <a class="cart" href="#">
-                    <img src="/Header/Shopping_cart.png" alt="Giỏ Hàng">
-                    <p>Giỏ hàng</p>
-                </a>
-                
-                <a class="user-icon" href="/control_register/test_reg.html">
-                    <img src="/Header/usericon.png" alt="Đăng Nhập">
-                </a>
+            <div class="features">
+                <div class="features-list">
+                    <a class="feature" href="#">Trang chủ</a>
+                    <a class="feature" href="#">Sản phẩm</a>
+                    <a class="feature" href="#">Giỏ hàng</a>
+                </div>
+                <a class="user-cart" href="/Register/register.html"> <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;"> </a>
             </div>
         </div>
-
-        <nav class ="header_nav">
-            <a class="feature" href="#">TRANG CHỦ</a>
-            <a class="feature" href="#">SẢN PHẨM</a>
-            <a class="feature" href="#">KHUYẾN MÃI</a>
-            <a class="feature" href="#">VỀ CHÚNG TÔI</a>
-            <a class="feature" href="#">GIỎ HÀNG</a>
-            <a class="feature" href="test_reg.html">ĐĂNG NHẬP</a>
-            <a class="feature" href="test_reg.html">ĐĂNG KÝ</a>
-        </nav>
+            
     </header>
 
-    <main class="content">
+    <!-- MAIN CONTAINER -->
+    <div class="container">
 
-    <section class="product cafe-product">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li><a href="#coffee-products">Cafe</a></li>
+                <li><a href="#tea-products">Trà</a></li>
+                <li><a href="#freeze">Freeze</a></li>
+            </ul>
+        </aside>
 
-        <h1 class="title-product">CÀ PHÊ TRUYỀN THỐNG</h1>
-        
-        <div class="slider-window">
-            <div class="slider-track" id ="product-list-cafe">
-            </div>
-        </div>
+        <!-- PRODUCT AREA -->
+        <main class="products">
 
-        <div class="slider-nav">
-            <button class="btn-slider btn-prev"> &lt; </button>
-            <button class="btn-slider btn-next"> &gt; </button>
-        </div>
-    </section>
+            <!-- CAFE -->
+            <section id="coffee-products">
+                <h2>Cafe</h2>
+                <div class="product-grid coffee-list">
+                    <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
+                </div>
+                <!-- <button class="more less"> More </button> -->
+            </section>
 
-    <!-- ===== TRÀ ===== -->
-    <section class="product tea-product">
-        <h1 class="title-product">Trà</h1>
-        
-        <div class="slider-window">
-            <div class="slider-track" id ="product-list-tea">
-            </div>
-        </div>
+            <!-- TRA -->
+            <section id="tea-products">
+                <h2>Trà</h2>
+                <div class="product-grid tea-list">
+                    <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
+                </div>
+            </section>
 
-        <div class="slider-nav">
-            <button class="btn-slider btn-prev"> &lt; </button>
-            <button class="btn-slider btn-next"> &gt; </button>
-        </div>
-    </section>
+            <!-- FREEZE -->
+            <section id="freeze">
+                <h2>Freeze</h2>
+                <div class="product-grid freeze-list">
+                    <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
+
+                </div>
+            </section>
+
+        </main>
+    </div>
 
 
-    <!-- ===== FREEZE ===== -->
-    <section class="product freeze-product">
-        <h1 class="title-product" id ="product-list-freeze">Freeze</h1>
-        
-        <div class="slider-window">
-            <div class="slider-track">
-            </div>
-        </div>
-
-        <div class="slider-nav">
-            <button class="btn-slider btn-prev"> &lt; </button>
-            <button class="btn-slider btn-next"> &gt; </button>
-        </div>
-    </section>
-    </main>
-
-    <footer>
-
+    <footer class="footer-page">
+        <p style="display: block; width: 100%; text-align: center;">&copy; 2024 My Coffee. All rights reserved.</p>
     </footer>
-
-    <script src="Nav_and_button/nav.js"></script>
-    <script type="module" src="./Cafe/read_data_coffee.js"></script>
-    <script type="module" src="./Tea/read_data_tea.js"></script>
-    <script type="module" src="control_register/control_user_icon.js"></script>
+    <script src="./Tea/read_data_tea.js"></script>
+    <script src="./Cafe/read_data_coffee.js"></script>
+    <script src="/ShowProduct/main.js"></script>
+    <script src="./Nav/nav.js"></script>
 </body>
 </html>
