@@ -1,10 +1,4 @@
-html {
-    font-size: 62.5%;
-    box-sizing: border-box;
-}
-* {
-    box-sizing: border-box;
-}
+
 body {
     font-size: 1.6rem;
     display: flex;
@@ -15,27 +9,7 @@ body {
     line-height: normal;
 }
 
-a{
-   text-decoration: none;
-}
 
-.grid{
-   display: grid;
-}
-
-.flex{
-   display: flex;
-}
-
-.gap-10{
-   gap: 1rem;
-}
-.gap-20{
-   gap: 2rem;
-}
-.relative{
-   position: relative;
-}
 
 .container{
    width: 100rem;
@@ -48,19 +22,7 @@ a{
    grid-template-columns: minmax(0, 40%) 60%;
    grid-template-rows: 1fr;
 }
-.flex-colum{
-   display: flex;
-   flex-direction: column;
-}
 
-.bold{
-   font-weight: bold;
-}
-.flex-center{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
 
 .container-form{
    order: 2;
@@ -117,31 +79,19 @@ h1.title {
     left: -1.5rem;
     right: -1.5rem;
 }
+.forgot-password{
+   text-align: right;
+   width: 100%;
+}
 
-.a-forgot{
+.a-forgot , .a-account{
    color: black;
    font-weight: 500;
+   
 }
 
-.form .btn-login{
-    width: 100%;
-    padding: 1rem;
-    background-color: #1d4ff5cf;
-    border-radius: 1.2rem;
-    color: white;
-    font-size: 1.5rem;
-    border: none;
-    font-weight: 600;
-}
 
-.btn-login:hover, .btn-register:hover {
-    cursor: pointer;
-    background-color: #1d4ff5;
-    box-shadow: 0 0 2rem rgba(29, 79, 245, 0.6);
-    transform: translateY(-0.2rem);
-}
-
-.forgot-password:hover{
+.a-forgot:hover , .a-account:hover{
    text-shadow: 0.05rem 0 0 currentColor;
 }
 

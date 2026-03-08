@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+   <div class="app-container ">
+      <div class="sidebar">
+         <!-- logo -->
+         <div class="sidebar-logo">
+            Logo
+         </div>
+         
+         <div class="sidebar__title-home flex gap-10">
+            <i class="fa-solid fa-house"></i>
+            <h1>Home</h1>
+         </div>
+         
+
+         <div class="sidebar-home">
+            <div class="sidebar-home__dashboard1">
+
+            </div>
+         </div>
+         <div class="sidebar-menu">
+            <div class="nav-item flex">
+
+            </div>
+            <div class="nav-item flex">
+
+            </div>
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+         </div>
+      </div>
+
+      <div class="main-content">
+         <header class="top-header">
+            <div class="search-bar ">
+               <i class="fa-solid fa-magnifying-glass"></i>
+               <input type="search" placeholder="nhập tìm kiếm">
+            </div>
+
+            
+
+                  <button class="mobile-menu-btn">
+                     <i class="fa-solid fa-bars"></i>
+                  </button>
+                  <div class="nav-container" id="mobileNav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="#">Product</a>
+                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#">Contact</a>
+                  </div>
+               <div class="header-user gap-10 flex">
+                  <div class="header-avt gap-10 flex">
+                     <div class="avt-user">
+                        <img src="./img/avt.jpg" alt="">
+                     </div>
+                     <div class="log-out flex-collum">
+                      <div class="name-wrapper">
+                          <h3 class="name-user">Bùi Nhựt Duy</h3>
+                          <!-- <div class="name-tooltip">Bùi Nhựt Duy</div> -->
+                      </div>
+                      <a href="" class="action-user">Log Out</a>
+                     </div>
+                  </div>
+               </div>
+            
+            <script src="./js/nav.js"></script>
+         </header>
+
+         <div class="page-header" style="margin-top: 10px;">
+            <p>các bước thanh toán</p>
+            <div class="stepper">
+                    <span class="step active" style="color: blue"><b>1</b> Cart</span>
+                    <span class="divider"></span>
+                    <span class="step" ; ><b>2</b> Address</span>
+                    <span class="divider"></span>
+                    <span class="step"><b>3</b> Payment</span>
+            </div>
+         </div>
+
+         <div class="content"> 
+            <div class="checkout-grid">
+               <section class="cart-section card">
+                  <h3 class="card-title"><i class="fa-solid fa-cart-shopping"></i> My Cart (<span id="total-items">0</span> items)</h3>
+                  <div class="cart-list" id="cartList"></div>
+               </section> 
+            </div>
+            <div class="payload">
+              <section class="summary-section">
+                    <!-- <div class="saving-alert">You are saving $103.00 on this order</div> -->
+                    
+                    <div class="order-details card">
+                        <h3 class="hide" style="margin-bottom: 10px;">Tổng details</h3>
+                        <div class="detail-row "><span>Bag total</span> <span id="Price-oder">0</span></div>
+                        <div class="detail-row hide discount"><span>Coupon discount</span> <span>-$98.00</span></div>
+                        <!-- <div class="detail-row hide"><span>Order total</span> <span>$1100.00</span></div> -->
+                        <!-- <div class="detail-row hide free"><span>Delivery charges <span class="badge">Free</span></span> <span>-$5.00</span></div> -->
+                        
+                        <div class="detail-row total"><span>Total</span> <span id="total-Price">$0.00</span></div>
+                        
+                        <button class="btn-primary w-100">Place Order</button>
+                    </div>
+
+                    
+                </section>
+            </div>
+         </div>
+      </div>
+   </div>
+   <script src="./js/cart.js"></script>
+</body>
+</html>

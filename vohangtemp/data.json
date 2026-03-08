@@ -1,0 +1,111 @@
+[
+  {
+    "id": "P001",
+    "image": "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&q=80",
+    "name": "The cleanser face wash",
+    "rating": 4.8,
+    "reviews": 87,
+    "price": 16.25,
+    "oldPrice": 24.25,
+    "size": "50ml",
+    "color": "Brown",
+    "qty": 1
+  },
+  {
+    "id": "P002",
+    "image": "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=150&q=80",
+    "name": "Premium Gold Cream",
+    "rating": 4.9,
+    "reviews": 120,
+    "price": 32.00,
+    "oldPrice": 45.00,
+    "size": "100 ml",
+    "color": "Gold",
+    "qty": 2
+  },
+  {
+    "id": "P003",
+    "image": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=150&q=80",
+    "name": "Green Tea Serum",
+    "rating": 4.7,
+    "reviews": 56,
+    "price": 18.50,
+    "oldPrice": 22.00,
+    "size": "30 ml",
+    "color": "Green",
+    "qty": 1
+  },
+  
+  {
+    "id": "P005",
+    "image": "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?w=150&q=80",
+    "name": "Vitamin C Glow Oil",
+    "rating": 4.9,
+    "reviews": 215,
+    "price": 45.00,
+    "oldPrice": 60.00,
+    "size": "30 ml",
+    "color": "Orange",
+    "qty": 1
+  },
+  {
+    "id": "P006",
+    "image": "https://images.unsplash.com/photo-1617897903246-719242758050?w=150&q=80",
+    "name": "Clay Mask Deep Pore",
+    "rating": 4.6,
+    "reviews": 98,
+    "price": 25.50,
+    "oldPrice": 30.00,
+    "size": "100g",
+    "color": "Grey",
+    "qty": 1
+  },
+  {
+    "id": "P007",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80",
+    "name": "Retinol Night Repair",
+    "rating": 4.8,
+    "reviews": 134,
+    "price": 55.00,
+    "oldPrice": 75.00,
+    "size": "50 ml",
+    "color": "Blue",
+    "qty": 1
+  },
+  {
+    "id": "P008",
+    "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=150&q=80",
+    "name": "Aloe Vera Soothing Gel",
+    "rating": 4.4,
+    "reviews": 88,
+    "price": 8.99,
+    "oldPrice": 12.00,
+    "size": "300 ml",
+    "color": "Green",
+    "qty": 3
+  },
+  {
+    "id": "P009",
+    "image": "https://images.unsplash.com/photo-1556228852-6d35a585d566?w=150&q=80",
+    "name": "Daily Sunscreen SPF 50",
+    "rating": 4.7,
+    "reviews": 110,
+    "price": 22.00,
+    "oldPrice": 28.00,
+    "size": "50 ml",
+    "color": "White",
+    "qty": 1
+  },
+  {
+    "id": "P010",
+    "image": "https://images.unsplash.com/photo-1556227702-d1e4e7b5c232?w=150&q=80",
+    "name": "Lip Sleeping Mask",
+    "rating": 4.9,
+    "reviews": 320,
+    "price": 14.50,
+    "oldPrice": 18.00,
+    "size": "20g",
+    "color": "Red",
+    "qty": 1
+  }
+]

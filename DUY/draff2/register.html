@@ -4,40 +4,40 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Register</title>
-   <link rel="stylesheet" href="./css/register.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <link rel="stylesheet" href="./css/register/style.css">
 </head>
 <body>
    <div class="container">
 
       <div class="flex-center container-form ">
-         <form   action="" enctype="application/x-www-form-urlencoded"  class="form gap-20 flex-collum form-login">
-            <h2 class="title bold">Register</h2>
+         <form   action="" enctype="application/x-www-form-urlencoded"  class="form gap-20 flex-collum form-register">
+            <h2 class="title bold">Đăng Ký</h2>
             <!-- input-user -->
             <div class="input-user input relative">
-               <input type="text" class="username" required placeholder="Username">
+               <input type="text" id="username" class="username" required placeholder="Username">
                <i class="fa-solid fa-user"></i>
             </div>   
             <!-- email -->
             <div class="input-email input relative">
-               <input type="text" class="username" required placeholder="Email">
+               <input type="text" id="contact" class="username" required placeholder="Email or Number Phone">
                <i class="fa-solid fa-envelope"></i>
             </div>   
             <!-- input-passwd -->
             <div class="input-password input relative">
                <input type="password" id="password" class="password " required placeholder="Password">
-               <i class="fa-solid fa-lock" style="cursor: pointer; " id="togglePassword"></i>
                <!-- <i class="fa-solid  fa-eye" ></i> -->
+                <i class=" fa-solid fa-lock" style="cursor: pointer; " id="togglePassword"></i>
             </div>   
-            
-            <div class="forgot-password ">
-               <a class="a-forgot" href="">Forgot Password?</a>
+
+            <div class="has-Passwd">
+               <span>Đã có tài khoản ? </span>
+               <a class="a-hasPasswd" href="./index.html">Đăng Nhập Ngay</a>
             </div>
-            <button class="btn btn-login">Register</button>
+            <button class="btn btn-register">Register</button>
             <div class="platform-other">
                <p>or Login With Social platforms</p>
             </div>
-            <div class="flex gap-10 platform-item platform-login">
+            <div class="flex gap-10 platform-item platform-register">
                <a href="" class="item"><i class="fa-brands fa-google"></i></a>
                <a href="" class="item"><i class="fa-brands fa-facebook"></i></a>
                <a href="" class="item"><i class="fa-brands fa-tiktok"></i></a>

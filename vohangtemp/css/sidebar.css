@@ -1,0 +1,20 @@
+.sidebar{
+   padding: 5px;
+   background-color: var(--bg-white);
+   border-radius: 8px;
+   text-align: center;
+   border: 1px solid var(--border-color);
+   position: sticky;
+   top: 0;
+}
+
+.sidebar-logo{
+   margin: 10px 0;
+   font-size: 3rem;
+}
+
+
+.sidebar__title-home {
+   font-size: 2rem;
+   color: rgba(0, 0, 0, 0.54);
+}

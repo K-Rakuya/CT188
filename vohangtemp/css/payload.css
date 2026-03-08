@@ -1,0 +1,57 @@
+.payload{
+    border-radius: 9px;
+   background-color: var(--bg-white);
+   border: 1px solid var(--border-color);
+   min-width: 287px;
+}
+
+.content{
+   border-radius: 15px;
+}
+
+
+.saving-alert {
+    background-color: #e6f6ee;
+    color: var(--success);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    
+    color: var(--text-gray);
+}
+
+.detail-row.discount { color: var(--success); }
+.detail-row.total {
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.8rem;
+}
+
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.gift-card { background-color: #eef2ff; margin-top: 2rem;}
+
+
+
+
