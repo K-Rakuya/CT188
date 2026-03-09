@@ -32,9 +32,7 @@
 
 
  
-   .checkout-grid{
-      width: 100%;
-   }
+
 
    
 
@@ -111,7 +109,11 @@
     .top-header{
         justify-content: space-between;
     }
+        .cart-item img {
+    width: 100px;
+    height: 100px;
 
+}
 
 
 
