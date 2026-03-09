@@ -1,21 +1,17 @@
+import {isLoggedIn} from "../CheckUser/isLogged.js"
 const burger_btn = document.querySelector('.burger-menu');
 const features_list = document.querySelector('.features-list');
-
-
-window.addEventListener("resize", () => {
-  const menu = document.querySelector(".features-list");
-
-  if (window.innerWidth >= 768) {
-    menu.classList.remove("active");
-  }
-});
-
 burger_btn.addEventListener('click', () => {
-    let check  = features_list.classList.toggle('active');
-    if(check){
-        features_list.style.transform = 'translateX(0)';
-    }
-    else{
-        features_list.style.transform = 'translateX(-100%)';
-    }
+  features_list.classList.toggle('active');
 })
+
+const user_icon = document.querySelector(".user-cart");
+user_icon.addEventListener("click", ()=>{
+  if(isLoggedIn()){
+    window.location.href = "Account/account.html";
+  }
+  else{
+    window.location.href ="Register/register.html";
+  }
+})
+

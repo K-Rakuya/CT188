@@ -50,6 +50,7 @@ body {
     justify-content: space-around;
     align-items: center;
 }
+
 .search-bar{
     position: relative;
 }
@@ -114,7 +115,6 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-    top: 80px;
     width: 220px;
     background: white;
     padding: 20px;
@@ -151,8 +151,16 @@ body {
     flex: 1;
 }
 
-.products section {
+.products-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 50px;
+}
+
+.button-show-pd{
+    width: 60px;
 }
 
 .products h2 {
@@ -163,7 +171,6 @@ body {
 /* GRID */
 .product-grid {
     display: grid;
-    /* Tạo 3 cột đều nhau */
     grid-template-columns: repeat(1, 1fr); 
     gap: 25px;
 }
@@ -175,6 +182,7 @@ body {
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
+    min-width: 300px;
 }
 
 .product-card:hover {
@@ -182,10 +190,20 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.container-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;
+}
+
+.container-img img{
+    align-self: center;
+    height: 100%;
+}
+
 .product-card img {
-    height: 200px;
-    background: #ddd; /* placeholder */
-    /* Ảnh phóng to lắp đầy khung*/
+    background: #ddd; 
     object-fit: cover;
     border-radius: 6px;
 }
@@ -217,9 +235,13 @@ body {
     display: none;
 }
 
+.footer-page{
+    padding-bottom: 10px;
+}
+
 /* RESPONSIVE */
 
-
+/* TABLET */
 @media (min-width: 768px) {
     .header {
         flex-direction: row;
@@ -233,6 +255,7 @@ body {
     .burger-menu{
         display: none;
     }
+    
     .search-bar{
         margin-right: 50px;
     }
@@ -248,11 +271,19 @@ body {
         display: flex;
         height: auto;
         width: auto;
-        transform: none !important;
+        transform: translateX(0);
     }
+
+    .features-list.active{
+        transform: none;
+    }
+
 
     .feature{
         color: white;
+    }
+    .feature:nth-child(n+4){
+        display: none;
     }
 
     .sidebar{
@@ -291,6 +322,7 @@ body {
 
 }
 
+/* LAPTOP */
 @media (min-width: 1024px) {
     .header {
         flex-direction: row;

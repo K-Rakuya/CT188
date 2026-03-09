@@ -8,9 +8,9 @@
     },
     {
         "id": 2,
-        "name": "Tắc Thái Xanh",
+        "name": "Trà Táo",
         "price": 35000,
-        "image": "/Tea/tac_thai_xanh.jpg",
+        "image": "/Tea/tra_tao.jpg",
         "category": "Tea"
     },
     {

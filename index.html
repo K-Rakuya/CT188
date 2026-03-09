@@ -11,10 +11,10 @@
 
     <!-- HEADER -->
     <header class="header">
-        <div class="logo">
+        <a href="#" class="logo">
             <img src="./Header/Logo_Text.png" alt="Logo" class="logo-img">
-            <h1>MY COFFEE</h1>
-        </div>
+            <h1 style="color: white;">MY COFFEE</h1>
+        </a>
 
         <div class="nav">
             <button class="burger-menu" style="background-color: black; border: none;">
@@ -27,11 +27,16 @@
             </div>
             <div class="features">
                 <div class="features-list">
-                    <a class="feature" href="#">Trang chủ</a>
-                    <a class="feature" href="#">Sản phẩm</a>
-                    <a class="feature" href="#">Giỏ hàng</a>
+                    <a href="#" class="feature">Trang chủ</a>
+                    <a href="#" class="feature">Sản phẩm</a>
+                    <a href="#" class="feature">Giỏ hàng</a>
+                    <a href="#" class="feature">Đăng Ký</a>
+                    <a href="#" class="feature">Đăng Nhập</a>
+                    <a href="#" class="feature">Tin tức</a>
                 </div>
-                <a class="user-cart" href="/Register/register.html"> <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;"> </a>
+                <a class="user-cart" href="#"> 
+                    <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;"> 
+                </a>
             </div>
         </div>
             
@@ -54,16 +59,16 @@
         <main class="products">
 
             <!-- CAFE -->
-            <section id="coffee-products">
+            <section class="products-list" id="coffee-products">
                 <h2>Cafe</h2>
                 <div class="product-grid coffee-list">
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
                 </div>
-                <!-- <button class="more less"> More </button> -->
+                <!-- <button class="button-show-pd"> Show all </button> -->
             </section>
 
             <!-- TRA -->
-            <section id="tea-products">
+            <section class="products-list" id="tea-products">
                 <h2>Trà</h2>
                 <div class="product-grid tea-list">
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
@@ -71,7 +76,7 @@
             </section>
 
             <!-- FREEZE -->
-            <section id="freeze">
+            <section class="products-list" id="freeze">
                 <h2>Freeze</h2>
                 <div class="product-grid freeze-list">
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
@@ -86,9 +91,8 @@
     <footer class="footer-page">
         <p style="display: block; width: 100%; text-align: center;">&copy; 2024 My Coffee. All rights reserved.</p>
     </footer>
-    <script src="./Tea/read_data_tea.js"></script>
-    <script src="./Cafe/read_data_coffee.js"></script>
-    <script src="/ShowProduct/main.js"></script>
-    <script src="./Nav/nav.js"></script>
+    <script type="module" src="./Tea/read_data_tea.js"></script>
+    <script type="module" src="./Cafe/read_data_coffee.js"></script>
+    <script type="module" src="./Nav/nav.js"></script>
 </body>
 </html>

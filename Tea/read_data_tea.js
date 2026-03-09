@@ -10,7 +10,7 @@ function renderProductsTea(products) {
   products.forEach(p => {
     html += `
       <article class="product-card tea-card">
-          <img src="${p.image}" alt="${p.name}">
+          <div class="container-img"><img src="${p.image}" alt="${p.name}"></div>
           <div class="info-product">
               <h4>${p.name}</h4>
               <p class="price">${p.price.toLocaleString("vi-VN")} VNĐ</p>
