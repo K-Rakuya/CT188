@@ -13,7 +13,7 @@
 }
 .container:hover{
    transform: translateY(-0.3rem); 
-    /* Tăng độ đậm của bóng đổ khi nhích lên để tạo cảm giác thực tế */
+
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25);
 }
 .flex-collum{

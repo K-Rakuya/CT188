@@ -18,6 +18,10 @@
             <i class="fa-solid fa-house"></i>
             <h2>Home</h2>
          </a>
+
+         
+
+         
          
 
          <a href="" class="sidebar--contact sidebar-item flex gap-10">
@@ -25,14 +29,7 @@
             <h2>Contact Us !</h2>
          </a>
          <div class="sidebar-menu">
-            <div class="nav-item flex">
-
-            </div>
-            <div class="nav-item flex">
-
-            </div>
-            <div class="nav-item flex"></div>
-            <div class="nav-item flex"></div>
+            <!-- Các mục menu khác có thể thêm ở đây -->
             <div class="nav-item flex"></div>
             <div class="nav-item flex"></div>
             <div class="nav-item flex"></div>
@@ -60,14 +57,14 @@
                <div class="header-user gap-10 flex">
                   <div class="header-avt gap-10 flex">
                      <div class="avt-user">
-                        <img src="./img/avt.jpg" alt="">
+                        <img id="img-avt-user" src="" alt="">
                      </div>
                      <div class="log-out flex-collum">
                       <div class="name-wrapper">
-                          <h3 class="name-user">Bùi Nhựt Duy</h3>
+                          <h3 id="name-user" class="name-user"></h3>
                           <!-- <div class="name-tooltip">Bùi Nhựt Duy</div> -->
                       </div>
-                      <a href="" class="action-user">Log Out</a>
+                      <a href="#" class="action-user"></a>
                      </div>
                   </div>
                </div>
@@ -78,9 +75,9 @@
          <div class="page-header" style="margin-top: 10px;">
             <p>các bước thanh toán</p>
             <div class="stepper">
-                    <span class="step active" style="color: blue"><b>1</b> Cart</span>
+                    <span class="step active" style="color: var(--primary-color, blue)"><b>1</b> Cart</span>
                     <span class="divider"></span>
-                    <span class="step" ; ><b>2</b> Address</span>
+                    <span class="step"><b>2</b> Address</span>
                     <span class="divider"></span>
                     <span class="step"><b>3</b> Payment</span>
             </div>
@@ -99,14 +96,14 @@
                     
                     <div class="order-details card">
                         <h3 class="hide" style="margin-bottom: 10px;">Tổng details</h3>
-                        <div class="detail-row "><span>Bag total</span> <span id="Price-oder">0</span></div>
+                        <div class="detail-row "><span>Giá Gốc</span> <span id="total-price-old">0</span></div>
                         <div class="detail-row hide discount"><span>Coupon discount</span> <span>-$98.00</span></div>
                         <!-- <div class="detail-row hide"><span>Order total</span> <span>$1100.00</span></div> -->
                         <!-- <div class="detail-row hide free"><span>Delivery charges <span class="badge">Free</span></span> <span>-$5.00</span></div> -->
                         
-                        <div class="detail-row total"><span>Total</span> <span id="total-Price">$0.00</span></div>
+                        <div class="detail-row total"><span>Total</span> <span id="total-price-new">$0.00</span></div>
                         
-                        <button class="btn-primary w-100">Place Order</button>
+                        <button id="btn-place" class="btn-primary  w-100">Place Order</button>
                     </div>
 
                     
@@ -116,5 +113,6 @@
       </div>
    </div>
    <script src="./js/cart.js"></script>
+   <script src="./js/user_action.js"></script>
 </body>
 </html>

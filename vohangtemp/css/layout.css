@@ -28,10 +28,7 @@
 }
 
 .payload {
-   /* Giúp cột này chỉ cao vừa đủ nội dung bên trong */
    align-self: start; 
-   
-   /* Nếu bạn muốn khi cuộn trang, thanh toán luôn dính ở trên màn hình */
    position: sticky;
    top : 10px;
 }

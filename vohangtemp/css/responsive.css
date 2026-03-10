@@ -23,21 +23,12 @@
     }
 }
 
-/* Màn hình Mobile (Dưới 768px) */
+
 @media (max-width: 768px) {
     .search-bar {
         display: none; /* Ẩn ô tìm kiếm */
     }
 
-
-
- 
-
-
-   
-
-  
-    
 
    .payload{
     position: sticky;
@@ -76,7 +67,7 @@
         position: fixed;
         top: 0;
         left: -100%; /* Mặc định ẩn bên trái màn hình */
-        width: 250px;
+        width: 200px;
         height: 100vh;
         background: #fff;
         display: flex;

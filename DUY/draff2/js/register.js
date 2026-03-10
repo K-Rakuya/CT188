@@ -1,19 +1,9 @@
-// 1. Lấy các phần tử từ DOM
+
 const registerForm = document.querySelector('.form-register');
 const contactInput = document.querySelector('#contact');
-const passwordInput = document.querySelector('#password');
-const togglePassword = document.querySelector('#togglePassword');
 
-// --- CHỨC NĂNG 1: Ẩn/Hiện mật khẩu ---
-if (togglePassword) {
-    togglePassword.addEventListener('click', () => {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        togglePassword.classList.toggle('fa-eye');
-        togglePassword.classList.toggle('fa-lock');
-    });
-}
-
+const username = document.querySelector(".username");
+const passwd = document.querySelector(".password");
 
 function validateRegister() {
     const value = contactInput.value.trim();
@@ -50,7 +40,13 @@ if (registerForm) {
 
         if (validateRegister()) {
             alert("Đăng ký thành công! Chào mừng bạn đến với Refreshing Journey.");
-
+            alert("bạn đã tạo tài khoản thành công !")
+            localStorage.setItem('username', username.value);
+            localStorage.setItem('account-Name', username.value);
+            localStorage.setItem('account-Passwd',passwd.value);
+            window.location.href = './login.html';
         }
     });
 }
+
+

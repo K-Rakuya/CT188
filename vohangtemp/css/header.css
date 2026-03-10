@@ -12,11 +12,16 @@
    display: flex;
    justify-content: space-around;
 }
-.avt-user img {
+#img-avt-user {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     object-fit: cover;
+    display: none;
+}
+#img-avt-user.active {
+    display: block ;
+
 }
 
 .header-avt{
@@ -47,11 +52,20 @@
 
 .action-user:hover {
     background-color: var(--bg-main);
+    color: var(--success); 
+    border-color: var(--success); 
+    box-shadow: 0 4px 12px rgba(235, 87, 87, 0.1); 
+    transform: translateY(-1px);
+}
+
+.action-user.active:hover {
+    background-color: var(--bg-main);
     color: var(--danger); 
     border-color: var(--danger); 
     box-shadow: 0 4px 12px rgba(235, 87, 87, 0.1); 
     transform: translateY(-1px);
 }
+
 
 .header-user{
    display: flex;

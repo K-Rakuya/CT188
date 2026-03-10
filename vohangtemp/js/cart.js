@@ -1,7 +1,7 @@
 const cartListContainer = document.querySelector('#cartList');
 const totalItem = document.querySelector('#total-items');
-const totalPrice =document.querySelector('#total-Price');
-const priceOld = document.querySelector('#Price-oder');
+const totalPriceNew =document.querySelector('#total-price-new'); //giá giảm giá
+const totalPriceOld = document.querySelector('#total-price-old'); //giá gốc
 let productData = [];
 
 async function loadProduct (){
@@ -19,14 +19,36 @@ async function loadProduct (){
    }
 }
 
+
+const PriceOld=()=>{
+   let sumPriceOld = 0;
+   productData.forEach(p=>{
+      sumPriceOld+=p.oldPrice*p.qty;
+   })
+    totalPriceOld.innerHTML = '$'+sumPriceOld.toFixed(2);
+
+   return sumPriceOld;
+}
+
+const PriceNew = () =>{
+   let sumPriceNew = 0;
+   productData.forEach((product)=>{
+      sumPriceNew+=product.price * product.qty;
+   })
+   totalPriceNew.innerHTML = '$'+sumPriceNew;
+   return sumPriceNew;
+}
+
+const updatePayLoad = () =>{
+   PriceOld();
+   PriceNew();
+}
+
+
 const renderCart = () =>{
    
    totalItem.innerHTML = productData.length;
-
-   priceOld.innerHTML = '$'+updatePriceOld();
-
-   totalPrice.innerHTML = '$'+updatePrice();
-
+   
    let hmtlContent = "";
    productData.forEach((product)=>{
       
@@ -44,7 +66,7 @@ const renderCart = () =>{
                 <div class="item-actions">
                         <div class="qty-control">
                            <button onclick="decreateQty('${product.id}')">-</button>
-                           <input type="number" value="${product.qty}" readonly>
+                           <input  id="qty-${product.id}" type="number" value="${product.qty}" readonly>
                            <button onclick="increateQty('${product.id}')">+</button>
                         </div>
                 </div>
@@ -69,24 +91,10 @@ const renderCart = () =>{
    })
 
    cartListContainer.innerHTML=hmtlContent;
-   
+   updatePayLoad();
 }
 
-const updatePriceOld=()=>{
-   let totalPriceOld = 0;
-   productData.forEach(p=>{
-      totalPriceOld+=p.oldPrice;
-   })
-   return totalPriceOld;
-}
 
-const updatePrice = () =>{
-   let sumPrice = 0;
-   productData.forEach((product)=>{
-      sumPrice+=product.price * product.qty;
-   })
-   return sumPrice;
-}
 
 function removeItem(id) {
    productData = productData.filter(p=>p.id!==id);
@@ -106,7 +114,8 @@ function decreateQty(id){
    let product = productData.find(p => p.id === id);
    if(product && product.qty > 1){
       product.qty--;
-      renderCart();
+      document.getElementById(`qty-${id}`).value = product.qty;
+      updatePayLoad();
    }
 }
 
@@ -114,7 +123,8 @@ function increateQty(id){
    let product = productData.find(p => p.id === id);
    if(product){
       product.qty++;
-      renderCart();
+      document.getElementById(`qty-${id}`).value = product.qty;
+      updatePayLoad();
    }
 }
 
