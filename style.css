@@ -9,11 +9,8 @@
     text-decoration: none;
 }
 
-:root{
-    --main-color: #AB7743;
-}
 body {
-    background-color: #f5f5f5;
+    background-color: #efefef;
 }
 
 /* HEADER */
@@ -233,9 +230,11 @@ body {
 
 .product-card:nth-child(n+3){
     display: none;
+    /* display: initial; */
 }
 
 .footer-page{
+    background-color: white;
     padding-bottom: 10px;
 }
 
