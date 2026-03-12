@@ -1,9 +1,8 @@
-import {getListOfCards} from "../ShowProduct/showPD.js"
+import {} from "../ShowProduct/showPD.js"
 import {isLoggedIn} from "../CheckUser/isLogged.js"
 fetch("Cafe/data_coffee.json")
   .then(res => res.json())
   .then(data => renderProductsCoffee(data))
-  .then(pd_grid => getListOfCards(pd_grid))
   .catch(err => console.error(err));
 
 function renderProductsCoffee(products) {
