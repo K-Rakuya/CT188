@@ -1,8 +1,9 @@
-import {} from "../ShowProduct/showPD.js"
+import {ShowProduct} from "../ShowProduct/showPD.js";
 import {isLoggedIn} from "../CheckUser/isLogged.js"
 fetch("Cafe/data_coffee.json")
   .then(res => res.json())
   .then(data => renderProductsCoffee(data))
+  .then(grid_pd => ShowProduct(grid_pd))
   .catch(err => console.error(err));
 
 function renderProductsCoffee(products) {
@@ -23,24 +24,28 @@ function renderProductsCoffee(products) {
   });
 
   product_grid.innerHTML = html;
+
+
   const List_of_cards = product_grid.querySelectorAll(".product-card");
   List_of_cards.forEach(card=>{
     const btn_order = card.querySelector(".btn-order");
     btn_order.addEventListener("click", ()=>{
+      
       if(!isLoggedIn()){
         window.location.href = "Register/register.html";
       }
+
       else{
         const name = card.querySelector("h4").textContent;
         const price = card.querySelector("p").textContent;
-        let image = card.querySelector("img").getAttribute("src");
-        image = '..' + image;        
+        let image = card.querySelector("img").getAttribute("src");       
 
         const product = {
           name: name,
           price: price,
           image: image
         }
+        
         let list_products = JSON.parse(localStorage.getItem('products')) || [];
         list_products.push(product);
         localStorage.setItem("products", JSON.stringify(list_products));
