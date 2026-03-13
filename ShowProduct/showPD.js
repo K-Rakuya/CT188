@@ -4,9 +4,9 @@ function getVisible(){
         return 2;
     } 
     if(current_width < 1024){
-        return 4;
+        return 6;
     }
-    return 6;
+    return 8;
 }
 
 export function ShowProduct(proucts_grid){
