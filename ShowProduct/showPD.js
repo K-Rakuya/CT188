@@ -1,7 +1,7 @@
 function getVisible(){
     let current_width = window.innerWidth;
     if(current_width < 768){
-        return 2;
+        return 4;
     } 
     if(current_width < 1024){
         return 6;
