@@ -1,17 +1,25 @@
 /* Nav */
+:root {
+    --nav-bg: rgba(255, 255, 255, 0.75);
+    --primary-color: #30c95e;
+    --text-main: #1f2937;
+    --glass-border: rgba(229, 231, 235, 0.5);
+}
 
 #nav {
     display: flex;
-    padding: 10px 15px;
+    width: min(95%, 1600px);
+    padding: 8px 24px;
+    /* Giảm chiều cao, tăng chiều ngang */
     align-items: center;
     justify-content: space-between;
-    border-radius: 50px;
-    box-shadow: var(--main-shadow);
-    border: 1px solid;
-    border-color: rgb(229, 231, 235);
-    backdrop-filter: blur(20px) saturate(140%);
-    z-index: 10;
-    transition: border-radius .5s ease;
+    border-radius: 999px;
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px) saturate(160%);
+    background: var(--nav-bg);
+    z-index: 100;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Nav Left */
@@ -21,13 +29,13 @@
 }
 
 #nav-logo {
-    width: 128px;
-    transition: transform .5s ease;
-    transform-origin: left;
+    width: 110px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+    transition: all 0.3s ease;
 }
 
 #nav-logo:hover {
-    transform: translateX(8px) scale(1.1) rotate(2.5deg) translateY(-2px);
+    transform: translateX(8px) scale(1.1) rotate(2.5deg) translateY(2px);
 }
 
 /* Nav Center */
@@ -36,43 +44,66 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    column-gap: 6%;
+    gap: 3%;
     flex-wrap: wrap;
     transition: all .3s ease;
 }
 
-#nav-center .nav-center-element {
-    position: relative;
+#nav-center a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
     font-size: 20px;
-    text-align: center;
-    transition: all 0.2s ease-out;
-    border-radius: var(--radius-sm);
-    transition:
-        color 0.2s ease,
-        transform 0.18s cubic-bezier(.4,0,.2,1);
+    padding: 8px 18px;
+    border-radius: 16px;
+    /* Bo tròn nút hover */
+    transition: all 0.4s ease;
 }
 
-#nav-center .nav-center-element:hover {
-    color: rgb(22, 139, 143);
-    transform: translateY(-1px);
+/* Hiệu ứng khi Hover vào Link */
+#nav-center a:hover {
+    color: #fff;
+    background: #111827;
+    /* Màu đen carbon cực sang */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Thanh gạch chân chạy hiệu ứng */
+#nav-center a::after {
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: -1000;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#nav-center a:hover::after {
+    width: 70%;
 }
 
 
 /* Nav Right */
 
 #nav-right {
-    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-#searchContainer{
-}
+#searchContainer {}
 
 #nav-right #searchBtn {
     width: 32px;
     animation: SearchBtnHoverOut 0.4s ease forwards;
 }
 
-#nav-right #searchBtn > img {
+#nav-right #searchBtn>img {
     width: 100%;
 }
 
@@ -86,28 +117,26 @@
 
 #nav-right #searchBtn:hover img {
     filter:
-        drop-shadow(0 0 3px rgba(114, 196, 236, 0.477))
-        drop-shadow(0 0 6px rgba(99, 201, 252, .6));
+        drop-shadow(0 0 3px rgba(114, 196, 236, 0.477)) drop-shadow(0 0 6px rgba(99, 201, 252, .6));
 }
 
 
-#searchForm{
+#searchForm {
     position: relative;
     width: 0px;
     transition: width .3s ease-out;
 }
 
-#searchForm.expand{
+#searchForm.expand {
     width: 270px;
 }
 
-#searchBox{
+#searchBox {
     position: absolute;
     right: 0;
     top: 50%;
     transform:
-        translateY(-50%)
-        scale(.5);
+        translateY(-50%) scale(.5);
     opacity: 0;
     pointer-events: none;
     transform-origin: right center;
@@ -122,7 +151,7 @@
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);
 }
 
-#searchBox.show{
+#searchBox.show {
     opacity: 1;
     pointer-events: all;
     top: 50%;
@@ -170,7 +199,7 @@
     overflow: hidden;
 }
 
-#nav-right #avatar #avatar-wrapper a > img {
+#nav-right #avatar #avatar-wrapper a>img {
     width: 100%;
 }
 

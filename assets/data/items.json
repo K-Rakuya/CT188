@@ -1,67 +1,49 @@
 [
     {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
+        "name": "Drink 1",
+        "img": "drink1.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Kousaki Onodera",
-        "img": "onodera.png",
+        "name": "Drink 2",
+        "img": "drink2.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Marika Tachibana",
-        "img": "tachibana.png",
+        "name": "Drink 3",
+        "img": "drink3.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Seishiro Tsugumi",
-        "img": "tsugumi.png",
+        "name": "Drink 4",
+        "img": "drink4.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
+        "name": "Drink 1",
+        "img": "drink1.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
+        "name": "Drink 1",
+        "img": "drink1.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
+        "name": "Drink 1",
+        "img": "drink1.png",
         "oldPrice": "999",
         "newPrice": "999"
     },
     {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
-        "oldPrice": "999",
-        "newPrice": "999"
-    },
-    {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
-        "oldPrice": "999",
-        "newPrice": "999"
-    },
-    {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
-        "oldPrice": "999",
-        "newPrice": "999"
-    },
-    {
-        "name": "Kirisaki Chitoge",
-        "img": "chitoge.png",
+        "name": "Drink 1",
+        "img": "drink1.png",
         "oldPrice": "999",
         "newPrice": "999"
     }

@@ -8,7 +8,7 @@
 @media (max-width: 640px) {
     .grid-auto-fit {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 10px;
         width: var(--width-full);
     }

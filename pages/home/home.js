@@ -215,7 +215,7 @@ function change_banner_item(bannerIndex) {
 
 banner_item.innerHTML =
     '<img src="/assets/Banners/items/item1.png" alt="">' +
-    '<div><h1>Ten</h1><p>Thong tin 1</p></div>' + 
+    '<div><h1>Ten</h1><p>Thong tin 1</p></div>' +
     '<button id="banner-buy-btn">Buy Now!</button>'
 
 
@@ -233,30 +233,33 @@ fetch("/assets/data/items.json")
         renderItems(grid_items);
     })
 
+
 function renderItems(grid_items) {
-    grid.innerHTML = "";
+    let htmlContent = "";
 
-    grid_items.forEach(item => {
-        grid.innerHTML +=
-            '<div class="item-card flyIn radius-auto liquid-background card-backdrop card-border gap-2">' +
-            '<div class="item-wrapper flex-center flex-col gap-2">' +
+    grid_items.forEach((item, index) => {
+        const delay = index * 0.05;
+        htmlContent += `
+        <div class="item-card flyIn radius-auto liquid-background card-backdrop card-border gap-2" 
+                 style="animation-delay: ${delay}s;">
+                <div class="item-wrapper flex-center flex-col gap-2">
+                    <div class="item-banner img-crop radius-auto img-shadow">
+                        <img src="/assets/images/${item.img}" loading="lazy">
+                    </div>
+                    <h3>${item.name}</h3>
+                    <div class="relative flex gap-4 price">
+                        <span class="before-sale">${item.oldPrice}$</span>
+                        <span class="after-sale">${item.newPrice}$</span>
+                    </div>
+                    <div class="flex gap-12" style="width: 85%;">
+                        <button class="item-buy-btn btn-background radius-all-sm btn-shadow">Buy</button>
+                        <button class="more-btn btn-background radius-all-md btn-shadow" style="aspect-ratio: 1/1">⋯</button>
+                    </div>
+                </div>
+            </div>`;
+    });
 
-            '<div class="item-banner img-crop radius-auto img-shadow">' +
-            '<img src="/assets/images/' + item.img + '">' +
-            '</div>' +
-
-            '<h3>' + item.name + '</h3>' +
-
-            '<div class="relative flex gap-4 price">' +
-            '<span class="before-sale">' + item.oldPrice + '$</span>' +
-            '<span class="after-sale">' + item.newPrice + '$</span>' +
-            '</div>' +
-
-            '<div class="flex gap-12" style="width: 85%;"><button class="item-buy-btn btn-background radius-all-sm btn-shadow">Buy</button><button class="more-btn btn-background radius-all-md btn-shadow" style="aspect-ratio: 1/1">⋯</button></div>' +
-
-            '</div>' +
-            '</div>';
-    })
+    grid.innerHTML = htmlContent; // Gán 1 lần duy nhất vào DOM
 }
 
 
@@ -267,7 +270,7 @@ grid.addEventListener("mouseover", e => {
     if (!btn) return;
 
     if (auth.isLoged()) {
-        btn.textContent = "Click to Add to Cart";
+        btn.textContent = "Add to Cart";
     } else {
         btn.textContent = "Login / Register";
     }
@@ -301,3 +304,31 @@ clearCheckbox.addEventListener("click", () => {
         checkBox.checked = false;
     })
 })
+
+// Changemode to listItem
+
+const toolBarBtn = document.querySelector('#toolBar img');
+const gridContainer = document.querySelector('#main-grid-items');
+
+toolBarBtn.addEventListener('click', () => {
+    // làm mờ
+    gridContainer.classList.add('loading-overlay');
+
+    setTimeout(() => {
+        gridContainer.classList.toggle('is-list');
+
+        // xoá mờ
+        gridContainer.classList.remove('loading-overlay');
+
+        // chạy animation
+        const items = gridContainer.querySelectorAll('.item-card');
+        items.forEach((item, index) => {
+            item.classList.remove('reload-animation');
+            void item.offsetWidth; // Force reflow
+            item.classList.add('reload-animation');
+
+            // delay
+            item.style.animationDelay = `${index * 0.04}s`;
+        });
+    }, 100);
+});

@@ -48,7 +48,7 @@
 }
 
 .flyIn {
-    animation: flyIn .5s;
+    animation: flyIn 0.5s ease-out forwards;
 }
 
 /* Dạng tim đập nhẹ */

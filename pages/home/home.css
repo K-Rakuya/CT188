@@ -1,7 +1,11 @@
 body {
     position: relative;
     margin: 0;
-    background: var(--bg-gradient);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(/assets/Background/home.jpg) no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
 }
 
 /* Header */
@@ -13,8 +17,11 @@ header {
     z-index: 10;
     width: 90%;
     margin: auto;
-    transition: width .5s ease-out,
-        height .5s ease-out;
+    transition: all .5s ease-out
+}
+
+header.full-width {
+    width: 100%;
 }
 
 header:hover {
@@ -33,7 +40,7 @@ main {}
     display: flex;
     justify-content: center;
     overflow: hidden;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 21 / 9;
     width: var(--width-full);
     box-shadow: var(--main-shadow);
     border: 1px solid;
@@ -82,35 +89,46 @@ main {}
     filter: drop-shadow(0 20px 40px rgba(213, 16, 16, 0.671));
 }
 
-#banner-item div {
+#banner-item div h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
     color: white;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+#banner-item div p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 #banner-buy-btn {
-    position: relative;
     aspect-ratio: 16/7;
-    width: calc(max(10%, 100px));
-    align-self: flex-end;
-    justify-content: flex-end;
-    margin: auto 6% 3% auto;
-    z-index: 3;
+    width: calc(max(10%, 120px)); 
+    margin: auto 6% 6% auto; 
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 12px; 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
     pointer-events: all;
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0px);
-    transition: backdrop-filter .3s ease,
-        box-shadow .3s ease,
-        color .3s ease,
-        background-color .3s ease,
-        width .5s ease,
-        border-radius .5s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #banner-buy-btn:hover {
-    backdrop-filter: blur(8px);
+    background: rgba(46, 183, 99, 0.8); 
+    backdrop-filter: blur(15px);
+    border-color: rgba(255, 255, 255, 0.6);
     color: white;
-    background: rgb(22, 181, 20);
-    box-shadow: 0 0 25px rgba(41, 157, 85, .6);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 20px rgba(41, 157, 85, 0.4),
+        0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .banner-dots {
@@ -168,18 +186,31 @@ main {}
 }
 
 #main-grid-items .item-card {
+    cursor: pointer;
     width: 100%;
+    opacity: 0;
+    animation-fill-mode: forwards; 
     box-shadow: var(--main-shadow);
-    transition: transform .5s ease;
+    transition: box-shadow 0.3s ease;
+    will-change: transform, opacity;
 }
 
 #main-grid-items .item-card:hover {
-    transform: scale(1.05) translateY(-5px);
     z-index: 9;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
 }
 
 .item-wrapper {
     margin: 12px 16px;
+}
+
+.item-banner {
+    transition: transform 0.3s ease; 
+    will-change: transform;
+}
+
+#main-grid-items .item-card:hover .item-wrapper > .item-banner {
+    transform: scale(1.05) translateY(-5px);
 }
 
 .item-banner {
@@ -192,6 +223,7 @@ main {}
 }
 
 .before-sale {
+    opacity: .6;
     text-decoration: line-through;
 }
 
@@ -201,27 +233,91 @@ main {}
 
 .item-buy-btn {
     width: 85%;
+    height: 36px;
     transform-origin: center;
-    transition: transform 0.3s ease,
-        box-shadow .3s ease,
-        font-weight 0.3s ease,
-        opacity 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
 }
 
 .item-buy-btn:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 5px rgb(99, 201, 252),
-        0 0 15px rgb(99, 201, 252),
-        0 0 30px rgb(99, 201, 252);
-    font-weight: 800;
-    opacity: 0.9;
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(99, 201, 252, 0.4); 
+    font-weight: 700; 
+    filter: brightness(1.1); 
+    cursor: pointer;
 }
 
 .more-btn {
     width: 15%;
     align-self: center;
     flex: 0 0 auto;
+}
+
+/* KHI Ở CHẾ ĐỘ LIST */
+#main-grid-items.is-list {
+    grid-template-columns: 1fr; /* Ép tất cả về 1 cột */
+    gap: 12px;
+}
+
+/* Thay đổi layout */
+#main-grid-items.is-list .item-card {
+    width: 100%;
+}
+
+#main-grid-items.is-list .item-wrapper {
+    flex-direction: row; 
+    justify-content: flex-start;
+    text-align: left;
+    gap: 20px;
+}
+
+/* Thu nhỏ ảnh lại khi ở dạng List */
+#main-grid-items.is-list .item-banner {
+    width: 120px; 
+    aspect-ratio: 1/1;
+}
+
+/* Căn chỉnh lại các nút bấm và thông tin */
+#main-grid-items.is-list .item-wrapper h3 {
+    flex: 1; 
+    margin: 0;
+}
+
+#main-grid-items.is-list .price {
+    flex-direction: column; 
+    gap: 2px;
+}
+
+#main-grid-items.is-list .flex.gap-12 {
+    width: 150px !important; 
+    flex-direction: row; 
+    gap: 5px;
+}
+
+/* Hiệu ứng xuất hiện */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* animation */
+.reload-animation {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0; /* Mặc định ẩn */
+}
+
+/* Lớp phủ mờ giả lập lúc đang "load" */
+.loading-overlay {
+    filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.1s ease;
 }
 
 /* List Item Side Bar */
@@ -249,7 +345,8 @@ main {}
     width: 25%;
     height: 100%;
     border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.331);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px) saturate(160%);
     border: 1px solid white;
     opacity: 0;
 
@@ -292,7 +389,7 @@ main {}
 .box {
     width: 20px;
     height: 20px;
-    border: 2px solid #ababab;
+    border: 2px solid #ffffff;
     border-radius: 6px;
     position: relative;
     transition: all 0.2s ease;
@@ -369,6 +466,34 @@ main {}
     border: 1px solid rgb(255, 255, 255);
 }
 
+@media (max-width: 900px) {
+    header {
+        width: 100%;
+    }
+
+    #main-banner-wrapper {
+        width: 95%;
+    }
+
+    #toolBar {
+        width: 95%;
+    }
+
+    #listItem {
+        width: 95%;
+    }
+
+    #listItem-side-pannel {
+        width: 45%;
+    }
+
+    #main-grid-items.collaps {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {}
+
 @media (max-width: 640px) {
     header {
         width: 100%;
@@ -407,11 +532,14 @@ main {}
         width: 100%;
         border-radius: 0;
         animation: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
     }
 
-    #banner-item>* {
+    /* #banner-item > * {
         font-size: 12px;
-    }
+    } */
 
     #banner-buy-btn {
         width: calc(max(10%, 70px));
@@ -446,19 +574,20 @@ main {}
     #listItem {
         width: 100%;
         padding: 0px 10px;
+        padding-top: 15px;
     }
 
-    #listItem * {
+    /* #listItem * {
         font-size: 12px;
-    }
+    } */
 
     .item-wrapper {
         margin: 6px 8px;
     }
 
-    .item-buy-btn {
+    /* .item-buy-btn {
         border-radius: 6px;
-    }
+    } */
 
     .more-btn {
         width: 20%;
@@ -466,8 +595,8 @@ main {}
 
     #listItem-side-pannel {
         width: 50%;
-        background: rgba(255, 255, 255, 0.619);
-        backdrop-filter: blur(20px) saturate(140%);
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px) saturate(160%); 
         border-radius: 12px 0px 0px 0px;
     }
 }

@@ -55,9 +55,9 @@
 .liquid-background {
     background:
         linear-gradient(180deg,
-            rgba(255, 255, 255, .35),
+            rgba(255, 255, 255, 0.169),
             rgba(255, 255, 255, 0.176)),
-        rgba(255, 255, 255, .1);
+        rgba(255, 255, 255, 0.073);
 }
 
 .hidden {
