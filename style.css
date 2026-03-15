@@ -46,7 +46,7 @@ body {
 
 .nav {
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr 4fr 1fr;
 }
 
 .container-search-bar{
@@ -61,6 +61,8 @@ body {
     border-radius: 10px;
     position: relative;
     padding: 2px 0px 2px 30px;
+    width: 80%;
+    min-width: 100px;
 }
 
 .search-button{
@@ -73,8 +75,8 @@ body {
 
 .search-input{
     border: 0px;
-    width: 80%;
     margin-left: 5px;
+    width: 70%;
 }
 
 .search-input:focus{
@@ -111,8 +113,11 @@ body {
 .burger-menu{
     text-align: start;
 }
+
 .user-cart{
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: end;
 }
 
 /* .feature:hover {
@@ -334,13 +339,12 @@ body {
 /* MOBILE MÀN BỰ HƠN */
 @media(min-width: 365px){
     .nav {
-        grid-template-columns: 1fr auto 1fr;
+        grid-template-columns: repeat(3, 1fr);
     }
-    .user-cart{
-        display: flex;
-        align-items: center;
-        justify-content: end;
+    .search-bar{
+        min-width: 170px;
     }
+
     .product-grid{
         padding: 0px 22px;
     }
@@ -371,6 +375,9 @@ body {
 
     .nav{
         grid-template-columns: 1fr 2fr 1fr;
+    }
+    .search-bar{
+        max-width: 200px;
     }
 
     .search-input{
