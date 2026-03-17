@@ -1,4 +1,9 @@
+:root {
+    --primary-bg: rgba(255, 255, 255, 0.269);
+}
+
 body {
+    font-family: 'Segoe UI', sans-serif;
     position: relative;
     margin: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -190,13 +195,17 @@ main {}
     width: 100%;
     opacity: 0;
     animation-fill-mode: forwards; 
+    background: var(--primary-bg);
+    backdrop-filter: blur(10px);
     box-shadow: var(--main-shadow);
-    transition: box-shadow 0.3s ease;
-    will-change: transform, opacity;
+    transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                border .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity, border;
 }
 
 #main-grid-items .item-card:hover {
     z-index: 9;
+    border: #86cbde90 solid;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
 }
 
@@ -223,12 +232,12 @@ main {}
 }
 
 .before-sale {
-    opacity: .6;
+    opacity: .4;
     text-decoration: line-through;
 }
 
 .after-sale {
-    color: red;
+    color: rgb(254, 56, 56);
 }
 
 .item-buy-btn {
@@ -255,11 +264,10 @@ main {}
 
 /* KHI Ở CHẾ ĐỘ LIST */
 #main-grid-items.is-list {
-    grid-template-columns: 1fr; /* Ép tất cả về 1 cột */
+    grid-template-columns: 1fr; 
     gap: 12px;
 }
 
-/* Thay đổi layout */
 #main-grid-items.is-list .item-card {
     width: 100%;
 }
@@ -271,13 +279,12 @@ main {}
     gap: 20px;
 }
 
-/* Thu nhỏ ảnh lại khi ở dạng List */
+/* Thu nhỏ ảnh  */
 #main-grid-items.is-list .item-banner {
     width: 120px; 
     aspect-ratio: 1/1;
 }
 
-/* Căn chỉnh lại các nút bấm và thông tin */
 #main-grid-items.is-list .item-wrapper h3 {
     flex: 1; 
     margin: 0;
@@ -345,7 +352,7 @@ main {}
     width: 25%;
     height: 100%;
     border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--primary-bg);
     backdrop-filter: blur(12px) saturate(160%);
     border: 1px solid white;
     opacity: 0;
@@ -451,20 +458,23 @@ main {}
 }
 
 #filter-submit-btn {
-    pointer-events: auto;
-    background-color: white;
     width: 100%;
-    height: 25px;
-    border-radius: 8px;
-    border: 1px solid black;
-    transition: all .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: auto;
+    background: #498d9f;
+    color: white;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(101, 158, 172, 0.4);
 }
-
+/* 
 #filter-submit-btn:hover {
     background-color: black;
     color: white;
     border: 1px solid rgb(255, 255, 255);
-}
+} */
 
 @media (max-width: 900px) {
     header {

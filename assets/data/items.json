@@ -3,48 +3,56 @@
         "name": "Drink 1",
         "img": "drink1.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Coffee"
     },
     {
         "name": "Drink 2",
         "img": "drink2.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Trà sữa"
     },
     {
         "name": "Drink 3",
         "img": "drink3.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Nước ép"
     },
     {
         "name": "Drink 4",
         "img": "drink4.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Sinh tố"
     },
     {
         "name": "Drink 1",
         "img": "drink1.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Coffee"
     },
     {
-        "name": "Drink 1",
-        "img": "drink1.png",
+        "name": "Drink 3",
+        "img": "drink3.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Nước ép"
     },
     {
-        "name": "Drink 1",
-        "img": "drink1.png",
+        "name": "Drink 2",
+        "img": "drink2.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Trà sữa"
     },
     {
-        "name": "Drink 1",
-        "img": "drink1.png",
+        "name": "Drink 4",
+        "img": "drink4.png",
         "oldPrice": "999",
-        "newPrice": "999"
+        "newPrice": "999",
+        "type": "Sinh tố"
     }
 ]

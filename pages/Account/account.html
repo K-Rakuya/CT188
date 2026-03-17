@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi-vn">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drite</title>
+    <title>Drite - Account Settings</title>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/pages/home/home.css">
     <link rel="stylesheet" href="/pages/Account/account.css">
     <script src="/pages/Account/account.js" defer></script>
 </head>
-
 <body>
     <header id="header" class="flex-center">
-        <nav class="flex-center width-max nav-floatbar-background" id="nav">
+        <nav class="flex-center nav-floatbar-background" id="nav">
             <div id="nav-left"><a href="/index.html"><img src="/assets/Logos/logo.png" alt="Logo" id="nav-logo"></a>
             </div>
             <div id="nav-center">
-                <div class="nav-center-element radius-auto">
                     <a href="/index.html">Home</a>
-                </div>
-                <div class="nav-center-element radius-auto">
                     <a href="">Product</a>
-                </div>
-                <div class="nav-center-element radius-auto">
                     <a href="">Promotion</a>
-                </div>
-                <div class="nav-center-element radius-auto">
                     <a href="">Information</a>
-                </div>
             </div>
             <div id="nav-right" class="flex-center gap-16">
                 <div id="searchContainer" class="flex-center gap-8">
@@ -52,73 +42,60 @@
             </div>
         </nav>
     </header>
-    <main class="flex-center">
-        <div id="profile" class="flex-center flex-col">
+
+    <main>
+        <div id="profile">
             <div id="profile-header">
-                <img id="banner" src="/assets/data/Account/Banner/banner.png" alt="">
-                <div id="user" class="flex gap-16">
+                <img id="profile-banner-img" src="/assets/data/Account/Banner/banner.png" alt="Banner">
+                <div id="user-overlay-info" class="flex gap-24">
                     <div id="avatar-container">
-                        <img src="/assets/Avatar/avatar.png" alt="">
+                        <img src="/assets/Avatar/avatar.png" alt="User Avatar">
                     </div>
                     <div id="short-info">
                         <h1>K.Rakuya</h1>
                         <h2>@k.rakuya</h2>
-                        <p>Description.............................</p>
+                        <p>Graphic Designer & Developer</p>
                     </div>
                 </div>
             </div>
-            <div id="profile-main" class="flex-center flex-col">
-                <form action="" id="user-information"></form>
-                <h1 class="info-title">Account Settings</h1>
-                <div id="information" class="flex-center flex-col gap-4 info-background">
-                    <div class="info-row flex justify-between">
-                        <div class="info-left flex-center">
-                            <label class="label-style" for="username">Username: </label>
+
+            <div id="profile-content">
+                <form action="" id="user-information-form">
+                    <h2 class="section-title">Account Settings</h2>
+                    <div class="glass-box">
+                        <div class="info-row">
+                            <label for="username">Username</label>
+                            <input id="username" type="text" placeholder="Tên người dùng">
                         </div>
-                        <div class="info-right flex-center">
-                            <input id="username" class="input-style" type="text" form="user-information"
-                                placeholder="Tên người dùng của bạn">
+                        <div class="info-row">
+                            <label for="phone">Số điện thoại</label>
+                            <input id="phone" type="text" placeholder="0123 456 789">
                         </div>
-                    </div>
-                    <div class="info-row flex justify-between">
-                        <div class="info-left flex-center">
-                            <label class="label-style" for="phone">Số điện thoại: </label>
-                        </div>
-                        <div class="info-right flex-center">
-                            <input type="text" id="phone" class="input-style" form="user-information"
-                                placeholder="Số điện thoại của bạn">
+                        <div class="info-row">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" placeholder="email@example.com">
                         </div>
                     </div>
-                    <div class="info-row flex justify-between">
-                        <div class="info-left flex-center">
-                            <label class="label-style" for="email">Email</label>
-                        </div>
-                        <div class="info-right flex-center">
-                            <input type="email" id="email" class="input-style" form="user-information"
-                                placeholder="Email của bạn">
-                        </div>
-                    </div>
-                </div>
-                <h1 class="info-title">Address Settings</h1>
-                <div id="address" class="flex-center flex-col gap-4 info-background">
-                    <div class="info-row flex justify-between">
-                        <div class="info-left flex-center">
-                            <label class="label-style" for="username">Địa chỉ: </label>
-                        </div>
-                        <div class="info-center">
-                            <input id="username" type="text" class="input-style" form="user-information"
-                                placeholder="Địa chỉ của bạn">
-                        </div>
-                        <div class="info-right flex-center gap-8">
-                            <input type="radio" name="address" id="main-address">
-                            <label class="radio-mark" for="main-address"></label>
-                            <button class="btn-delete">🗑 Delete</button>
+
+                    <h2 class="section-title">Address Settings</h2>
+                    <div class="glass-box">
+                        <div class="info-row address-row">
+                            <label for="address_input">Địa chỉ chính</label>
+                            <input id="address_input" type="text" placeholder="Địa chỉ của bạn">
+                            <div class="actions">
+                                <input type="radio" name="address_primary" id="main-addr-check" checked>
+                                <label class="radio-mark" for="main-addr-check"></label>
+                                <button type="button" class="btn-delete">🗑</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    
+                    <div class="flex-center" style="margin-top: 20px;">
+                        <button type="submit" class="btn-save">Save Changes</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
 </body>
-
 </html>

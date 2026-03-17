@@ -5,9 +5,9 @@ const Card = document.getElementById("button-card");
 const Avt = document.getElementById("avatar");
 const login = document.getElementById("login");
 const register = document.getElementById("register");
+let isLoged = 0;
 
 const auth = (() => {
-    let isLoged = 0;
 
     function updateUI() {
         setLoggedUI(isLoged);
@@ -158,8 +158,10 @@ document.addEventListener("pointerup", () => {
         bannerIndex = (bannerIndex - 1 + banner_images.length) % banner_images.length;
     }
 
-    // fade ảnh cũ
+    ChangeBanner(bannerIndex, direction);
+});
 
+function ChangeBanner(bannerIndex, direction) {
     banner.style.transition = "opacity 0.3s ease";
     banner.style.opacity = "0";
     setTimeout(() => {
@@ -182,7 +184,17 @@ document.addEventListener("pointerup", () => {
         banner.style.opacity = "1";
 
     }, 300);
-});
+}
+
+function autoChangeBanner() {
+    setTimeout(() => {
+        bannerIndex = (bannerIndex + 1) % banner_images.length;
+        ChangeBanner(bannerIndex, -1);
+        autoChangeBanner();
+    }, 7000)
+}
+
+autoChangeBanner();
 
 const banner_items_img = [
     "/assets/Banners/items/item1.png",
@@ -252,7 +264,7 @@ function renderItems(grid_items) {
                         <span class="after-sale">${item.newPrice}$</span>
                     </div>
                     <div class="flex gap-12" style="width: 85%;">
-                        <button class="item-buy-btn btn-background radius-all-sm btn-shadow">Buy</button>
+                        <button class="item-buy-btn btn-background radius-all-sm btn-shadow" data-name="${item.name}">Buy</button>
                         <button class="more-btn btn-background radius-all-md btn-shadow" style="aspect-ratio: 1/1">⋯</button>
                     </div>
                 </div>
@@ -331,4 +343,72 @@ toolBarBtn.addEventListener('click', () => {
             item.style.animationDelay = `${index * 0.04}s`;
         });
     }, 100);
+});
+
+// Event nhấn nút buy thêm vào localstorage
+
+grid.addEventListener("click", (e) => {
+    if (e.target.classList.contains("item-buy-btn")) {
+        const name = e.target.getAttribute("data-name");
+        const selectedItem = grid_items.find(i => i.name === name);
+
+        if (isLoged) {
+            addToCart(selectedItem);
+        } else {
+            console.log("Chua dang nhap");
+        }
+    }
+});
+
+function addToCart(product) {
+    // Lấy dữ liệu cũ từ localStorage, nếu chưa có thì khởi tạo mảng rỗng []
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Kiểm tra xem sản phẩm đã tồn tại
+    const existingProduct = cart.find(item => item.name === product.name);
+
+    if (existingProduct) {
+        // tăng số lượng
+        existingProduct.amount += 1;
+    } else {
+        // thêm obj mới
+        cart.push({
+            name: product.name,
+            img: product.img,
+            price: product.newPrice,
+            amount: 1
+        });
+    }
+    // Lưu lại
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Filter Logic
+
+const filterBtn = document.getElementById("filter-submit-btn");
+const clearBtn = document.getElementById("clearCheckBoxBtn");
+
+function applyFilter() {
+    const checkedBoxes = document.querySelectorAll('.pop-checkbox input[type="checkbox"]:checked');
+
+    // chuyển value thành mảng
+    const selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
+
+    // Nếu không chọn gì, hiện tất cả. Nếu có chọn, lọc theo type.
+    if (selectedCategories.length === 0) {
+        renderItems(grid_items);
+    } else {
+        const filteredData = grid_items.filter(item =>
+            selectedCategories.includes(item.type)
+        );
+        renderItems(filteredData);
+    }
+}
+
+filterBtn.addEventListener("click", applyFilter);
+
+clearBtn.addEventListener("click", () => {
+    const allBoxes = document.querySelectorAll('.pop-checkbox input[type="checkbox"]');
+    allBoxes.forEach(cb => cb.checked = false);
+    renderItems(grid_items);
 });
