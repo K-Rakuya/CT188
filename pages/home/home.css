@@ -110,13 +110,13 @@ main {}
 
 #banner-buy-btn {
     aspect-ratio: 16/7;
-    width: calc(max(10%, 120px)); 
-    margin: auto 6% 6% auto; 
+    width: calc(max(10%, 120px));
+    margin: auto 6% 6% auto;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    border-radius: 12px; 
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: #ffffff;
     font-weight: 600;
     letter-spacing: 1px;
@@ -126,12 +126,12 @@ main {}
 }
 
 #banner-buy-btn:hover {
-    background: rgba(46, 183, 99, 0.8); 
+    background: rgba(46, 183, 99, 0.8);
     backdrop-filter: blur(15px);
     border-color: rgba(255, 255, 255, 0.6);
     color: white;
     transform: translateY(-3px);
-    box-shadow: 
+    box-shadow:
         0 8px 20px rgba(41, 157, 85, 0.4),
         0 0 10px rgba(255, 255, 255, 0.2);
 }
@@ -194,19 +194,19 @@ main {}
     cursor: pointer;
     width: 100%;
     opacity: 0;
-    animation-fill-mode: forwards; 
+    animation-fill-mode: forwards;
     background: var(--primary-bg);
     backdrop-filter: blur(10px);
     box-shadow: var(--main-shadow);
     transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                border .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     will-change: transform, opacity, border;
 }
 
 #main-grid-items .item-card:hover {
     z-index: 9;
     border: #86cbde90 solid;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .item-wrapper {
@@ -214,11 +214,11 @@ main {}
 }
 
 .item-banner {
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
     will-change: transform;
 }
 
-#main-grid-items .item-card:hover .item-wrapper > .item-banner {
+#main-grid-items .item-card:hover .item-wrapper>.item-banner {
     transform: scale(1.05) translateY(-5px);
 }
 
@@ -249,10 +249,10 @@ main {}
 }
 
 .item-buy-btn:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 10px 20px rgba(99, 201, 252, 0.4); 
-    font-weight: 700; 
-    filter: brightness(1.1); 
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(99, 201, 252, 0.4);
+    font-weight: 700;
+    filter: brightness(1.1);
     cursor: pointer;
 }
 
@@ -264,7 +264,7 @@ main {}
 
 /* KHI Ở CHẾ ĐỘ LIST */
 #main-grid-items.is-list {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     gap: 12px;
 }
 
@@ -273,7 +273,7 @@ main {}
 }
 
 #main-grid-items.is-list .item-wrapper {
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: flex-start;
     text-align: left;
     gap: 20px;
@@ -281,23 +281,23 @@ main {}
 
 /* Thu nhỏ ảnh  */
 #main-grid-items.is-list .item-banner {
-    width: 120px; 
+    width: 120px;
     aspect-ratio: 1/1;
 }
 
 #main-grid-items.is-list .item-wrapper h3 {
-    flex: 1; 
+    flex: 1;
     margin: 0;
 }
 
 #main-grid-items.is-list .price {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 2px;
 }
 
 #main-grid-items.is-list .flex.gap-12 {
-    width: 150px !important; 
-    flex-direction: row; 
+    width: 150px !important;
+    flex-direction: row;
     gap: 5px;
 }
 
@@ -307,6 +307,7 @@ main {}
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -316,7 +317,8 @@ main {}
 /* animation */
 .reload-animation {
     animation: fadeInUp 0.5s ease forwards;
-    opacity: 0; /* Mặc định ẩn */
+    opacity: 0;
+    /* Mặc định ẩn */
 }
 
 /* Lớp phủ mờ giả lập lúc đang "load" */
@@ -469,6 +471,7 @@ main {}
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(101, 158, 172, 0.4);
 }
+
 /* 
 #filter-submit-btn:hover {
     background-color: black;
@@ -552,8 +555,17 @@ main {}
     } */
 
     #banner-buy-btn {
+        font-size: 8px;
         width: calc(max(10%, 70px));
         border-radius: 8px;
+    }
+
+    #banner-item div h1 {
+        font-size: 1.7rem;
+    }
+
+    #banner-item div p {
+        font-size: 1rem;
     }
 
     .dot {
@@ -606,7 +618,7 @@ main {}
     #listItem-side-pannel {
         width: 50%;
         background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(12px) saturate(160%); 
+        backdrop-filter: blur(12px) saturate(160%);
         border-radius: 12px 0px 0px 0px;
     }
 }
