@@ -102,6 +102,42 @@
                     <span class="arrow">▼</span>
                 </button>
             </section>
+            <form id="order-form">
+                <div class="modal">
+                    <div class="title-option">
+                        <h2 style="margin: 0;">Chọn tùy chọn</h2>
+                    </div>
+                    <div class="img-order-form">
+                    </div>
+                    <div class="customization">
+                        <div class="option number">   
+                            <label>Số lượng:</label>
+                            <input style="padding-left: 10px;" name="quantity" type="number" value="1" min="1">
+                        </div>
+                        <div class="option sugar">
+                            <label>Đường:</label>
+                            <select name="sugar">
+                                <option>100%</option>
+                                <option>70%</option>
+                                <option>50%</option>
+                                <option>Không đường</option>
+                            </select>
+                        </div>
+                        <div class="option ice">
+                            <label>Đá:</label>
+                            <select name="ice">
+                                <option>Bình thường</option>
+                                <option>Ít đá</option>
+                                <option>Không đá</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-btn">
+                        <button type="submit" id="confirmBtn">Xác nhận</button>
+                        <button type="button" id="closeBtn">Hủy</button>
+                    </div>
+                </div>
+            </form>
 
         </main>
     </div>
@@ -125,6 +161,7 @@
                         <a href="#"><i style="color: blue;" class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i style="color: red;" class="fa-brands fa-instagram"></i></a>
                         <a href="#"><i style="color: white;" class="fa-brands fa-x-twitter"></i></a>
+                        <!-- <a href="#"><i style="color: red;" class="fa-brands fa-youtube"></i></a> -->
                     </div>
                 </div>
             </div>
@@ -145,5 +182,12 @@
     <script type="module" src="./Tea/read_data_tea.js"></script>
     <script type="module" src="./Freeze/read_data_freeze.js"></script>
     <script type="module" src="./Nav/nav.js"></script>
+    <script>
+        var order_table = document.querySelector("#order-form");
+        var close_btn = order_table.querySelector("#closeBtn");
+        close_btn.addEventListener("click", ()=>{
+          order_table.classList.toggle("toggle");
+        })
+    </script>
 </body>
 </html>
