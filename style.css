@@ -134,12 +134,19 @@ body {
 
 /* SIDEBAR */
 .sidebar {
-    width: 120px;
+    /* FIX */
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+
+   
     background: white;
     margin-top: 10px;
     padding: 5px;
     border-radius: 8px;
     height: fit-content;
+   
 }
 
 .sidebar h3 {
@@ -149,6 +156,10 @@ body {
 }
 
 .sidebar ul {
+    /* FIX */
+    display: contents;
+
+
     list-style: none;
 }
 
@@ -179,6 +190,7 @@ body {
 .products h2 {
     text-align: center;
     margin-bottom: 5px;
+    display: none;
 }
 
 /* GRID */
@@ -430,6 +442,10 @@ body {
     font-size: 7px;
     color: white;
 }
+
+.h2{
+        display: none;
+    }
 /* RESPONSIVE */
 
 /* MOBILE MÀN BỰ HƠN */
@@ -456,13 +472,26 @@ body {
     .modal {
         width: 280px;
     }
+    
+
 
 }
 /* TABLET */
+
 @media (min-width: 768px) {
+
+
+    /* FIX */
+    .sidebar{
+        flex-direction: column;
+        width: 120px;
+    }
+
     .header{
         padding: 8px 30px;
     }
+
+    
 
     .logo h1{
         font-size: 18px;
@@ -496,6 +525,7 @@ body {
         padding-bottom: 5px;
         position: sticky;
         top: 120px;
+        display: flex;
     }
 
     .sidebar h3 {
