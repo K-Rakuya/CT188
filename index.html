@@ -8,6 +8,7 @@
 
  </head>
 <body>
+  <head>
  <div>
   <div class = "section">
 <img src = "images/logo.png" class ="logo"> </div>
@@ -17,6 +18,8 @@
  
 </div>
 </div>
+</head>
+<main>
 <div class="slider"> 
   <div class="slides">
     <img src="images/thanhcuon1.jpg" class="slide active">
@@ -37,18 +40,18 @@
     <div class = "section">
     <h2>🌿 Giới thiệu</h2>
     <img src ="images/layout.jpg" class = "layout">
-    <h3>Đồ uống sáng tạo: Các món signature độc quyền chỉ có tại quán</h3>
-    <p>
+    <h3  style="font-family: Brush Script MT">Đồ uống sáng tạo: Các món signature độc quyền chỉ có tại quán</h3>
+    <p style="font-family: Comic San MS">
       Chào mừng bạn đến với [Tên quán cafe] không gian nơi hương vị cà phê hòa
       quyện cùng sự thư giãn. Chúng tôi mong muốn mang đến cho bạn những phút
       giây thoải mái, nhẹ nhàng giữa nhịp sống bận rộn
     </p>
     </div>
     <div class = "section">
-    <h3>☕ Thức uống đặc trưng</h3>
+    <h3  style="font-family: Brush Script MT">☕ Thức uống đặc trưng</h3>
     <img src ="images/cafe.jpg" alt ="ảnh minh họa 1" class = "img"  >
-    <ul>
-      <li>
+    <ul style="font-family: Comic San MS">
+      <li >
         Cà phê rang xay nguyên chất: Được chọn lọc từ hạt cà phê chất lượng cao,
         rang theo công thức riêng để giữ trọn hương vị.
       </i>
@@ -63,9 +66,9 @@
     </ul>
     </div>
     <div class = "section">
-    <h3>🍰 Không gian & trải nghiệm</h3>
+    <h3  style="font-family: Brush Script MT">🍰 Không gian & trải nghiệm</h3>
 <img src = "images/layer.jpg" alt ="ảnh minh họa 2" class = "img">
-<ul>
+<ul style="font-family: Comic San MS">
     <li>
       <p>
         - Phong cách thiết kế: Ấm cúng, hiện đại, phù hợp cho làm việc, gặp gỡ
@@ -82,7 +85,7 @@
     </li>
     </ul>
     <div class = "section">
-        <h3>🎉 Dịch vụ & ưu đãi</h3>
+        <h3  style="font-family: Brush Script MT">🎉 Dịch vụ & ưu đãi</h3>
         <ul>
 <li>
     <p>
@@ -94,10 +97,28 @@
 </div>
 
   <H2> Tham khảo ý kiến khách hàng</H2>
-<from>
- 
-</from>
 
+<form>
+  <section>
+    <h2>Đánh giá của khách hàng</h2>
+    <h3>Hãy để lại đánh giá để giúp shop cải thiện chất lượng nhé</h3>
+    <div>
+      <input type="text" id="name" placeholder="Nhập Tên Của Bạn"/>
+      <div class ="starSelect"  id = "starSelect">
+  <span data-value="1">⭐</span>
+  <span data-value="2">⭐</span>
+  <span data-value="3">⭐</span>
+  <span data-value="4">⭐</span>
+  <span data-value="5">⭐</span>
+</div>
+      </div>
+      <textarea id="comment" placeholder="Viết đánh giá ở đây..."></textarea>
+      <button type="button" onclick="addReview()">Gửi đánh giá</button>
+    </div>
+    <div id="reviewList"></div>
+  </section>
+</form>
+</main>
     <footer class="background">
         <div>
         <h2>
