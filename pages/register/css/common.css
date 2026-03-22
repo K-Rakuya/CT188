@@ -1,0 +1,59 @@
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+    line-height: normal;
+    background:linear-gradient(
+      to  right,
+      rgba(30, 189, 252, 0.541) 20%,
+      rgba(44, 150, 158, 0)
+    );
+}
+
+a{
+   text-decoration: none;
+}
+
+.grid{
+   display: grid;
+}
+
+.flex{
+   display: flex;
+}
+
+.gap-10{
+   gap: 1rem;
+}
+.gap-20{
+   gap: 2rem;
+}
+.relative{
+   position: relative;
+}
+
+
+/* Tắt icon mặc định trên Edge/Chrome */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none;
+}
+
+/* Đảm bảo trình duyệt không tự chèn thêm các nút điều khiển lạ */
+input::-webkit-contacts-auto-fill-button, 
+input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+}

@@ -1,0 +1,11 @@
+/* reset css */
+@import url(./reset.css);
+
+/* import icon */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+
+@import url(./main.css);
+
+@import url(./common.css);
+
+@import url(./btn.css);

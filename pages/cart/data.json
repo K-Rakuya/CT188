@@ -1,0 +1,386 @@
+[{
+    "id": "P001",
+    "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400&q=80",
+    "name": "Cà Phê Sữa Đá",
+    "rating": 4.9,
+    "reviews": 450,
+    "price": 2,
+    "oldPrice": 3,
+    "size": "M",
+    "color": "Đậm đà",
+    "qty": 1
+  },
+  {
+    "id": "P002",
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&q=80",
+    "name": "Trà Đào Cam Sả",
+    "rating": 4.8,
+    "reviews": 320,
+    "price": 4,
+    "oldPrice": 50,
+    "size": "L",
+    "color": "Thanh mát",
+    "qty": 1
+  },
+  
+  {
+    "id": "P004",
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80",
+    "name": "Cà Phê Đen Đá",
+    "rating": 4.8,
+    "reviews": 215,
+    "price": 2.5,
+    "oldPrice": 3,
+    "size": "M",
+    "color": "Mạnh mẽ",
+    "qty": 1
+  },
+  {
+    "id": "P005",
+    "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&q=80",
+    "name": "Bạc Xỉu Đá",
+    "rating": 4.9,
+    "reviews": 380,
+    "price": 3.2,
+    "oldPrice": 3.8,
+    "size": "M",
+    "color": "Béo ngậy",
+    "qty": 1
+  },
+
+  {
+    "id": "P007",
+    "image": "https://images.unsplash.com/photo-1556881286-fc6915169721?w=400&q=80",
+    "name": "Sinh Tố Dâu Tây",
+    "rating": 4.8,
+    "reviews": 290,
+    "price": 4.5,
+    "oldPrice": 5.5,
+    "size": "L",
+    "color": "Hồng",
+    "qty": 1
+  },
+
+  {
+    "id": "P010",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=80",
+    "name": "Soda Chanh Dây",
+    "rating": 4.5,
+    "reviews": 110,
+    "price": 3.8,
+    "oldPrice": 4.5,
+    "size": "L",
+    "color": "Vàng",
+    "qty": 1
+  },
+  {
+    "id": "P011",
+    "image": "https://images.unsplash.com/photo-1529502669403-c073b74fcefb?w=400&q=80",
+    "name": "Sinh Tố Bơ Mộc Châu",
+    "rating": 4.8,
+    "reviews": 315,
+    "price": 5,
+    "oldPrice": 6,
+    "size": "L",
+    "color": "Xanh nhạt",
+    "qty": 1
+  },
+
+  {
+    "id": "P014",
+    "image": "https://images.unsplash.com/photo-1515586000433-45406d8e6662?w=400&q=80",
+    "name": "Nước Chanh Sả Mật Ong",
+    "rating": 4.7,
+    "reviews": 89,
+    "price": 3,
+    "oldPrice": 3.5,
+    "size": "M",
+    "color": "Vàng nhạt",
+    "qty": 1
+  },
+  {
+    "id": "P015",
+    "image": "https://images.unsplash.com/photo-1597075687490-8f673c6c17f6?w=400&q=80",
+    "name": "Trà Hoa Cúc Nóng",
+    "rating": 4.8,
+    "reviews": 167,
+    "price": 3.5,
+    "oldPrice": 4,
+    "size": "S",
+    "color": "Trà nóng",
+    "qty": 1
+  },
+  {
+    "id": "P016",
+    "image": "https://images.unsplash.com/photo-1536934331404-b6b9d044f50f?w=400&q=80",
+    "name": "Cacao Đá Xay",
+    "rating": 4.7,
+    "reviews": 240,
+    "price": 4.8,
+    "oldPrice": 5.5,
+    "size": "L",
+    "color": "Sô-cô-la",
+    "qty": 1
+  },
+  {
+    "id": "P017",
+    "image": "https://images.unsplash.com/photo-1613478223719-2ab802602423?w=400&q=80",
+    "name": "Nước Ép Táo Xanh",
+    "rating": 4.5,
+    "reviews": 95,
+    "price": 4.2,
+    "oldPrice": 4.8,
+    "size": "M",
+    "color": "Xanh",
+    "qty": 1
+  },
+  {
+    "id": "P018",
+    "image": "https://images.unsplash.com/photo-1595981267035-7b04d84b5269?w=400&q=80",
+    "name": "Trà Xanh Macchiato",
+    "rating": 4.8,
+    "reviews": 310,
+    "price": 4.5,
+    "oldPrice": 5.2,
+    "size": "L",
+    "color": "Lớp kem sữa",
+    "qty": 1
+  },
+  {
+    "id": "P019",
+    "image": "https://images.unsplash.com/photo-1622483767028-fd167fc1ce46?w=400&q=80",
+    "name": "Sinh Tố Xoài Chanh Dây",
+    "rating": 4.6,
+    "reviews": 175,
+    "price": 4.5,
+    "oldPrice": 5,
+    "size": "L",
+    "color": "Vàng tươi",
+    "qty": 1
+  }
+  ,
+  {
+    "id": "P001",
+    "image": "https://images.unsplash.com/photo-1551030173-122aabc4489c?w=150&q=80",
+    "name": "Classic Iced Latte",
+    "rating": 4.8,
+    "reviews": 87,
+    "price": 4.50,
+    "oldPrice": 5.50,
+    "size": "Medium",
+    "color": "Iced",
+    "qty": 1
+  },
+  {
+    "id": "P002",
+    "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=150&q=80",
+    "name": "Caramel Frappuccino",
+    "rating": 4.9,
+    "reviews": 120,
+    "price": 5.50,
+    "oldPrice": 6.50,
+    "size": "Large",
+    "color": "Caramel",
+    "qty": 2
+  },
+
+  {
+    "id": "P005",
+    "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=150&q=80",
+    "name": "Signature Cold Brew",
+    "rating": 4.9,
+    "reviews": 215,
+    "price": 4.00,
+    "oldPrice": 5.00,
+    "size": "Large",
+    "color": "Dark Roast",
+    "qty": 1
+  },
+
+  {
+    "id": "P007",
+    "image": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=150&q=80",
+    "name": "Peach Iced Tea",
+    "rating": 4.8,
+    "reviews": 134,
+    "price": 4.50,
+    "oldPrice": 5.50,
+    "size": "Medium",
+    "color": "Amber",
+    "qty": 1
+  },
+
+  {
+    "id": "P010",
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=150&q=80",
+    "name": "Espresso Double Shot",
+    "rating": 4.9,
+    "reviews": 320,
+    "price": 3.50,
+    "oldPrice": 4.50,
+    "size": "Small",
+    "color": "Black",
+    "qty": 1
+  }
+  ,
+  
+  {
+    "id": "P001",
+    "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&q=80",
+    "name": "Iced Caramel Macchiato",
+    "rating": 4.8,
+    "reviews": 342,
+    "price": 5.50,
+    "oldPrice": 6.50,
+    "size": "Large",
+    "color": "Caramel",
+    "qty": 1
+  },
+  {
+    "id": "P002",
+    "image": "https://images.unsplash.com/photo-1625248041506-0d2c9c5c3ec2?w=400&q=80",
+    "name": "Espresso Double Shot",
+    "rating": 4.9,
+    "reviews": 128,
+    "price": 3.00,
+    "oldPrice": 4.00,
+    "size": "Small",
+    "color": "Dark Roast",
+    "qty": 1
+  },
+  {
+    "id": "P003",
+    "image": "https://images.unsplash.com/photo-1498709112912-9be3173d30be?w=400&q=80",
+    "name": "Classic Hot Latte",
+    "rating": 4.7,
+    "reviews": 512,
+    "price": 4.50,
+    "oldPrice": 5.00,
+    "size": "Medium",
+    "color": "Creamy",
+    "qty": 1
+  },
+  {
+    "id": "P004",
+    "image": "https://images.unsplash.com/photo-1457414104202-9d4b4908f285?w=400&q=80",
+    "name": "Matcha Green Tea",
+    "rating": 4.9,
+    "reviews": 215,
+    "price": 5.00,
+    "oldPrice": 6.00,
+    "size": "Medium",
+    "color": "Matcha",
+    "qty": 1
+  },
+
+  {
+    "id": "P006",
+    "image": "https://images.unsplash.com/photo-1497294917683-af0deacf3ef0?w=400&q=80",
+    "name": "Pour Over Coffee",
+    "rating": 4.6,
+    "reviews": 88,
+    "price": 4.25,
+    "oldPrice": 5.00,
+    "size": "Medium",
+    "color": "Light Roast",
+    "qty": 1
+  },
+  {
+    "id": "P007",
+    "image": "https://images.unsplash.com/photo-1514134583630-250e42c36dbd?w=400&q=80",
+    "name": "Earl Grey Hot Tea",
+    "rating": 4.8,
+    "reviews": 134,
+    "price": 3.50,
+    "oldPrice": 4.50,
+    "size": "Small",
+    "color": "Amber",
+    "qty": 1
+  },
+  {
+    "id": "P008",
+    "image": "https://images.unsplash.com/photo-1630938237517-0fcaefdb2641?w=400&q=80",
+    "name": "Mocha Frappuccino",
+    "rating": 4.9,
+    "reviews": 432,
+    "price": 6.00,
+    "oldPrice": 7.50,
+    "size": "Large",
+    "color": "Chocolate",
+    "qty": 2
+  },
+  {
+    "id": "P009",
+    "image": "https://images.unsplash.com/photo-1465176728568-7da7e336b1e9?w=400&q=80",
+    "name": "Nitro Cold Brew",
+    "rating": 4.7,
+    "reviews": 110,
+    "price": 5.50,
+    "oldPrice": 6.50,
+    "size": "Medium",
+    "color": "Foamy",
+    "qty": 1
+  },
+  {
+    "id": "P010",
+    "image": "https://images.unsplash.com/photo-1498603645763-1005915e0abe?w=400&q=80",
+    "name": "Flat White",
+    "rating": 4.5,
+    "reviews": 95,
+    "price": 4.00,
+    "oldPrice": 5.00,
+    "size": "Small",
+    "color": "White",
+    "qty": 1
+  },
+  {
+    "id": "P011",
+    "image": "https://images.unsplash.com/photo-1567773332678-d8439e3b5a4a?w=400&q=80",
+    "name": "Iced Americano",
+    "rating": 4.8,
+    "reviews": 276,
+    "price": 3.50,
+    "oldPrice": 4.50,
+    "size": "Large",
+    "color": "Black",
+    "qty": 1
+  },
+  {
+    "id": "P012",
+    "image": "https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=400&q=80",
+    "name": "Peppermint Iced Tea",
+    "rating": 4.6,
+    "reviews": 145,
+    "price": 3.75,
+    "oldPrice": 4.50,
+    "size": "Medium",
+    "color": "Clear",
+    "qty": 1
+  },
+  {
+    "id": "P013",
+    "image": "https://images.unsplash.com/photo-1521767703556-c4c44fd6e280?w=400&q=80",
+    "name": "Vanilla Bean Latte",
+    "rating": 4.9,
+    "reviews": 310,
+    "price": 5.25,
+    "oldPrice": 6.00,
+    "size": "Medium",
+    "color": "Vanilla",
+    "qty": 1
+  },
+
+  {
+    "id": "P015",
+    "image": "https://images.unsplash.com/photo-1706553707046-335e3e8afdf5?w=400&q=80",
+    "name": "Chai Spiced Latte",
+    "rating": 4.8,
+    "reviews": 167,
+    "price": 4.75,
+    "oldPrice": 5.50,
+    "size": "Medium",
+    "color": "Spiced",
+    "qty": 1
+  }
+
+]

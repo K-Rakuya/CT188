@@ -1,0 +1,37 @@
+:root{
+   --primary: #1d4ff5;
+    --primary-light: #e8ecff;
+    --text-dark: #202224;
+    --text-gray: #8f95a0;
+    --bg-main: #f4f7fb;
+    --bg-white: #ffffff;
+    --danger: #eb5757;
+    --success: #27ae60;
+    --border-color: #eaedf1;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    --radius: 1.5rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-size: 1.6rem;
+
+}
+
+html { font-size: 62.5%; } /* 1rem = 10px để dễ tính */
+
+.card {
+    background: var(--bg-white);
+    border-radius: var(--radius);
+    padding:0.5rem 1.5rem;
+    box-shadow: var(--shadow);
+}

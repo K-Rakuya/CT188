@@ -1,0 +1,20 @@
+[
+    {
+        "bannerUrl": "assets/data/home/banner1.jpg",
+        "itemUrl": "/assets/data/home/item1.png", 
+        "title": "Ten 1",
+        "Description": "Thong tin san pham 1"
+    },
+    {
+        "bannerUrl": "assets/data/home/banner2.jpg",
+        "itemUrl": "/assets/data/home/item2.png",
+        "title": "Ten 2",
+        "Description": "Thong tin san pham 2"
+    },
+    {
+        "bannerUrl": "assets/data/home/banner3.jpg",
+        "itemUrl": "/assets/data/home/item3.png",
+        "title": "Ten 3",
+        "Description": "Thong tin san pham 3"
+    }
+]

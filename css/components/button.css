@@ -1,0 +1,12 @@
+.btn-background {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.728),
+        rgb(255, 255, 255)
+    );
+    backdrop-filter: blur(20px) saturate(140%);
+}
+
+.btn-shadow {
+    box-shadow: var(--main-shadow);
+}

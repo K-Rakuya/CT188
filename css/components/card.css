@@ -1,0 +1,11 @@
+.card-backdrop{
+    backdrop-filter: blur(25px) saturate(140%);
+}
+
+.card-border {
+    border: 2px solid rgba(224, 224, 224, 0.358);
+}
+
+.radius-auto {
+    border-radius: clamp(10px, 8%, 22px);
+}
