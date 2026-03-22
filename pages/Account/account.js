@@ -95,3 +95,82 @@ function animate() {
     requestAnimationFrame(animate);
 }
 animate();
+
+const userForm = document.getElementById("user-information-form");
+const usernameInput = document.getElementById("username");
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("email");
+const addressInput = document.getElementById("address_input");
+
+function loadUserData() {
+    const storedUser = getCurrentUser();
+
+    if (storedUser) {
+        // Điền dữ liệu vào các ô input
+        usernameInput.value = storedUser.username || "";
+        phoneInput.value = storedUser.phone || "";
+        emailInput.value = storedUser.email || "";
+        addressInput.value = storedUser.address || "";
+
+        // Cập nhật tên hiển thị ở phần #short-info
+        const shortInfoName = document.querySelector("#short-info h1");
+        if (shortInfoName && storedUser) {
+            shortInfoName.textContent = storedUser.fullName || storedUser.username || "Người dùng ẩn danh";
+        }
+    }
+}
+
+userForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let currentUser = getCurrentUser();
+
+    // Cập nhật thông tin mới từ các ô input
+    currentUser.fullName = usernameInput.value;
+    currentUser.phone = phoneInput.value;
+    currentUser.email = emailInput.value;
+    currentUser.address = addressInput.value;
+
+    saveCurrentUser(currentUser);
+
+    alert("Đã lưu thông tin tài khoản thành công!");
+
+    // Cập nhật lại UI hiển thị tên
+    const shortInfoName = document.querySelector("#short-info h1");
+    if (shortInfoName) shortInfoName.textContent = currentUser.fullName;
+});
+
+loadUserData();
+
+
+// Quản lí users
+
+// Hàm lấy danh sách tất cả users
+function getAllUsers() {
+    return JSON.parse(localStorage.getItem('users')) || [];
+}
+
+// Hàm lấy ra user đang đăng nhập
+function getCurrentUser() {
+    const users = getAllUsers();
+    const loggedInId = localStorage.getItem('loggedInId');
+
+    if (!loggedInId) return null;
+
+    return users.find(user => user.id === loggedInId);
+}
+
+// Hàm lưu user
+function saveCurrentUser(updatedUser) {
+    let users = getAllUsers();
+
+    const index = users.findIndex(user => user.id === updatedUser.id);
+
+    if (index !== -1) {
+        users[index] = updatedUser;
+    } else {
+        users.push(updatedUser);
+    }
+
+    // Lưu lại
+    localStorage.setItem('users', JSON.stringify(users));
+}

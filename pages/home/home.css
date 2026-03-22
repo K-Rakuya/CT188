@@ -89,6 +89,7 @@ main {}
 }
 
 #banner-item>img {
+    aspect-ratio: 1/1;
     width: auto;
     height: 100%;
     filter: drop-shadow(0 20px 40px rgba(213, 16, 16, 0.671));
@@ -187,7 +188,7 @@ main {}
 }
 
 #main-grid-items.collaps {
-    width: 75%;
+    width: 65%;
 }
 
 #main-grid-items .item-card {
@@ -351,7 +352,7 @@ main {}
     padding: 10px;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 35%;
     height: 100%;
     border-radius: var(--radius-sm);
     background: var(--primary-bg);
@@ -560,11 +561,18 @@ main {}
         border-radius: 8px;
     }
 
+    #banner-item {
+        top: 35%;
+    }
+
     #banner-item div h1 {
-        font-size: 1.7rem;
+        max-width: 170px;
+        font-size: 1.2rem;
+        margin: 0;
     }
 
     #banner-item div p {
+        max-width: 170px;
         font-size: 1rem;
     }
 

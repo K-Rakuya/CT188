@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Register</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="container">
+
+      <div class="flex-center container-form ">
+         <form   action="" enctype="application/x-www-form-urlencoded"  class="form gap-20 flex-collum form-register">
+            <h2 class="title bold">Đăng Ký</h2>
+            <!-- input-user -->
+            <div class="input-user input relative">
+               <input type="text" id="username" class="username" required placeholder="Username">
+               <i class="fa-solid fa-user"></i>
+            </div>   
+            <!-- email -->
+            <div class="input-email input relative">
+               <input type="text" id="contact" class="username" required placeholder="Email or Number Phone">
+               <i class="fa-solid fa-envelope"></i>
+            </div>   
+            <!-- input-passwd -->
+            <div class="input-password input relative">
+               <input type="password" id="password" class="password " required placeholder="Password">
+               <!-- <i class="fa-solid  fa-eye" ></i> -->
+                <i class=" fa-solid fa-lock" style="cursor: pointer; " id="togglePassword"></i>
+            </div>   
+
+            <div class="has-Passwd">
+               <span>Đã có tài khoản ? </span>
+               <a class="a-hasPasswd" href="../login/login.html">Đăng Nhập Ngay</a>
+            </div>
+            <button class="btn btn-register">Register</button>
+            <div class="platform-other">
+               <p>or Login With Social platforms</p>
+            </div>
+            <div class="flex gap-10 platform-item platform-register">
+               <a href="" class="item"><i class="fa-brands fa-google"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-facebook"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-tiktok"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-apple"></i></a>
+              
+            </div>
+         </form> 
+         
+         
+      </div>
+      <div class="container-panel gap-10 flex-center flex-collum">
+        <h1 class="title">Start Your Refreshing Journey!</h1>
+        <p class="content">Trở thành thành viên để nhận ngay ưu đãi "Mua 1 Tặng 1" 
+         và cập nhật những món signature mới nhất từ chúng mình</p>
+        <!-- <input class="btn btn-sign" type="button" value="Sign Up"> -->
+   </div>
+   <script src="js/register.js" type="module"></script>
+
+</body>
+</html>

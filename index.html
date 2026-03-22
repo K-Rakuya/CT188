@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drite</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/pages/home/home.css">
-    <script src="/pages/home/home.js" defer></script>
-    <script src="/js/components/nav.js" defer></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="pages/home/home.css">
+    <script src="pages/home/home.js" defer></script>
+    <script src="js/components/nav.js" defer></script>
 </head>
 
 <body>
@@ -17,10 +17,10 @@
             <div id="nav-left"><a href="/index.html"><img src="/assets/Logos/logo.png" alt="Logo" id="nav-logo"></a>
             </div>
             <div id="nav-center">
-                    <a href="/index.html">Home</a>
-                    <a href="">Product</a>
-                    <a href="">Promotion</a>
-                    <a href="">Information</a>
+                <a href="/index.html">Home</a>
+                <a href="/pages/products/products.html">Products</a>
+                <a href="/pages/promotion/promotion.html">Promotion</a>
+                <a href="/pages/information/information.html">Information</a>
             </div>
             <div id="nav-right" class="flex-center gap-16">
                 <div id="searchContainer" class="flex-center gap-8">
@@ -37,8 +37,13 @@
                     <a class="relative" href="" id="register">Register</a>
                 </div>
                 <div id="avatar" class="flyIn hidden">
-                    <div id="avatar-wrapper">
+                    <div id="avatar-wrapper" style="position: relative;">
                         <a href="/pages/Account/account.html"><img src="/assets/Avatar/avatar.png" alt="Avatar"></a>
+
+                        <div id="avatar-dropdown" class="dropdown-menu">
+                            <a href="/pages/Account/account.html" class="dropdown-item">Profile</a>
+                            <a href="#" id="logout-btn" class="dropdown-item text-danger">Logout</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -53,7 +58,7 @@
                 <span class="dot"></span>
             </div>
             <div id="main-banner-overlay"></div>
-            <img class="" src="/assets/Banners/banner1.jpg" alt="" draggable="false">
+            <img class="" src="" alt="" draggable="false">
         </div>
         <div id="toolBar" class="width-full flex gap-12">
             <img src="/assets/icons/menu.png" alt="">
