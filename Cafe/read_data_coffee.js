@@ -3,16 +3,15 @@ import {add_Event_order_btn} from "../Order/order.js"
 fetch("Cafe/data_coffee.json")
   .then(res => res.json())
   .then(data => renderProductsCoffee(data))
-  .then(grid_pd => ShowProduct(grid_pd))
   .catch(err => console.error(err));
 
 function renderProductsCoffee(products) {
-  const product_grid = document.querySelector(".coffee-list");
+  const list_all_products = document.querySelector(".all-products");
   let html = ``;
 
   products.forEach(p => {
     html += `
-      <article id=${p.id} class="product-card coffee-card">
+      <article id=${p.id} class="product-card coffee-card" data-category="cafe">
         <div class="container-img"><img src="${p.image}" alt="${p.name}"></div>
         <div class="info-product">
             <h4 class="pd-name">${p.name}</h4>
@@ -23,9 +22,9 @@ function renderProductsCoffee(products) {
     `;
   });
 
-  product_grid.innerHTML = html;
-  add_Event_order_btn(product_grid);
-  return product_grid;
+  list_all_products.insertAdjacentHTML("beforeend", html);
+  add_Event_order_btn(list_all_products)
+  ShowProduct(list_all_products);
 }
 
 

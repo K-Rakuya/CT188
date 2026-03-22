@@ -152,7 +152,7 @@ body {
 .sidebar h3 {
     font-size: 13px;
     text-align: center;
-    margin-bottom: 8px;
+    margin-top: 3px;
 }
 
 .sidebar ul {
@@ -188,9 +188,9 @@ body {
 }
 
 .products h2 {
+    margin: 5px;
+    font-size: 10px;
     text-align: center;
-    margin-bottom: 5px;
-    display: none;
 }
 
 /* GRID */
@@ -202,14 +202,16 @@ body {
     padding: 0px 15px;
 }
 
-.product-grid.collapsed{
-    max-height: 430px;
+.product-grid{
+    max-height: 780px;
 }
 
-.product-grid.collapsed .product-card:nth-child(n+5){
+/* .product-grid .product-card:nth-child(n+7){
     opacity: 0;
     pointer-events: none;
-} 
+}  */
+
+
 
 /* CARD */
 .product-card {
@@ -443,9 +445,6 @@ body {
     color: white;
 }
 
-.h2{
-        display: none;
-    }
 /* RESPONSIVE */
 
 /* MOBILE MÀN BỰ HƠN */
@@ -460,9 +459,9 @@ body {
     .product-grid{
         padding: 0px 22px;
     }
-    .product-grid.collapsed{
+    /* .product-grid.collapsed{
         max-height: 520px;
-    }
+    } */
     .container-img{
         height: 140px;
     }
@@ -472,26 +471,20 @@ body {
     .modal {
         width: 280px;
     }
-    
-
-
 }
 /* TABLET */
 
 @media (min-width: 768px) {
-
-
     /* FIX */
     .sidebar{
         flex-direction: column;
-        width: 120px;
+        width: 140px;
     }
 
     .header{
         padding: 8px 30px;
     }
 
-    
 
     .logo h1{
         font-size: 18px;
@@ -517,12 +510,11 @@ body {
         display: flex;
         flex-direction: row;
         align-items: stretch;
-        padding: 20px 30px;
+        padding: 20px 20px;
     }
     .sidebar{
         margin-top: 10px;
-        padding: 10px;
-        padding-bottom: 5px;
+        padding: 10px 15px;
         position: sticky;
         top: 120px;
         display: flex;
@@ -530,6 +522,8 @@ body {
 
     .sidebar h3 {
         font-size: 16px;
+        margin-top: 0px;
+        margin-bottom: 10px;
         text-align: start;
     }
 
@@ -543,26 +537,14 @@ body {
     }
 
     .products h2 {
+        font-size: 20px;
         text-align: start;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
     .product-grid{
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
-    }
-
-    .product-grid.collapsed .product-card:nth-child(n+5){
-        opacity: 1;
-        pointer-events: initial;
-    }
-    .product-grid.collapsed .product-card:nth-child(n+7){
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .product-grid.collapsed{
-        max-height: 510px;
     }
 
     .product-card{
@@ -676,6 +658,7 @@ body {
         width: 200px;
         padding: 20px;
         top: 80px;
+        min-width: 120px;
     }
     .sidebar h3 {
         font-size: 18px;
@@ -688,21 +671,24 @@ body {
     .sidebar a:hover {
         color: #555;
     }
+    .products h2{
+        display: initial;
+    }
     .product-grid {
         gap: 20px;
         grid-template-columns: repeat(4, 1fr); 
     }
-    .product-grid.collapsed .product-card:nth-child(n+7){
+    /* .product-grid.collapsed .product-card:nth-child(n+7){
         opacity: 1;
         pointer-events: initial;
     }
     .product-grid.collapsed .product-card:nth-child(n+9){
         opacity: 0;
         pointer-events: none;
-    }
+    } */
 
-    .product-grid.collapsed{
-        max-height: 840px;
+    .product-grid{
+        max-height: 1700px;
     }
 
     .title-product {
