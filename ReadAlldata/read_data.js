@@ -10,7 +10,6 @@ Promise.all([
 .then(([coffee, tea, freeze]) => {
 
   const allProducts = [...coffee, ...tea, ...freeze];
-
   const grid = renderProducts(allProducts);
   filterProducts(grid);
 })

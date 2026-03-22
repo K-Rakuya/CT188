@@ -1,3 +1,13 @@
+// import {getVisible} from "../ShowProduct/showPD.js"
+// let visible_products = getVisible();
+// let id_time;
+// window.addEventListener("resize", ()=>{
+//     clearTimeout(id_time);
+//     id_time = setTimeout(()=>{
+//         visible_products = getVisible();
+//     }, 200);
+// });
+
 export function filterProducts(productGrid) {
     const buttons = document.querySelectorAll(".filter-product");
 
@@ -15,10 +25,12 @@ export function filterProducts(productGrid) {
 
                 if (category === productCategory) {
                     product.style.display = "flex";
-                } else {
+                } 
+                else {
                     product.style.display = "none";
                 }
             }
         });
     });
 }
+

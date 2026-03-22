@@ -1,4 +1,4 @@
-function getVisible(){
+export function getVisible(){
     let current_width = window.innerWidth;
     if(current_width < 768){
         return 6;
@@ -35,16 +35,14 @@ export function ShowProduct(products_grid){
 
         // Ẩn hết
         list_products.forEach(item => {
-            item.style.opacity = "0";
-            item.style.pointerEvents = "none";
+            item.style.display = "none";
         });
 
 
         // Hiện lần đầu
         let step = getVisible() + current_visible_more;
         for(let i = 0; i < step && i < list_products.length; i++){
-            list_products[i].style.opacity = "1";
-            list_products[i].style.pointerEvents = "auto";
+            list_products[i].style.display = "flex";
         }
 
         update();
@@ -57,8 +55,7 @@ export function ShowProduct(products_grid){
         let step = getVisible();
 
         for(let i = start; i < start + step && i < list_products.length; i++){
-            list_products[i].style.opacity = "1";
-            list_products[i].style.pointerEvents = "auto";
+            list_products[i].style.display = "flex";
         }
 
         current_visible_more += step;
