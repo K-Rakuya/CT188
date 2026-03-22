@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <div class="container">
+
+      <div class="flex-center container-form ">
+         <form   action="" enctype="application/x-www-form-urlencoded"  class="form gap-20 flex-colum form-login">
+            <h1 class="title bold">Login</h1>
+            <!-- input-user -->
+            <div class="input-user input relative">
+               <input type="text" id="username" class="username" required placeholder="Username or SĐT">
+               <i class="fa-solid fa-user"></i>
+            </div>   
+            <!-- input-passwd -->
+            <div class="input-password input relative">
+               <input type="password" id="password" class="password " required placeholder="Password">
+               <i class="fa-solid fa-lock" style="cursor: pointer; " id="togglePassword"></i>
+               <!-- <i class="fa-solid  fa-eye" ></i> -->
+            </div>   
+            
+            <div class="forgot-password">
+               <a class="a-forgot" href="">Quên Mật Khẩu </a>
+               
+            </div>
+            
+            <button id="login" class="btn btn-login">Login</button>
+
+           <div class="no-account">
+               <span>Chưa có tài khoản ? </span>
+               <a class="a-account" href="../register/register.html">Đăng kí ngay</a>
+            </div>
+
+            <div class="platform-other">
+               <p>or Login With Social platforms</p>
+            </div>
+            <div class="flex gap-10 platform-item platform-login">
+               <a href="" class="item"><i class="fa-brands fa-google"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-facebook"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-tiktok"></i></a>
+               <a href="" class="item"><i class="fa-brands fa-apple"></i></a>
+              
+            </div>
+         </form> 
+         
+         
+      </div>
+      <div class="container-panel ">
+         <img src="img/d94327edc7ae4b131845767888022b35.jpg" alt="">
+      </div>
+   </div>
+   <script src="js/login.js" type="module"></script>
+
+</body>
+</html>

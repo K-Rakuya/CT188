@@ -1,0 +1,35 @@
+:root {
+  /* colors */
+  --primary-color: #4f46e5;
+  --secondary-color: #22c55e;
+  --text-color: #111;
+  --bg-color: rgb(148, 159, 236);
+  --bg-gradient: linear-gradient(
+        120deg,
+        rgba(72, 206, 243, 0.728) 20%,
+        rgb(196, 196, 196)
+    );
+
+  /* spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 24px;
+
+  /* transition */
+  --ease: 0.25s ease;
+
+  /* font */
+  /* --font-sans:  */
+
+  /* width */
+  --width-full: min(80%, 1600px);
+
+  /* box shadow */
+  --main-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.283);
+}

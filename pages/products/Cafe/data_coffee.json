@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cf_01",
+    "name": "Phin Đen Đá",
+    "price": 30000,
+    "image": "Cafe/black_coffee.jpg",
+    "category": "coffee"
+  },
+  {
+    "id": "cf_02",
+    "name": "Cà Phê Sữa",
+    "price": 35000,
+    "image": "Cafe/milk_coffee.jpg",
+    "category": "coffee"
+  },
+  {
+    "id": "cf_03",
+    "name": "Cafe Muối",
+    "price": 35000,
+    "image": "Cafe/cafe_muoi.jpg",
+    "category": "coffee"
+  },
+  {
+    "id": "cf_04",
+    "name": "Choco Coffee",
+    "price": 40000,
+    "image": "Cafe/choco_coffee.jpg",
+    "category": "coffee"
+  }
+]

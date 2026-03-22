@@ -1,0 +1,66 @@
+[
+    {
+        "name": "Drink 1",
+        "Description": "Thong tin san pham",
+        "img": "drink1.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Coffee"
+    },
+    {
+        "name": "Drink 2",
+        "Description": "Thong tin san pham",
+        "img": "drink2.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Trà sữa"
+    },
+    {
+        "name": "Drink 3",
+        "Description": "Thong tin san pham",
+        "img": "drink3.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Nước ép"
+    },
+    {
+        "name": "Drink 4",
+        "Description": "Thong tin san pham",
+        "img": "drink4.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Sinh tố"
+    },
+    {
+        "name": "Drink 1",
+        "Description": "Thong tin san pham",
+        "img": "drink1.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Coffee"
+    },
+    {
+        "name": "Drink 3",
+        "Description": "Thong tin san pham",
+        "img": "drink3.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Nước ép"
+    },
+    {
+        "name": "Drink 2",
+        "Description": "Thong tin san pham",
+        "img": "drink2.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Trà sữa"
+    },
+    {
+        "name": "Drink 4",
+        "Description": "Thong tin san pham",
+        "img": "drink4.png",
+        "oldPrice": "999",
+        "newPrice": "999",
+        "type": "Sinh tố"
+    }
+]

@@ -1,0 +1,44 @@
+a{
+   text-decoration: none;
+   font-size: 1.7rem;
+}
+
+.grid{
+   display: grid;
+}
+
+.flex{
+   display: flex;
+}
+
+.gap-10{
+   gap: 1rem;
+}
+.gap-20{
+   gap: 2rem;
+}
+.relative{
+   position: relative;
+}
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: border-box;
+}
+
+.flex-colum{
+   display: flex;
+   flex-direction: column;
+}
+
+
+.flex-center{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.bold{
+   font-weight: bold;
+}
