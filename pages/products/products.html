@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -29,7 +31,7 @@
                     <input id="search-product" class="search-input" type="text" placeholder="Tìm kiếm...">
                 </div>
             </div>
-            
+
             <div class="features">
                 <div class="features-list">
                     <a href="/index.html" class="feature">Trang chủ</a>
@@ -39,12 +41,12 @@
                     <a href="/pages/login/login.html" class="feature">Đăng Nhập</a>
                     <a href="/pages/information/information.html" class="feature">Tin tức</a>
                 </div>
-                <a class="user-cart" href="#"> 
-                    <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;"> 
+                <a class="user-cart" href="#">
+                    <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;">
                 </a>
             </div>
         </div>
-            
+
     </header>
 
     <!-- MAIN CONTAINER -->
@@ -98,7 +100,7 @@
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
 
                 </div>
-                <button class="button-show-pd"> 
+                <button class="button-show-pd">
                     <span class="arrow">▼</span>
                 </button>
             </section>
@@ -110,7 +112,7 @@
                     <div class="img-order-form">
                     </div>
                     <div class="customization">
-                        <div class="option number">   
+                        <div class="option number">
                             <label>Số lượng:</label>
                             <input style="padding-left: 10px;" name="quantity" type="number" value="1" min="1">
                         </div>
@@ -143,39 +145,48 @@
     </div>
 
 
-    <footer class="footer-page">
-        <div class="information-footer grid-footer">
-            <div class="brand-footer">
-                <div class="container-brand">
-                    <a href="#" class="logo logo-footer">
-                        <img src="./Header/Logo_Text.png" alt="Logo" class="logo-img footer-logo-img">
-                        <h1 style="color: white;">MIXI COFFEE</h1>
-                    </a>
-                    <h3>THƯƠNG HIỆU CÀ PHÊ CHẤT LƯỢNG CAO</h3>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Logo.</h3>
+                <p>Khởi nguồn từ đam mê, mang đến trải nghiệm tuyệt vời cho hành trình của bạn.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
                 </div>
             </div>
-            <div class="social-footer">
-                <div class="container-social">
-                    <h3>LIÊN HỆ VỚI CHÚNG TÔI</h3>
-                    <div class="social-account">
-                        <a href="#"><i style="color: blue;" class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i style="color: red;" class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i style="color: white;" class="fa-brands fa-x-twitter"></i></a>
-                        <!-- <a href="#"><i style="color: red;" class="fa-brands fa-youtube"></i></a> -->
-                    </div>
-                </div>
+
+            <div class="footer-col">
+                <h3>Liên Kết</h3>
+                <ul>
+                    <li><a href="../../index.html">Trang Chủ</a></li>
+                    <li><a href="/pages/products/products.html">Sản Phẩm</a></li>
+                    <li><a href="/pages/information/information.html">Về Chúng Tôi</a></li>
+                </ul>
             </div>
-            <div class="support-footer">
-                <div class="container-support">
-                    <h3>HỖ TRỢ KHÁCH HÀNG</h3>
-                    <div class="number-connect">
-                        <h3>Hotline:</h3>
-                        <a href="#">0123456789</a>
-                    </div>
-                </div>
+
+            <div class="footer-col">
+                <h3>Liên Hệ</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, TP.HCM</li>
+                    <li><i class="fa-solid fa-phone"></i> +84 123 456 789</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Góp Ý</h3>
+                <form action="mailto:admin@yourweb.com" method="post" enctype="text/plain" class="feedback-form">
+                    <input type="text" name="name" placeholder="Tên của bạn" required>
+                    <textarea name="message" rows="2" placeholder="Lời nhắn..." required></textarea>
+                    <button type="submit">Gửi <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
             </div>
         </div>
-        <p style="display: block; width: 100%; text-align: center;">&copy; 2024 My Coffee. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 MyBrand. All rights reserved.</p>
+        </div>
     </footer>
 
     <script type="module" src="./Cafe/read_data_coffee.js"></script>
@@ -185,9 +196,10 @@
     <script>
         var order_table = document.querySelector("#order-form");
         var close_btn = order_table.querySelector("#closeBtn");
-        close_btn.addEventListener("click", ()=>{
-          order_table.classList.toggle("toggle");
+        close_btn.addEventListener("click", () => {
+            order_table.classList.toggle("toggle");
         })
     </script>
 </body>
+
 </html>

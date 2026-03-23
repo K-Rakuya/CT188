@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Information page</title>
-  <link rel="stylesheet" href="styler.css" />
-
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
-<body>
+<body class="light-page">
   <div>
     <div class="section">
       <img src="images/logo.png" class="logo">
@@ -102,18 +102,47 @@
 
     </from>
 
-    <footer class="background">
-      <div>
-        <h2>
-          📍 Liên hệ & địa chỉ
-        </h2>
-        <p> - Địa chỉ: [Số nhà, đường, thành phố]<br>
-          - Giờ mở cửa: 7:00 – 22:00 mỗi ngày<br>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>Logo.</h3>
+          <p>Khởi nguồn từ đam mê, mang đến trải nghiệm tuyệt vời cho hành trình của bạn.</p>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
 
-          - Hotline: [Số điện thoại]<br>
-          - Fanpage/Instagram: [
-          <a href="https://youtube.com/shorts/eXtUUoEDJeg?si=6tL4JjSORUjWFK-l">Trang chủ thông tin</a>]<br>
-        </p>
+        <div class="footer-col">
+          <h3>Liên Kết</h3>
+          <ul>
+            <li><a href="../../index.html">Trang Chủ</a></li>
+            <li><a href="/pages/products/products.html">Sản Phẩm</a></li>
+            <li><a href="/pages/information/information.html">Về Chúng Tôi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Liên Hệ</h3>
+          <ul>
+            <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, TP.HCM</li>
+            <li><i class="fa-solid fa-phone"></i> +84 123 456 789</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Góp Ý</h3>
+          <form action="mailto:admin@yourweb.com" method="post" enctype="text/plain" class="feedback-form">
+            <input type="text" name="name" placeholder="Tên của bạn" required>
+            <textarea name="message" rows="2" placeholder="Lời nhắn..." required></textarea>
+            <button type="submit">Gửi <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 MyBrand. All rights reserved.</p>
       </div>
     </footer>
     <script src="action.js"></script>

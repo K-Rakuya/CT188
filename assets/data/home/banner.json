@@ -2,19 +2,19 @@
     {
         "bannerUrl": "assets/data/home/banner1.jpg",
         "itemUrl": "/assets/data/home/item1.png", 
-        "title": "Ten 1",
-        "Description": "Thong tin san pham 1"
+        "title": "Sữa Tươi Đường Đen",
+        "Description": "Hòa quyện sữa tươi nguyên bản và trân châu đường đen"
     },
     {
         "bannerUrl": "assets/data/home/banner2.jpg",
         "itemUrl": "/assets/data/home/item2.png",
-        "title": "Ten 2",
-        "Description": "Thong tin san pham 2"
+        "title": "Hồng Trà Trân Châu",
+        "Description": "Cốt hồng trà đậm đà truyền thống kết hợp trân châu đen dai giòn béo ngậy."
     },
     {
         "bannerUrl": "assets/data/home/banner3.jpg",
         "itemUrl": "/assets/data/home/item3.png",
-        "title": "Ten 3",
-        "Description": "Thong tin san pham 3"
+        "title": "Trà Sữa Xoài Tươi",
+        "Description": "Thanh mát vị xoài hạt lựu ngọt lịm cùng trà sữa trái cây giải nhiệt sảng khoái."
     }
 ]

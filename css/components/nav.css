@@ -273,7 +273,7 @@
 
 .dropdown-item:hover {
     background: rgba(0, 0, 0, 0.04);
-    color: var(--primary-color); 
+    color: rgb(29, 116, 114); 
 }
 
 .dropdown-item.text-danger {

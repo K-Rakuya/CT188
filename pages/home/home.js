@@ -299,14 +299,14 @@ function renderItems(grid_items) {
                         <span class="after-sale">${item.newPrice}$</span>
                     </div>
                     <div class="flex gap-12" style="width: 85%;">
-                        <button class="item-buy-btn btn-background radius-all-sm btn-shadow" data-name="${item.name}">Buy</button>
+                        <button class="item-buy-btn btn-background radius-all-sm btn-shadow" style="font-weight: 600;" data-name="${item.name}">Buy</button>
                         <button class="more-btn btn-background radius-all-md btn-shadow" style="aspect-ratio: 1/1">⋯</button>
                     </div>
                 </div>
             </div>`;
     });
 
-    grid.innerHTML = htmlContent; // Gán 1 lần duy nhất vào DOM
+    grid.innerHTML = htmlContent;
 }
 
 
@@ -315,7 +315,7 @@ function renderItems(grid_items) {
 grid.addEventListener("mouseover", e => {
     const btn = e.target.closest(".item-buy-btn");
     if (!btn) return;
-
+    if (btn.classList.contains("success-added")) return;
     if (auth.isLoged()) {
         btn.textContent = "Add to Cart";
     } else {
@@ -326,7 +326,7 @@ grid.addEventListener("mouseover", e => {
 grid.addEventListener("mouseleave", e => {
     const btn = e.target.closest(".item-buy-btn");
     if (!btn) return;
-
+    if (btn.classList.contains("success-added")) return;
     btn.textContent = "Buy";
 }, true);
 
@@ -354,7 +354,7 @@ clearCheckbox.addEventListener("click", () => {
 
 // Changemode to listItem
 
-const toolBarBtn = document.querySelector('#toolBar img');
+const toolBarBtn = document.getElementById('menu');
 const gridContainer = document.querySelector('#main-grid-items');
 
 toolBarBtn.addEventListener('click', () => {
@@ -386,20 +386,52 @@ grid.addEventListener("click", (e) => {
     if (e.target.classList.contains("item-buy-btn")) {
         const name = e.target.getAttribute("data-name");
         const selectedItem = grid_items.find(i => i.name === name);
+        addToCart(selectedItem);
+        e.target.textContent = "Added ✓";
+        e.target.classList.add("success-added");
+        e.target.style.background = "#38d75d"; 
 
-        if (isLoged) {
-            addToCart(selectedItem);
-        } else {
-            window.alert("Vui lòng đăng nhập");
-            window.location.href = "pages/login/login.html";
-        }
+        setTimeout(() => {
+            e.target.classList.remove("success-added");
+            e.target.style.background = ""; 
+            e.target.textContent = "Buy";
+        }, 1000);
     }
 });
 
+// Hàm tạo Toast Notification
+function showToast(message, type = 'success') {
+    let toastContainer = document.getElementById('toast-container');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toast-container';
+        document.body.appendChild(toastContainer);
+    }
+
+    // Tạo thẻ div
+    const toast = document.createElement('div');
+    toast.classList.add('custom-toast', `toast-${type}`);
+
+    const icon = type === 'success' ? '<i class="fa-solid fa-circle-check"></i>' : '<i class="fa-solid fa-circle-exclamation"></i>';
+
+    toast.innerHTML = `
+        ${icon}
+        <span class="toast-msg">${message}</span>
+    `;
+    toastContainer.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
 function addToCart(product) {
     let currentUser = getCurrentUser();
+
     if (!currentUser) {
-        alert("Vui lòng đăng nhập!");
+        showToast("Vui lòng đăng nhập để mua hàng!", "error");
         return;
     }
 
@@ -421,7 +453,7 @@ function addToCart(product) {
     }
 
     saveCurrentUser(currentUser);
-    alert(`Đã thêm ${product.name} vào giỏ hàng!`);
+    showToast(`Đã thêm <b>${product.name}</b> vào giỏ!`, "success");
 }
 
 // Filter Logic
@@ -502,3 +534,75 @@ const cartBtn = document.querySelector("#button-cart_img");
 cartBtn.addEventListener('click', () => {
     window.location.href = "pages/cart/cart.html"
 })
+
+
+// Chi tiết sản phẩm khi nhấn vào item card
+
+// hàm hiển tị
+function showProductDetail(product) {
+    let detailOverlay = document.getElementById('product-detail-overlay');
+
+    if (!detailOverlay) {
+        detailOverlay = document.createElement('div');
+        detailOverlay.id = 'product-detail-overlay';
+        document.body.appendChild(detailOverlay);
+    }
+
+    detailOverlay.innerHTML = `
+        <div class="detail-card horizontal-glass">
+            <button class="close-detail">&times;</button>
+            <div class="detail-content flex-row">
+                <div class="detail-img">
+                    <img src="/assets/images/${product.img}" alt="${product.name}">
+                </div>
+                <div class="detail-info">
+                    <span class="detail-type">${product.type}</span>
+                    <h2>${product.name}</h2>
+                    <p class="detail-desc">${product.Description}</p>
+                    <div class="detail-pricing">
+                        <span class="old">${product.oldPrice}$</span>
+                        <span class="new">${product.newPrice}$</span>
+                    </div>
+                    <button class="add-to-cart-big" data-name="${product.name}">Thêm vào giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    `;
+    // sự kiện xuất hiện
+    setTimeout(() => detailOverlay.classList.add('active'), 10);
+
+    // Sự kiện đóng
+    detailOverlay.querySelector('.close-detail').onclick = () => {
+        detailOverlay.classList.remove('active');
+    };
+    detailOverlay.onclick = (e) => {
+        if (e.target === detailOverlay) detailOverlay.classList.remove('active');
+    };
+
+    // Sự kiện mua hàng
+    const bigBuyBtn = detailOverlay.querySelector('.add-to-cart-big');
+    bigBuyBtn.onclick = () => {
+        addToCart(product);
+        const originalText = bigBuyBtn.textContent;
+        bigBuyBtn.textContent = "Đã thêm vào giỏ ✓";
+        bigBuyBtn.style.background = "#28a745"; 
+
+        setTimeout(() => {
+            bigBuyBtn.textContent = originalText;
+            bigBuyBtn.style.background = ""; 
+        }, 1500);
+    };
+}
+
+// Gắn sự kiện Click vào Grid
+grid.addEventListener('click', (e) => {
+    const card = e.target.closest('.item-card');
+    const buyBtn = e.target.closest('.item-buy-btn');
+
+    if (card && !buyBtn) {
+        const productName = card.querySelector('h3').innerText;
+        // Tìm dữ liệu sản phẩm từ mảng grid_items của bạn
+        const product = grid_items.find(item => item.name === productName);
+        if (product) showProductDetail(product);
+    }
+});

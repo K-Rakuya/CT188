@@ -1,3 +1,8 @@
+@import url(../../css/components/footer.css);
+@import url(../../css/components/trustBadges.css);
+@import url(../../css/components/toast-noti.css);
+@import url(../../css/components/itemDetails.css);
+
 :root {
     --primary-bg: rgba(255, 255, 255, 0.269);
 }
@@ -6,7 +11,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     position: relative;
     margin: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    background: linear-gradient(rgba(0, 0, 0, 0.208) 60%, rgba(0, 0, 0, 0.724)),
         url(/assets/Background/home.jpg) no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -19,7 +24,7 @@ header {
     position: sticky;
     top: 0;
     height: 90px;
-    z-index: 10;
+    z-index: 13;
     width: 90%;
     margin: auto;
     transition: all .5s ease-out
@@ -166,17 +171,29 @@ main {}
     justify-content: flex-end;
     padding: 0 2%;
     height: 50px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.331);
-    border: 1px solid white;
+    border-radius: 12px;
+    background: var(--primary-bg);
+    backdrop-filter: blur(12px) saturate(120%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     transition: height .5s ease-out,
         width .5s ease-out;
 }
 
-#toolBar>img {
-    width: 28px;
-    aspect-ratio: 1/1;
-    transition: width .3s ease;
+#menu, #filterPannel {
+    width: 28px !important;
+    height: 28px !important;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.1, .7, 0.5, 2);
+}
+
+#toolBar div>img:hover {
+    transform:  scale(1.2);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(0, 0, 0, 0.8));
+}
+
+#toolBar div>img:active {
+    transform: scale(0.9) ;
+    opacity: 0.7;
 }
 
 
@@ -188,7 +205,7 @@ main {}
 }
 
 #main-grid-items.collaps {
-    width: 65%;
+    width: 70%;
 }
 
 #main-grid-items .item-card {
@@ -199,14 +216,18 @@ main {}
     background: var(--primary-bg);
     backdrop-filter: blur(10px);
     box-shadow: var(--main-shadow);
-    transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-        border .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    will-change: transform, opacity, border;
+    transition:
+        box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        border 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        background 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity, border, background;
 }
 
 #main-grid-items .item-card:hover {
     z-index: 9;
-    border: #86cbde90 solid;
+    background: rgba(255, 255, 255, 0.388);
+    border: #ffffff90 solid;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -215,7 +236,7 @@ main {}
 }
 
 .item-banner {
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 2);
     will-change: transform;
 }
 
@@ -225,11 +246,17 @@ main {}
 
 .item-banner {
     width: 80%;
-    aspect-ratio: 9/9.5;
+    aspect-ratio: 9 / 9.5;
+    overflow: hidden; 
+    border-radius: 15px; 
 }
 
 .item-banner img {
     width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .before-sale {
@@ -238,12 +265,14 @@ main {}
 }
 
 .after-sale {
+    font-weight: 800;
     color: rgb(254, 56, 56);
 }
 
 .item-buy-btn {
     width: 85%;
     height: 36px;
+    text-align: center;
     transform-origin: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid transparent;
@@ -255,6 +284,13 @@ main {}
     font-weight: 700;
     filter: brightness(1.1);
     cursor: pointer;
+}
+
+.item-buy-btn.success-added {
+    background-color: #28a745 !important;
+    color: white !important;
+    transform: scale(0.97); 
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4); 
 }
 
 .more-btn {
@@ -319,10 +355,9 @@ main {}
 .reload-animation {
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
-    /* Mặc định ẩn */
 }
 
-/* Lớp phủ mờ giả lập lúc đang "load" */
+/* Lớp phủ mờ giả lập lúc đang load*/
 .loading-overlay {
     filter: blur(4px);
     opacity: 0;
@@ -352,11 +387,11 @@ main {}
     padding: 10px;
     top: 0;
     right: 0;
-    width: 35%;
+    width: 30%;
     height: 100%;
     border-radius: var(--radius-sm);
     background: var(--primary-bg);
-    backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(120%);
     border: 1px solid white;
     opacity: 0;
 
@@ -461,16 +496,48 @@ main {}
 }
 
 #filter-submit-btn {
-    width: 100%;
+    width: 95%;
+    margin: auto;
     pointer-events: auto;
-    background: #498d9f;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 12px 40px;
-    border-radius: 30px;
+    border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(101, 158, 172, 0.4);
+    transition: transform .3s cubic-bezier(0.175, 0.585, 0.42, 2.275);
+    will-change: transform;
+}
+
+#filter-submit-btn:hover{
+    transform: scale(1.05) translateY(-2px);
+}
+
+#filter-submit-btn:active{
+    transform: scale(1) translateY(2px);
+}
+
+#clearCheckBoxBtn {
+    width: 22px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0.7;
+    filter: brightness(0) invert(1); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.5, 2);
+    will-change: all;
+}
+
+#clearCheckBoxBtn:hover {
+    opacity: 1;
+    transform:  scale(1.2);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+#clearCheckBoxBtn:active {
+    transform: scale(0.9) ;
+    opacity: 0.7;
 }
 
 /* 
@@ -572,8 +639,8 @@ main {}
     }
 
     #banner-item div p {
-        max-width: 170px;
-        font-size: 1rem;
+        max-width: 270px;
+        font-size: .8rem;
     }
 
     .dot {
