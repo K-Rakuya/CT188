@@ -1,36 +1,5 @@
-// import {getVisible} from "../ShowProduct/showPD.js"
-// let visible_products = getVisible();
-// let id_time;
-// window.addEventListener("resize", ()=>{
-//     clearTimeout(id_time);
-//     id_time = setTimeout(()=>{
-//         visible_products = getVisible();
-//     }, 200);
-// });
+export function filterProducts(products, type) {
+  if (type === "all") return products;
 
-export function filterProducts(productGrid) {
-    const buttons = document.querySelectorAll(".filter-product");
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            const category = this.dataset.category;
-
-            const products = productGrid.children;
-
-            for (let i = 0; i < products.length; i++) {
-                const product = products[i];
-                const productCategory = product.dataset.category;
-
-                if (category === productCategory) {
-                    product.style.display = "flex";
-                } 
-                else {
-                    product.style.display = "none";
-                }
-            }
-        });
-    });
+  return products.filter(p => p.category === type);
 }
-

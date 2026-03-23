@@ -52,63 +52,69 @@
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
-            <h3 >Danh mục</h3>
-            <ul>
-                <li id="cafe"><a class="filter-product" data-category="coffee">Cafe</a></li>
-                <li id="tra"><a class="filter-product" data-category="Tea">Trà</a></li>
-                <li id="freeze"><a  class="filter-product" data-category="Freeze">Freeze</a></li>
-            </ul>
+            <h3>Danh mục</h3>
+                <ul>
+                    <li data-category="all">Tất cả</li>
+                    <li data-category="coffee">Cafe</li>
+                    <li data-category="Tea">Trà</li>
+                    <li data-category="Freeze">Freeze</li>
+                </ul>
         </aside>
 
         <!-- PRODUCT AREA -->
         <main class="products">
+
             <section class="products-list">
-                <h2>SẢN PHẨM CỦA CHÚNG TÔI</h2>
-                <div class="product-grid all-products">
+                <div class="title-product">
+                    <h2>Tất cả sản phẩm</h2>
+                </div>
+                <div class="product-grid">
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
                 </div>
                 <button class="button-show-pd">
                     <span class="arrow">▼</span>
                 </button>
             </section>
+
+            <form id="order-form">
+                <div class="modal">
+                    <div class="title-option">
+                        <h2 style="margin: 0;">Chọn tùy chọn</h2>
+                    </div>
+                    <div class="img-order-form">
+                    </div>
+                    <div class="customization">
+                        <div class="option number">   
+                            <label>Số lượng:</label>
+                            <input style="padding-left: 10px;" name="quantity" type="number" value="1" min="1">
+                        </div>
+                        <div class="option sugar">
+                            <label>Đường:</label>
+                            <select name="sugar">
+                                <option>100%</option>
+                                <option>70%</option>
+                                <option>50%</option>
+                                <option>Không đường</option>
+                            </select>
+                        </div>
+                        <div class="option ice">
+                            <label>Đá:</label>
+                            <select name="ice">
+                                <option>Bình thường</option>
+                                <option>Ít đá</option>
+                                <option>Không đá</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-btn">
+                        <button type="submit" id="confirmBtn">Xác nhận</button>
+                        <button type="button" id="closeBtn">Hủy</button>
+                    </div>
+                </div>
+            </form>
+
         </main>
-    </div>  
-    <form id="order-form">
-        <div class="modal">
-            <div class="title-option">
-                <h2 style="margin: 0;">TÙY CHỌN</h2>
-            </div>
-            <div class="img-order-form">
-            </div>
-            <div class="customization">
-                <div class="option number">   
-                    <label>Số lượng:</label>
-                    <input style="padding-left: 10px;" name="quantity" type="number" value="1" min="1">
-                </div>
-                <div class="option sugar">
-                    <label>Đường:</label>
-                    <select name="sugar">
-                        <option>100%</option>
-                        <option>70%</option>
-                        <option>50%</option>
-                        <option>Không đường</option>
-                    </select>
-                </div>
-                <div class="option ice">
-                    <label>Đá:</label>
-                    <select name="ice">
-                        <option>Bình thường</option>
-                        <option>Ít đá</option>
-                        <option>Không đá</option>
-                    </select>
-                </div>
-            </div>
-            <div class="container-btn">
-                <button type="submit" id="confirmBtn">Xác nhận</button>
-                <button type="button" id="closeBtn">Hủy</button>
-            </div>
-        </div>
-    </form>
+    </div>
 
 
     <footer class="footer-page">
@@ -148,13 +154,5 @@
 
     <script type="module" src="./ReadAlldata/read_data.js"></script>
     <script type="module" src="./Nav/nav.js"></script>
-
-    <script>
-        var order_table = document.querySelector("#order-form");
-        var close_btn = order_table.querySelector("#closeBtn");
-        close_btn.addEventListener("click", ()=>{
-          order_table.classList.toggle("toggle");
-        })
-    </script>
 </body>
 </html>

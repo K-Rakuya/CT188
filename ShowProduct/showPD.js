@@ -1,77 +1,34 @@
-export function getVisible(){
-    let current_width = window.innerWidth;
-    if(current_width < 768){
-        return 6;
-    } 
-    if(current_width < 1024){
-        return 9;
+import {add_Event_order_btn} from "../Order/order.js"
+export function showProduct(products, number_of_all_products) {
+    const list_all_products = document.querySelector(".product-grid");  
+
+    console.log(number_of_all_products)
+    console.log(products.length)  
+    let btn_show_more = document.querySelector(".button-show-pd");
+    
+    if(products.length < number_of_all_products){
+        btn_show_more.style.display = "initial";   
     }
-    return 16;
-}
-
-let current_visible_more = 0;
-
-export function ShowProduct(products_grid){
-    const container_product = products_grid.parentElement;
-    let btn_show = container_product.querySelector(".button-show-pd");
-
-    function getList(){
-        return products_grid.querySelectorAll(".product-card");
+    else{
+        btn_show_more.style.display = "none";   
     }
+    let html = ``;
 
-    function update(){
-        let list_products = getList();
-        let product_card_visible = getVisible() + current_visible_more;
-
-        if(list_products.length > product_card_visible){
-            btn_show.style.display = "initial";
-        }else{
-            btn_show.style.display = "none";
-        }
-    }
-
-    function init(){
-        let list_products = getList();
-
-        // Ẩn hết
-        list_products.forEach(item => {
-            item.style.display = "none";
-        });
-
-
-        // Hiện lần đầu
-        let step = getVisible() + current_visible_more;
-        for(let i = 0; i < step && i < list_products.length; i++){
-            list_products[i].style.display = "flex";
-        }
-
-        update();
-    }
-
-    function showMore(){
-        let list_products = getList();
-
-        let start = getVisible() + current_visible_more;
-        let step = getVisible();
-
-        for(let i = start; i < start + step && i < list_products.length; i++){
-            list_products[i].style.display = "flex";
-        }
-
-        current_visible_more += step;
-    }
-
-    btn_show.addEventListener("click", ()=>{
-        showMore();
-        products_grid.style.maxHeight = products_grid.scrollHeight + "px";
-        update();
+    products.forEach(p => {
+        html += `
+        <article id="${p.id}" class="product-card" data-category="${p.category}">
+            <div class="container-img">
+                <img src="${p.image}" alt="${p.name}">
+            </div>
+            <div class="info-product">
+                <h4 class="pd-name">${p.name}</h4>
+                <p class="price">${p.price.toLocaleString("vi-VN")} VNĐ</p>
+            </div>
+            <button class="btn-order">Thêm vào giỏ</button>
+        </article>
+        `;
     });
 
-    let id_time;
-    window.addEventListener("resize", ()=>{
-        clearTimeout(id_time);
-        id_time = setTimeout(init, 200);
-    });
-
-    init();
+    list_all_products.innerHTML = html;
+    add_Event_order_btn(list_all_products);
 }
