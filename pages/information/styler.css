@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
-.container {
+.slider-container {
   scroll-snap-type: x mandatory; /* cuộn ngang, bắt buộc snap */
   overflow-x: scroll; /* cho phép cuộn ngang */
   display: flex;
@@ -85,6 +85,7 @@ h3 {
   height: auto;
   margin: 10px 0;
   border-radius: 6px;
+  float: inherit;
 }
 
 /* Danh sách */
@@ -139,6 +140,7 @@ footer p {
   justify-content: flex-start;
 }
 .layout {
+  border-radius: 8px;
   width: 100%; /* ảnh chiếm toàn bộ chiều ngang màn hình */
   height: 300px; /* chiều cao cố định, bạn có thể thay đổi số px */
   object-fit: cover; /* tự động giữ tỷ lệ gốc */
@@ -207,3 +209,483 @@ footer p {
 .dot.active {
   background: #fff;
 }
+<<<<<<< Updated upstream:pages/information/styler.css
+=======
+.review-section {
+  max-width: 500px;
+  margin: auto;
+  font-family: Arial;
+}
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  margin: 8px 0;
+  padding: 8px;
+}
+.star-select span {
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.4;
+}
+.star-select span.active {
+  opacity: 1;
+}
+button {
+  padding: 10px;
+  background-color: bisque;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+}
+.review {
+  background: #f5f5f5;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.85); /* nền mờ */
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  backdrop-filter: blur(5px); /* hiệu ứng kính */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: #1e3557;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card img {
+  width: 80px;
+  margin-top: 20px;
+  opacity: 0.8;
+}
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+}
+.resection {
+  display: flex;
+  border: 1px solid #ddd; /* viền xám nhạt */
+  border-radius: 8px; /* bo góc */
+  padding: 20px; /* khoảng cách bên trong */
+  margin-bottom: 20px; /* khoảng cách giữa các khung */
+  background-color: #fafafa; /* nền nhẹ */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* bóng nhẹ */
+  text-align: center;
+}
+
+.imgkd {
+  border: #ddd;
+  border-radius: 8px;
+  float: right;
+  width: 150px;
+  height: auto;
+}
+main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.block {
+  border: #ddd;
+  border-radius: 8px;
+  padding: auto;
+  margin-bottom: 20px;
+  background-color: blue;
+  text-align: center;
+}
+
+/* Nav */
+:root {
+  --nav-bg: rgba(255, 255, 255, 0.75);
+  --primary-color: #30c95e;
+  --text-main: #1f2937;
+  --glass-border: rgba(229, 231, 235, 0.5);
+  --text-dark: #111;
+}
+
+#nav {
+  display: flex;
+  width: min(95%, 1600px);
+  padding: 8px 24px;
+  /* Giảm chiều cao, tăng chiều ngang */
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px) saturate(160%);
+  background: var(--nav-bg);
+  z-index: 100;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Nav Left */
+
+#nav-left {
+  flex: 0 0 auto;
+}
+
+#nav-logo {
+  width: 110px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+  transition: all 0.3s ease;
+}
+
+#nav-logo:hover {
+  transform: translateX(8px) scale(1.1) rotate(2.5deg) translateY(2px);
+}
+
+/* Nav Center */
+
+#nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+}
+
+#nav-center a {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 8px 18px;
+  border-radius: 16px;
+  /* Bo tròn nút hover */
+  transition: all 0.4s ease;
+
+  font-size: 20px;
+  color: var(--text-dark);
+}
+
+/* Hiệu ứng khi Hover vào Link */
+#nav-center a:hover {
+  color: #fff;
+  background: #111827;
+  /* Màu đen carbon cực sang */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Thanh gạch chân chạy hiệu ứng */
+#nav-center a::after {
+  display: none;
+  content: "";
+  position: absolute;
+  bottom: -1000;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 10px #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+#nav-center a:hover::after {
+  width: 70%;
+}
+
+/* Nav Right */
+
+#nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#searchContainer {
+}
+
+#nav-right #searchBtn {
+  width: 32px;
+  animation: SearchBtnHoverOut 0.4s ease forwards;
+}
+
+#nav-right #searchBtn > img {
+  width: 100%;
+}
+
+#nav-right #searchBtn:hover {
+  animation: SearchBtnHoverIn 0.4s ease forwards;
+}
+
+#nav-right #searchBtn:hover img {
+  transition: filter 0.5s ease;
+}
+
+#nav-right #searchBtn:hover img {
+  filter: drop-shadow(0 0 3px rgba(114, 196, 236, 0.477))
+    drop-shadow(0 0 6px rgba(99, 201, 252, 0.6));
+}
+
+#searchForm {
+  position: relative;
+  width: 0px;
+  transition: width 0.3s ease-out;
+}
+
+#searchForm.expand {
+  width: 270px;
+}
+
+#searchBox {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: right center;
+  width: 250px;
+  height: 28px;
+  border: 1.5px solid;
+  padding: 5px 15px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0);
+}
+
+#searchBox.show {
+  opacity: 1;
+  pointer-events: all;
+  top: 50%;
+  transform: translateY(-50%) scaleX(1) scale(1);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.283);
+}
+
+#nav-right #button-cart_img {
+  width: 32px;
+}
+
+#nav-right #button-cart_img:hover {
+  animation: shake 0.3s ease-in-out;
+}
+
+#nav-right #login-container {
+  flex-wrap: wrap;
+}
+
+#nav-right #login-container a::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  height: 2px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.142), black);
+  transform: translateY(25px) scale(0);
+  transform-origin: center;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+#nav-right #login-container a:hover::after {
+  opacity: 1;
+  transform: translateY(25px) scale(1);
+}
+
+#nav-right #avatar #avatar-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+}
+
+#nav-right #avatar #avatar-wrapper a > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#nav-right #avatar #avatar-wrapper > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Color */
+
+.nav-floatbar-background {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.564)
+    ),
+    rgba(255, 255, 255, 0.1);
+}
+
+.nav-background-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.372), rgba(0, 0, 0, 0));
+}
+
+/* Menu dropdown khi hover avatar */
+
+.dropdown-menu {
+  position: absolute;
+  top: 160%;
+  right: -20%;
+  min-width: 120px;
+
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 8px 0;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 200;
+}
+
+#nav-right #avatar #avatar-wrapper:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 10px 20px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--primary-color);
+}
+
+.dropdown-item.text-danger {
+  color: #dc3545;
+}
+
+.dropdown-item.text-danger:hover {
+  background: rgba(220, 53, 69, 0.08);
+  color: #dc3545;
+}
+.timeline-section {
+  text-align: left !important;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+}
+.timeline-section {
+  display: block;
+}
+
+.timeline {
+  display: block;
+}
+/* đường dọc giữa */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: #0d2f6f;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* mỗi item */
+.timeline-item {
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* chấm tròn */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  width: 18px;
+  height: 18px;
+  background: #0d2f6f;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 0 4px white;
+}
+.timeline-section {
+  display: block; /* QUAN TRỌNG */
+}
+/* chấm bên trái (đặt sát line giữa) */
+.timeline-item.left::before {
+  right: -9px; /* = nửa width */
+}
+
+/* chấm bên phải */
+.timeline-item.right::before {
+  left: -9px;
+}
+
+/* box nội dung */
+.content {
+  background: #f5f5f5;
+  padding: 15px 25px;
+  border-radius: 15px;
+  display: inline-block;
+}
+.timeline-container {
+  display: block; /* hoặc bỏ flex */
+}
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 50px;
+    text-align: left;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item::before {
+    left: 10px;
+  }
+}
+>>>>>>> Stashed changes:styler.css
