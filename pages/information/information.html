@@ -1,122 +1,187 @@
 <!doctype html>
 <html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information page</title>
+    <link rel="stylesheet" href="styler.css" />
+  </head>
+  <body>
+    <head>
+      <nav>
+        <nav class="flex-center width-max nav-floatbar-background" id="nav">
+          <div id="nav-left">
+            <a href="/index.html"
+              ><img src="./images/logo.png" alt="Logo" id="nav-logo"
+            /></a>
+          </div>
+          <div id="nav-center">
+            <div class="nav-center-element radius-auto">
+              <a href="/index.html">Home</a>
+            </div>
+            <div class="nav-center-element radius-auto">
+              <a href="../products/products.html">Product</a>
+            </div>
+            <div class="nav-center-element radius-auto">
+              <a href="../promotion/promotion.html">Promotion</a>
+            </div>
+          </div>
+          <div id="nav-right" class="flex-center gap-16">
+            <div id="searchContainer" class="flex-center gap-8">
+              <form id="searchForm" action="">
+                <input id="searchBox" class="radius-all-sm" type="search" />
+              </form>
+              <button id="searchBtn" type="submit" form="searchForm">
+                <img src="./images/seachicon.jpg" alt="searchBtn" />
+              </button>
+            </div>
+            <button id="button-card" class="flyIn hidden">
+              <img
+                id="button-cart_img"
+                src="/assets/icons/shopping-bag.png"
+                alt=""
+              />
+            </button>
+            <div id="login-container" class="flex-center gap-12">
+              <a class="relative" href="" id="login">Login</a>
+              <a class="relative" href="" id="register">Register</a>
+            </div>
+            <div id="avatar" class="flyIn hidden">
+              <div id="avatar-wrapper">
+                <a href="/pages/Account/account.html"
+                  ><img src="/assets/Avatar/avatar.png" alt="Avatar"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </nav>
+    </head>
+    <main>
+      <div class="slider">
+        <div class="slides">
+          <img src="images/thanhcuon1.jpg" class="slide active" />
+          <img src="images/thanhcuon2.jpg" class="slide" />
+          <img src="images/thanhcuon3.jpg" class="slide" />
+        </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Information page</title>
-  <link rel="stylesheet" href="styler.css" />
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
 
-</head>
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
 
-<body>
-  <div>
-    <div class="section">
-      <img src="images/logo.png" class="logo">
-    </div>
-    <div class="breadcrumb" style="font-size: 13px; color: #666; margin-bottom: 20px;">
-      <a href="/index.html" style="color:#666; text-decoration:none;">Trang chủ</a> /
-      <span style="color:#49d88c; font-weight: bold;">Thông Tin</span>
-
-    </div>
-  </div>
-  <div class="slider">
-    <div class="slides">
-      <img src="images/thanhcuon1.jpg" class="slide active">
-      <img src="images/thanhcuon2.jpg" class="slide">
-      <img src="images/thanhcuon3.jpg" class="slide">
-    </div>
-
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-
-    <div class="dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>🌿 Giới thiệu</h2>
-    <img src="images/layout.jpg" class="layout">
-    <h3>Đồ uống sáng tạo: Các món signature độc quyền chỉ có tại quán</h3>
-    <p>
-      Chào mừng bạn đến với [Tên quán cafe] không gian nơi hương vị cà phê hòa
-      quyện cùng sự thư giãn. Chúng tôi mong muốn mang đến cho bạn những phút
-      giây thoải mái, nhẹ nhàng giữa nhịp sống bận rộn
-    </p>
-  </div>
-  <div class="section">
-    <h3>☕ Thức uống đặc trưng</h3>
-    <img src="images/cafe.jpg" alt="ảnh minh họa 1" class="img">
-    <ul>
-      <li>
-        Cà phê rang xay nguyên chất: Được chọn lọc từ hạt cà phê chất lượng cao,
-        rang theo công thức riêng để giữ trọn hương vị.
-        </i>
-      <li>
-        Latte & Cappuccino: Sự kết hợp hoàn hảo giữa cà phê espresso và lớp sữa
-        béo mịn.
-      </li>
-
-      <li>Trà & nước ép: Đa dạng hương vị từ thiên nhiên, tốt cho sức khỏe.</li>
-      <li>Đồ uống sáng tạo: Các món signature độc quyền chỉ có tại quán.</li>
-
-    </ul>
-  </div>
-  <div class="section">
-    <h3>🍰 Không gian & trải nghiệm</h3>
-    <img src="images/layer.jpg" alt="ảnh minh họa 2" class="img">
-    <ul>
-      <li>
-        <p>
-          - Phong cách thiết kế: Ấm cúng, hiện đại, phù hợp cho làm việc, gặp gỡ
-          bạn bè hoặc hẹn hò.
-        <p>
-
-        </p> - Âm nhạc nhẹ nhàng: Tạo cảm giác thư thái, dễ chịu.
-        <p>
-
-        </p>
-        - Góc sống ảo: Nhiều góc chụp ảnh đẹp, giúp bạn lưu giữ khoảnh khắc đáng
-        nhớ.
-        </p>
-
-      </li>
-    </ul>
-    <div class="section">
-      <h3>🎉 Dịch vụ & ưu đãi</h3>
-      <ul>
-        <li>
+      <div class="section" style="font-family: Arial, Helvetica, sans-serif">
+        <h2>Lang Tỏa Hương Vị</h2>
+        <div>
           <p>
-            - Thẻ thành viên: Tích điểm đổi quà, giảm giá cho khách quen.
+            Chào mừng bạn đến với [Tên quán/website], nơi mỗi tách cà phê không
+            chỉ đơn thuần là một thức uống mà còn là một trải nghiệm đầy cảm
+            hứng. Chúng tôi lựa chọn những hạt cà phê nguyên chất từ các vùng
+            trồng nổi tiếng, rang xay tỉ mỉ để giữ trọn hương vị đậm đà và tinh
+            tế. Với mong muốn mang đến cho bạn sự tiện lợi tối đa, website đặt
+            cà phê của chúng tôi giúp bạn dễ dàng chọn món yêu thích chỉ trong
+            vài thao tác, từ espresso mạnh mẽ, latte ngọt ngào cho đến cold brew
+            mát lạnh.<br />
+
+            Không chỉ chú trọng vào chất lượng sản phẩm, chúng tôi còn cam kết
+            dịch vụ giao hàng nhanh chóng và tận tâm, để bạn luôn có thể bắt đầu
+            ngày mới với nguồn năng lượng tích cực. Sứ mệnh của chúng tôi là
+            đồng hành cùng bạn trong từng khoảnh khắc, mang đến sự tỉnh táo,
+            niềm vui và kết nối qua mỗi tách cà phê. Hãy để [Tên quán/website]
+            trở thành điểm hẹn quen thuộc, nơi bạn tìm thấy hương vị yêu thích
+            và những phút giây thư giãn trọn vẹn.
           </p>
-          <p>- Ưu đãi theo mùa: Các chương trình khuyến mãi đặc biệt vào dịp lễ, Tết</p>
-        </li>
-      </ul>
-    </div>
+        </div>
+      </div>
+      <img src="images/layout.jpg" class="layout" />
+      <div class="resection" style="font-family: Arial, Helvetica, sans-serif">
+        >
+        <div class="card">
+          <h2>Giá Trị</h2>
+          <p>
+            Chúng tôi đặt chất lượng lên hàng đầu, từ việc chọn lựa hạt cà phê
+            nguyên chất đến quy trình rang xay tỉ mỉ. Mỗi sản phẩm đều mang
+            trong mình sự tận tâm, nhằm đem lại hương vị đậm đà và trải nghiệm
+            đáng nhớ cho khách hàng.
+          </p>
+          <img src="images/hạtcafe.png" />
+        </div>
+        <div class="card">
+          <h2>Xứ Mệnh</h2>
+          <p>
+            Website được xây dựng để mang đến sự tiện lợi tối đa, giúp khách
+            hàng dễ dàng đặt cà phê mọi lúc, mọi nơi. Chúng tôi hướng đến việc
+            kết hợp công nghệ hiện đại với dịch vụ thân thiện, tạo nên trải
+            nghiệm mua sắm nhanh chóng và thoải mái.
+          </p>
+          <img src="images/HuyChuong2.png" />
+        </div>
+        <div class="card">
+          <h2>Tầm Nhìn</h2>
+          <p>
+            Chúng tôi mong muốn trở thành điểm hẹn quen thuộc của cộng đồng yêu
+            cà phê, nơi mọi người không chỉ tìm thấy thức uống yêu thích mà còn
+            chia sẻ niềm đam mê, kết nối và tận hưởng những khoảnh khắc ý nghĩa
+            bên tách cà phê chất lượng.
+          </p>
+          <img src="images/Cân.png" />
+        </div>
+      </div>
+      <div class="section">
+        <h2>Triết Lí Kinh Doanh</h2>
+        <p>
+          Chúng tôi tin rằng cà phê không chỉ là một sản phẩm, mà là một giá trị
+          sống. Mỗi hạt cà phê được chọn lựa kỹ lưỡng, rang xay bằng sự tận tâm,
+          mang trong mình tinh thần trách nhiệm và niềm đam mê. Triết lý kinh
+          doanh của chúng tôi đặt khách hàng làm trung tâm, coi sự hài lòng và
+          trải nghiệm của bạn là thước đo thành công. Chúng tôi hướng đến việc
+          tạo ra một không gian kết nối, nơi cà phê trở thành cầu nối giữa con
+          người, khơi gợi cảm hứng và nuôi dưỡng năng lượng tích cực mỗi ngày.
+        </p>
+        <img src="images/cafe.jpg " class="img" />
+      </div>
+      <div class="section">
+        <div class="timeline-section">
+          <h2>Các Chi Nhánh</h2>
 
-    <H2> Tham khảo ý kiến khách hàng</H2>
-    <from>
+          <div class="timeline">
+            <div class="timeline-item left">
+              <div class="content">Cần Thơ</div>
+            </div>
 
-    </from>
+            <div class="timeline-item right">
+              <div class="content">TP.HCM</div>
+            </div>
 
+            <div class="timeline-item left">
+              <div class="content">Hà Nội</div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="content">Cao Bằng</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer class="background">
       <div>
-        <h2>
-          📍 Liên hệ & địa chỉ
-        </h2>
-        <p> - Địa chỉ: [Số nhà, đường, thành phố]<br>
-          - Giờ mở cửa: 7:00 – 22:00 mỗi ngày<br>
+        <h2>📍 Liên hệ & địa chỉ</h2>
+        <p>
+          - Địa chỉ: [Số nhà, đường, thành phố]<br />
+          - Giờ mở cửa: 7:00 – 22:00 mỗi ngày<br />
 
-          - Hotline: [Số điện thoại]<br>
+          - Hotline: [Số điện thoại]<br />
           - Fanpage/Instagram: [
-          <a href="https://youtube.com/shorts/eXtUUoEDJeg?si=6tL4JjSORUjWFK-l">Trang chủ thông tin</a>]<br>
+          <a href="">Facebook</a>]<br />
         </p>
       </div>
     </footer>
     <script src="action.js"></script>
-</body>
-
+  </body>
 </html>

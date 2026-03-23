@@ -130,7 +130,9 @@ footer p {
   text-align: center;
 }
 .background {
-  background-color: antiquewhite;
+  background-color: white;
+  border: 1px solid;
+  border-radius: 8px;
 }
 .logo {
   width: 80px; /* đặt chiều rộng cố định cho logo */
@@ -209,8 +211,7 @@ footer p {
 .dot.active {
   background: #fff;
 }
-<<<<<<< Updated upstream:pages/information/styler.css
-=======
+
 .review-section {
   max-width: 500px;
   margin: auto;
@@ -688,4 +689,3 @@ main::after {
     left: 10px;
   }
 }
->>>>>>> Stashed changes:styler.css

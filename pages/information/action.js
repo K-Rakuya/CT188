@@ -24,13 +24,3 @@ function prevSlide() {
 
 document.querySelector(".next").onclick = nextSlide;
 document.querySelector(".prev").onclick = prevSlide;
-
-dots.forEach((dot, i) => {
-  dot.onclick = () => {
-    index = i;
-    showSlide(index);
-  };
-});
-
-showSlide(index);
-setInterval(nextSlide, 3000);
