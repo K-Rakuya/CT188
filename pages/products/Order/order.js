@@ -10,7 +10,7 @@ export function add_Event_order_btn(product_grid) {
 
     btn_order.addEventListener("click", () => {
       if (!isLoggedIn()) {
-        window.location.href = "Register/register.html";
+        window.location.href = "/pages/login/login.html";
       } 
       else {
         order_table.classList.add("toggle");

@@ -1,43 +1,57 @@
-function getVisible(){
-    let current_width = window.innerWidth;
-    if(current_width < 768){
-        return 4;
-    } 
-    if(current_width < 1024){
-        return 6;
+import {add_Event_order_btn} from "../Order/order.js"
+export function showProduct(products, number_of_all_products, type_of_product) {
+    const list_all_products = document.querySelector(".product-grid");  
+    let btn_show_more = document.querySelector(".button-show-pd");
+    
+    if(products.length < number_of_all_products){
+        btn_show_more.style.display = "initial";   
     }
-    return 8;
-}
-
-export function ShowProduct(proucts_grid){
-    const container_product = proucts_grid.parentElement;
-    let btn_show = container_product.querySelector(".button-show-pd");
-
-    function update(){
-        let product_card_visible = getVisible();
-        let number_products = proucts_grid.querySelectorAll(".product-card").length;
-        if(number_products > product_card_visible){
-            btn_show.style.display = "initial";
-        }else{
-            btn_show.style.display = "none";
-        }
+    else{
+        btn_show_more.style.display = "none";   
     }
+    let html = ``;
 
-    btn_show.addEventListener("click", ()=>{
-        let check = proucts_grid.classList.toggle("collapsed");
-        if(check == false){
-            btn_show.innerHTML = '<span class="arrow">▲</span>'
+    products.forEach(p => {
+        html += `
+        <article id="${p.id}" class="product-card" data-category="${p.category}">
+            <div class="container-img">
+                <img src="${p.image}" alt="${p.name}">
+            </div>
+            <div class="info-product">
+                <h4 class="pd-name">${p.name}</h4>
+                <p class="price">${p.price.toLocaleString("vi-VN")} VNĐ</p>
+            </div>
+            <button class="btn-order">Thêm vào giỏ</button>
+        </article>
+        `;
+    });
+
+    list_all_products.innerHTML = html;
+    add_Event_order_btn(list_all_products);
+    const parent_grid = list_all_products.parentElement;
+    let title = parent_grid.querySelector(".title-product");
+    if(products.length > 0){
+        if(type_of_product === "All"){
+            title.querySelector("h2").innerText = "Tất cả sản phẩm";
         }
         else{
-            btn_show.innerHTML = '<span class="arrow">▼</span>';
+            title.querySelector("h2").innerText = type_of_product;
         }
-    })
-
-    let id_time;
-    window.addEventListener("resize", ()=>{
-        clearTimeout(id_time);
-        id_time = setTimeout(update, 200);
-    })
-    update();
+    }
+    else{
+        title.querySelector("h2").innerText = "Không có sản phẩm";
+    }
 }
 
+export function showProductNeed(list_product){
+    const list_all_products = document.querySelector(".product-grid"); 
+    const parent_grid = list_all_products.parentElement;
+    let title = parent_grid.querySelector(".title-product");
+
+    if(list_product.length === 0){
+        title.querySelector("h2").innerText = "Không có sản phẩm";
+    }
+    else{
+        showProduct(list_product, list_product.length, "Kết Quả Tìm Kiếm");
+    }
+}

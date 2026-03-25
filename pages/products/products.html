@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
     <!-- HEADER -->
     <header class="header">
         <a href="#" class="logo">
-            <img src="./Header/Logo_Text.png" alt="Logo" class="logo-img">
+            <img src="./Header/Logo.png" alt="Logo" class="logo-img">
             <h1 style="color: white;">MIXI COFFEE</h1>
         </a>
 
@@ -31,22 +29,22 @@
                     <input id="search-product" class="search-input" type="text" placeholder="Tìm kiếm...">
                 </div>
             </div>
-
+            
             <div class="features">
                 <div class="features-list">
                     <a href="/index.html" class="feature">Trang chủ</a>
-                    <a href="/pages/products/products.html" class="feature">Sản phẩm</a>
+                    <a href="#" class="feature">Sản phẩm</a>
                     <a href="/pages/cart/cart.html" class="feature">Giỏ hàng</a>
                     <a href="/pages/register/register.html" class="feature">Đăng Ký</a>
                     <a href="/pages/login/login.html" class="feature">Đăng Nhập</a>
                     <a href="/pages/information/information.html" class="feature">Tin tức</a>
                 </div>
-                <a class="user-cart" href="#">
-                    <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;">
+                <a class="user-cart" href="#"> 
+                    <img src="./Header/USER_ICON.svg" alt="USER" style="height: 30px;object-fit: cover;"> 
                 </a>
             </div>
         </div>
-
+            
     </header>
 
     <!-- MAIN CONTAINER -->
@@ -56,21 +54,21 @@
         <aside class="sidebar">
             <h3>Danh mục</h3>
             <ul>
-                <li id="cafe"><a href="#coffee-products">Cafe</a></li>
-                <li id="tra"><a href="#tea-products">Trà</a></li>
-                <li id="freeze"><a href="#freeze">Freeze</a></li>
+                <li data-category="All">Tất cả</li>
+                <li data-category="Cà Phê">Cafe</li>
+                <li data-category="Trà">Trà</li>
+                <li data-category="Đá Xay">Freeze</li>
             </ul>
         </aside>
 
         <!-- PRODUCT AREA -->
         <main class="products">
 
-            <!-- CAFE -->
-            <section class="products-list" id="coffee-products">
+            <section class="products-list">
                 <div class="title-product">
-                    <h2>Cafe</h2>
+                    <h2>Tất cả sản phẩm</h2>
                 </div>
-                <div class="product-grid collapsed coffee-list">
+                <div class="product-grid">
                     <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
                 </div>
                 <button class="button-show-pd">
@@ -78,32 +76,6 @@
                 </button>
             </section>
 
-            <!-- TRA -->
-            <section class="products-list" id="tea-products">
-                <div class="title-product">
-                    <h2>Trà</h2>
-                </div>
-                <div class="product-grid collapsed tea-list">
-                    <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
-                </div>
-                <button class="button-show-pd">
-                    <span class="arrow">▼</span>
-                </button>
-            </section>
-
-            <!-- FREEZE -->
-            <section class="products-list" id="freeze">
-                <div class="title-product">
-                    <h2>Freeze</h2>
-                </div>
-                <div class="product-grid collapsed freeze-list">
-                    <!-- Sản phẩm sẽ được render ở đây bởi JavaScript -->
-
-                </div>
-                <button class="button-show-pd">
-                    <span class="arrow">▼</span>
-                </button>
-            </section>
             <form id="order-form">
                 <div class="modal">
                     <div class="title-option">
@@ -112,7 +84,7 @@
                     <div class="img-order-form">
                     </div>
                     <div class="customization">
-                        <div class="option number">
+                        <div class="option number">   
                             <label>Số lượng:</label>
                             <input style="padding-left: 10px;" name="quantity" type="number" value="1" min="1">
                         </div>
@@ -135,8 +107,8 @@
                         </div>
                     </div>
                     <div class="container-btn">
-                        <button type="submit" id="confirmBtn">Xác nhận</button>
-                        <button type="button" id="closeBtn">Hủy</button>
+                        <button type="submit" id="confirm_Order_Btn">Xác nhận</button>
+                        <button type="button" id="close_Order_Btn">Hủy</button>
                     </div>
                 </div>
             </form>
@@ -189,17 +161,15 @@
         </div>
     </footer>
 
-    <script type="module" src="./Cafe/read_data_coffee.js"></script>
-    <script type="module" src="./Tea/read_data_tea.js"></script>
-    <script type="module" src="./Freeze/read_data_freeze.js"></script>
+    <script type="module" src="./ReadAlldata/read_data.js"></script>
     <script type="module" src="./Nav/nav.js"></script>
+    <script type="module" src="./Search_Products/search.js"></script>
     <script>
-        var order_table = document.querySelector("#order-form");
-        var close_btn = order_table.querySelector("#closeBtn");
-        close_btn.addEventListener("click", () => {
-            order_table.classList.toggle("toggle");
+        let btn_close_form = document.querySelector("#close_Order_Btn");
+        btn_close_form.addEventListener("click", ()=>{
+            const order_table = document.querySelector("#order-form");
+            order_table.classList.remove("toggle");
         })
     </script>
 </body>
-
 </html>
