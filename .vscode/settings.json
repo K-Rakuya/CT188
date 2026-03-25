@@ -1,3 +1,4 @@
 {
-    "css.classCompletion.enabled": true
+    "css.classCompletion.enabled": true,
+    "livePreview.defaultPreviewPath": "/pages/cart/cart.html"
 }

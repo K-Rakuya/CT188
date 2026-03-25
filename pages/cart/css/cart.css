@@ -1,6 +1,6 @@
 .cart-item {
     display: grid;
-    grid-template-columns: 1fr minmax(0, 2fr) 1fr;
+    grid-template-columns: 1fr minmax(0, 3fr) ;
     grid-template-rows: 1fr;
     padding: 2rem 0;
     align-items: center;
@@ -10,6 +10,7 @@
 
 .card-title{
     margin-bottom: 5px;
+    padding: 5px 5px 5px 0;
 }
 
 .container-item{
@@ -30,7 +31,7 @@
 
     width: 100%;
     max-width: 120px; 
-    height: auto;
+    height: 100px;
     border-radius: 1rem;
     object-fit: cover;
 }
@@ -56,11 +57,22 @@
     flex:1;
     border: none; background: #fff; padding: 0.8rem 1.2rem; cursor: pointer;
 }
+
+.qty-control button:hover {
+    background-color: rgba(121, 141, 141, 0.089);
+    text-shadow: 0.05rem 0 0 currentColor;
+}
 .qty-control input {
     width: 4rem; text-align: center; border: none; font-weight: 600;
 }
 
 .btn-delete { color: var(--danger); background: none; border: none; font-weight: 600; cursor: pointer;}
+
+
+.btn-delete:hover {
+ 
+    text-shadow: 0.05rem 0 0 currentColor;
+}
 
 .cart-section{
     height: 100%;
@@ -70,8 +82,8 @@
 
 
 .cart-list {
-    height: calc(100vh - 200px); 
-    
+    height: calc(100vh - 150px); 
+    margin-top: 6px;
     width: 100%;
     overflow-y: auto; 
     overflow-x: hidden;
@@ -101,14 +113,6 @@
 }
 
 
-.group__action__detail{
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    text-align: center;
-   place-items: center;
-   gap: 10px;
-}
 .variant b {
   
     max-width: 100%;
@@ -131,7 +135,40 @@
 }
 .item-details{
     display: flex;
+    row-gap: 5px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+
+
+.item-main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "name  name"
+                "action  delete";
+    height: 100%;
+    align-items: start;
+}
+
+.item-main h4{
+    grid-area: name;
+    white-space: nowrap;     
+    overflow: hidden;         
+    text-overflow: ellipsis;   
+    width: 100%;               
+    display: block;
+}
+
+.qty-control{
+   grid-area: action;
+   justify-content: start;
+}
+.item-details {
+    grid-area: delete;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+
 }
