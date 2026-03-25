@@ -45,13 +45,12 @@ export function showProduct(products, number_of_all_products, type_of_product) {
 
 export function showProductNeed(list_product){
     const list_all_products = document.querySelector(".product-grid"); 
-    const parent_grid = list_all_products.parentElement;
-    let title = parent_grid.querySelector(".title-product");
-
-    if(list_product.length === 0){
-        title.querySelector("h2").innerText = "Không có sản phẩm";
+    if(list_product.length===0){
+        showProduct(list_product, list_product.length, "");
     }
     else{
         showProduct(list_product, list_product.length, "Kết Quả Tìm Kiếm");
     }
 }
+
+
