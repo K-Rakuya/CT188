@@ -41,7 +41,7 @@
     
     .cart-item img {
         width: 100%;
-        height: 20rem;
+        height: 12rem!important;
     }
 
     .page-header {
@@ -103,11 +103,7 @@
     .top-header{
         justify-content: space-between;
     }
-        .cart-item img {
-    width: 100px;
-    height: 100px;
 
-}
 
 .detail-row.total {
     display: flex;
@@ -151,6 +147,9 @@
         font-size: 1.6rem!important;
         
     }
+    .cart-item img{
+        height: 120px;
+    }
 
 
 
@@ -160,7 +159,7 @@
     
     .cart-item img {
     width: 100%;
-    height: 100%;
+    height: 100px!important;
 
 }
 .save{
