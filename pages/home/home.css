@@ -261,13 +261,13 @@ main {}
     display: block;
 }
 
-#main-grid-items > div > div > h3 {
+#main-grid-items>div>div>h3 {
     width: 100%;
     text-align: center;
-    white-space: nowrap;    
-    overflow: hidden;     
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
-    display: block;         
+    display: block;
 }
 
 .before-sale {
@@ -633,7 +633,14 @@ main {}
     }
 }
 
-@media (max-width: 800px) {}
+@media (max-width: 800px) {
+    #main-grid-items>div>div>h3 {
+        display: none;
+    }
+    #main-grid-items.is-list .flex.gap-12 {
+        margin-left: auto;
+    }
+}
 
 @media (max-width: 640px) {
     header {
@@ -771,5 +778,9 @@ main {}
 
     #main-grid-items>div>div>div.flex.gap-12>button.item-buy-btn {
         flex: 1;
+    }
+
+    #main-grid-items.is-list .flex.gap-12 {
+        width: 30% !important;
     }
 }
