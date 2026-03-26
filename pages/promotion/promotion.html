@@ -1,304 +1,343 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khuyến mãi</title>
-    <style>
-        /* 1. CÀI ĐẶT CHUNG */
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    <title>Deal Hời Mỗi Ngày</title>
 
-        /* 2. KHUNG KHUYẾN MÃI (Màu xanh đồng bộ) */
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: 0.3s;
-            cursor: pointer;
-            background: #fff;
-        }
-
-        .card:hover {
-            box-shadow: 0 4px 15px rgba(0, 106, 49, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .image-box {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            position: relative;
-            text-align: center;
-            background: linear-gradient(135deg, #006a31, #008a41);
-            /* Gradient xanh lá */
-        }
-
-        .view-count {
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
-            font-size: 11px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #006a31;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 13px;
-            text-transform: uppercase;
-            color: #222;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        .card-title::before {
-            content: "✿ ";
-            color: #006a31;
-        }
-
-        /* Biểu tượng hoa xanh */
-
-        /* 3. PHẦN HƯỚNG DẪN (Đã đổi sang xanh lá) */
-        .instruction-section {
-            margin: 50px 0;
-            padding: 30px;
-            background: #f0f7f3;
-            border-radius: 15px;
-            border: 1px solid #e0eee6;
-        }
-
-        .footer-header {
-            text-align: center;
-            color: #006a31;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            font-size: 26px;
-            font-weight: 800;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .step-card {
-            text-align: center;
-            padding: 25px;
-            background: white;
-            border: 2px dashed #006a31;
-            border-radius: 12px;
-            position: relative;
-        }
-
-        .step-number {
-            background: #006a31;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .step-card h4 {
-            color: #006a31;
-            margin: 10px 0;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .step-card p {
-            font-size: 14px;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        /* 4. FOOTER XANH ĐẬM */
-        footer {
-            background-color: #006a31;
-            color: #ffffff;
-            padding: 50px 0;
-            font-size: 13px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-            gap: 25px;
-            padding: 0 20px;
-        }
-
-        .footer-column h3 {
-            font-size: 15px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            padding-bottom: 8px;
-        }
-
-        .footer-column a {
-            color: #fff;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-
-        .footer-column a:hover {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 900px) {
-
-            .promo-grid,
-            .steps-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="../../css/components/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="promotion.css">
+    <script src="promotion.js" defer></script>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="breadcrumb" style="font-size: 13px; color: #666; margin-bottom: 20px;"><a href="/index.html"
-                style="text-decoration: none; color: inherit;">Trang chủ</a> / <span
-                style="color:#006a31; font-weight: bold;">Khuyến mãi</span></div>
 
-        <div class="promo-grid">
-            <div class="card">
-                <div class="image-box">8/3 RẠNG RỠ<br>ƯU ĐÃI 50%<div class="view-count">👁 1.2k</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Sắc hương phái đẹp: Ưu đãi nước hoa chính hãng</div>
-                </div>
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <div class="nav-logo">
+
+                <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Logo">
+
+                <span>MIXI COFFEE</span>
+
             </div>
-            <div class="card">
-                <div class="image-box" style="background: linear-gradient(135deg, #004d23, #006a31);">MUA 1 TẶNG 1<br>8
-                    THÁNG 3<div class="view-count">👁 945</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Vị ngọt yêu thương: Mua 1 tặng 1 toàn menu</div>
-                </div>
+
+
+
+            <div class="nav-search">
+
+                <input type="text" placeholder="Tìm kiếm sản phẩm...">
+
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+
             </div>
-            <div class="card">
-                <div class="image-box">QUỐC TẾ THIẾU NHI<br>COMBO 1/6<div class="view-count">👁 2.1k</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Vương quốc quà tặng: Combo đặc biệt cho bé</div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="image-box" style="background: linear-gradient(135deg, #004d23, #006a31);">FREESHIP 0Đ<br>MÙA
-                    HÈ<div class="view-count">👁 420</div>
-                </div>
-                <div class="card-body">
-                    <div class="card-title">Giải nhiệt cực đã: Miễn phí giao hàng tận nơi</div>
-                </div>
-            </div>
+
+
+
+            <ul class="nav-menu">
+
+                <li><a href="/index.html" class="active">Trang chủ</a></li>
+
+                <li><a href="/pages/products/products.html">Sản phẩm</a></li>
+
+                <li><a href="/pages/cart/cart.html">Giỏ hàng</a></li>
+
+                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+
+            </ul>
+
         </div>
 
-        <div class="instruction-section">
-            <h2 class="footer-header">Hướng Dẫn Nhận Ưu Đãi</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">01</div>
-                    <h4>Chọn ưu đãi</h4>
-                    <p>Khám phá các chương trình đang diễn ra trên website hoặc ứng dụng.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">02</div>
-                    <h4>Lấy mã giảm giá</h4>
-                    <p>Nhấn vào chi tiết để lấy mã hoặc quét QR tại cửa hàng Phúc Long.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">03</div>
-                    <h4>Thanh toán</h4>
-                    <p>Áp dụng mã để được giảm giá trực tiếp hoặc nhận quà tặng kèm.</p>
-                </div>
+    </nav>
+
+
+
+    <section class="banner-section">
+
+        <div class="banner-content">
+
+            <span class="banner-tag">HOT DEAL</span>
+
+            <h1>SỮA TƯƠI ĐƯỜNG ĐEN</h1>
+
+            <p>Hòa quyện sữa tươi nguyên bản và trân châu đường đen thủ công</p>
+
+            <div class="banner-buttons">
+
+                <button class="btn-primary">SĂN NGAY DEAL 20%</button>
+
+                <button class="btn-outline">TÌM HIỂU THÊM</button>
+
             </div>
+
         </div>
+
+    </section>
+
+
+
+    <div class="main-layout container">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <i class="fa-solid fa-bars"></i> DANH MỤC SẢN PHẨM
+
+            </div>
+
+            <ul class="sidebar-menu">
+
+                <li class="has-submenu">
+
+                    <span><i class="fa-solid fa-percentage"></i> KHUYẾN MÃI SỐC</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <ul class="submenu">
+
+                        <li><a href="#">Mua 1 Tặng 1</a></li>
+
+                        <li><a href="#">Giảm giá 20%</a></li>
+
+                        <li><a href="#">Combo Tiết Kiệm</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="has-submenu">
+
+                    <span><i class="fa-solid fa-mug-hot"></i> CÀ PHÊ TRUYỀN THỐNG</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <ul class="submenu">
+
+                        <li><a href="#">Cà Phê Đen</a></li>
+
+                        <li><a href="#">Cà Phê Sữa</a></li>
+
+                        <li><a href="#">Bạc Xỉu</a></li>
+
+                        <li><a href="#">Cà Phê Muối</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="has-submenu">
+
+                    <span><i class="fa-solid fa-leaf"></i> TRÀ TRÁI CÂY</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <ul class="submenu">
+
+                        <li><a href="#">Trà Đào Cam Sả</a></li>
+
+                        <li><a href="#">Trà Vải Sen</a></li>
+
+                        <li><a href="#">Trà Dâu Đông Du</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="has-submenu">
+
+                    <span><i class="fa-solid fa-blender"></i> ĐÁ XAY SPECIAL</span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <ul class="submenu">
+
+                        <li><a href="#">Matcha Đá Xay</a></li>
+
+                        <li><a href="#">Cookie Cream</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li><span>SỮA CHUA & MACCHIATO</span><i class="fa-solid fa-chevron-right"></i></li>
+
+                <li><span>BÁNH NGỌT NHÀ LÀM</span><i class="fa-solid fa-chevron-right"></i></li>
+
+            </ul>
+
+        </aside>
+
+
+
+        <section class="content-wrapper">
+
+            <div class="breadcrumb">
+
+                <a href="/index.html">Trang chủ</a> / <span>Khuyến mãi</span>
+
+            </div>
+
+
+
+            <div class="promo-grid">
+
+                <div class="card">
+
+                    <div class="promo-badge">HOT</div>
+
+                    <div class="image-box">
+
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500" alt="Cafe">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-title">MUA 1 TẶNG 1 - THƯỞNG THỨC CÀ PHÊ SÁNG</div>
+
+                        <button class="btn-detail">Xem chi tiết</button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="promo-badge">-20%</div>
+
+                    <div class="image-box">
+
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=500" alt="Cafe">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-title">ƯU ĐÃI GIẢM GIÁ 20% CÀ PHÊ MUỐI MỚI</div>
+
+                        <button class="btn-detail">Xem chi tiết</button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <div class="promo-badge">GIFT</div>
+
+                    <div class="image-box">
+
+                        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=500" alt="Cafe">
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <div class="card-title">TẶNG KÈM BÁNH NGỌT KHI MUA COMBO</div>
+
+                        <button class="btn-detail">Xem chi tiết</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
 
+
+
     <footer class="footer">
+
         <div class="footer-container">
+
             <div class="footer-col">
-                <h3>Logo.</h3>
+
+                <h3>Mixi Coffee.</h3>
+
                 <p>Khởi nguồn từ đam mê, mang đến trải nghiệm tuyệt vời cho hành trình của bạn.</p>
+
                 <div class="social-links">
+
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
                     <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+
                 </div>
+
             </div>
 
             <div class="footer-col">
+
                 <h3>Liên Kết</h3>
+
                 <ul>
-                    <li><a href="../../index.html">Trang Chủ</a></li>
-                    <li><a href="/pages/products/products.html">Sản Phẩm</a></li>
-                    <li><a href="/pages/information/information.html">Về Chúng Tôi</a></li>
+
+                    <li><a href="#">Trang Chủ</a></li>
+
+                    <li><a href="#">Sản Phẩm</a></li>
+
+                    <li><a href="#">Về Chúng Tôi</a></li>
+
                 </ul>
+
             </div>
 
             <div class="footer-col">
+
                 <h3>Liên Hệ</h3>
+
                 <ul>
-                    <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, TP.HCM</li>
+
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Đường Coffee, TP.HCM</li>
+
                     <li><i class="fa-solid fa-phone"></i> +84 123 456 789</li>
+
                 </ul>
+
             </div>
 
             <div class="footer-col">
+
                 <h3>Góp Ý</h3>
-                <form action="mailto:admin@yourweb.com" method="post" enctype="text/plain" class="feedback-form">
-                    <input type="text" name="name" placeholder="Tên của bạn" required>
-                    <textarea name="message" rows="2" placeholder="Lời nhắn..." required></textarea>
+
+                <form class="feedback-form">
+                    <input type="text" placeholder="Tên của bạn">
+                    <textarea placeholder="Lời nhắn..."></textarea>
                     <button type="submit">Gửi <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
+
             </div>
+
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2024 MyBrand. All rights reserved.</p>
+
+            <p>&copy; 2026 Mixi Coffee. All rights reserved.</p>
+
         </div>
+
     </footer>
+
+
 
 </body>
 

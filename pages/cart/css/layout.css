@@ -4,8 +4,17 @@
    gap: 10px;
    padding: 8px;
    overflow: hidden;
+   max-width: 1200px;
+   padding: 15px;
+   width: 100%;
+   background-color: rgba(255, 255, 255, 0.505); 
+   box-shadow: 0 0 3rem rgba(0, 0, 0, .2);
 }
 
+body{
+   display: flex;
+   justify-content: center;
+}
 
 
 .sidebar{

@@ -81,6 +81,7 @@ body {
 }
 
 .search-input:focus{
+    background-color: white;
     outline: none;
 }
 
@@ -139,9 +140,6 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-around;
-
-
-   
     background: white;
     margin-top: 10px;
     padding: 5px;
@@ -151,9 +149,7 @@ body {
 }
 
 .sidebar h3 {
-    font-size: 13px;
-    text-align: center;
-    margin-bottom: 8px;
+    display: none;
 }
 
 .sidebar ul {
@@ -167,12 +163,13 @@ body {
 .sidebar li {
     text-align: center;
     margin-bottom: 2px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px;
 }
 
-.sidebar a {
-    font-size: 11px;
-    color: black;
-    font-weight: 500;
+.sidebar li:hover {
+  cursor: pointer;
 }
 
 /* PRODUCTS */
@@ -190,8 +187,8 @@ body {
 
 .products h2 {
     text-align: center;
-    margin-bottom: 5px;
-    display: none;
+    margin: 5px;
+    font-size: 13px;
 }
 
 /* GRID */
@@ -444,9 +441,6 @@ body {
     color: white;
 }
 
-.h2{
-        display: none;
-    }
 /* RESPONSIVE */
 
 /* MOBILE MÀN BỰ HƠN */
@@ -480,12 +474,18 @@ body {
 /* TABLET */
 
 @media (min-width: 768px) {
-
-
+    .sidebar h3{
+        display: initial;
+        margin-bottom: 8px;
+    }
     /* FIX */
     .sidebar{
         flex-direction: column;
         width: 120px;
+    }
+    .sidebar li{
+        font-size: 15px;
+        margin: 3px;
     }
 
     .header{
@@ -546,6 +546,7 @@ body {
     .products h2 {
         text-align: start;
         margin-bottom: 20px;
+        font-size: 20px;
     }
 
     .product-grid{
@@ -722,7 +723,7 @@ body {
     }
 
     .product-card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
     .container-img{

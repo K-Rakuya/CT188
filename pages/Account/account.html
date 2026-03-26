@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi-vn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +8,21 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/pages/home/home.css">
     <link rel="stylesheet" href="/pages/account/account.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="/pages/Account/account.js" defer></script>
 </head>
+
 <body>
     <header id="header" class="flex-center">
         <nav class="flex-center nav-floatbar-background" id="nav">
-            <div id="nav-left"><a href="/index.html"><img src="/assets/Logos/logo.png" alt="Logo" id="nav-logo"></a>
+            <div id="nav-left"><a href="/index.html"><img src="/assets/Logos/logo.png" alt="Logo" id="nav-logo"
+                        draggable="false"></a>
             </div>
             <div id="nav-center">
-                    <a href="/index.html">Home</a>
-                    <a href="">Product</a>
-                    <a href="">Promotion</a>
-                    <a href="">Information</a>
+                <a href="/index.html">Home</a>
+                <a href="/pages/products/products.html">Products</a>
+                <a href="/pages/promotion/promotion.html">Promotion</a>
+                <a href="/pages/information/information.html">Information</a>
             </div>
             <div id="nav-right" class="flex-center gap-16">
                 <div id="searchContainer" class="flex-center gap-8">
@@ -26,21 +30,36 @@
                         <input id="searchBox" class="radius-all-sm" type="search">
                     </form>
                     <button id="searchBtn" type="submit" form="searchForm"><img src="/assets/icons/search.png"
-                            alt="searchBtn"></button>
+                            alt="searchBtn" draggable="false"></button>
                 </div>
                 <button id="button-card" class="flyIn hidden"><img id="button-cart_img"
-                        src="/assets/icons/shopping-bag.png" alt=""></button>
+                        src="/assets/icons/shopping-bag.png" alt="" draggable="false"></button>
                 <div id="login-container" class="flex-center gap-12">
                     <a class="relative" href="" id="login">Login</a>
                     <a class="relative" href="" id="register">Register</a>
                 </div>
                 <div id="avatar" class="flyIn hidden">
-                    <div id="avatar-wrapper">
+                    <div id="avatar-wrapper" style="position: relative;">
                         <a href="/pages/Account/account.html"><img src="/assets/Avatar/avatar.png" alt="Avatar"></a>
+
+                        <div id="avatar-dropdown" class="dropdown-glass">
+                            <a href="/pages/account/account.html">Profile</a>
+                            <a href="#" id="logout-btn" class="text-danger">Logout</a>
+                        </div>
                     </div>
                 </div>
+                <button id="hamburger-btn" class="flex-center hidden"
+                    style="background: transparent; border: none; font-size: 24px; cursor: pointer; color: #333;">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </nav>
+        <div id="dropdown-menu-links" class="dropdown-glass">
+            <a href="/index.html">Home</a>
+            <a href="/pages/products/products.html">Products</a>
+            <a href="/pages/promotion/promotion.html">Promotion</a>
+            <a href="/pages/information/information.html">Information</a>
+        </div>
     </header>
 
     <main>
@@ -50,6 +69,10 @@
                 <div id="user-overlay-info" class="flex gap-24">
                     <div id="avatar-container">
                         <img src="/assets/Avatar/avatar.png" alt="User Avatar">
+                        <div class="avatar-edit-overlay">
+                            <span>📷 Đổi ảnh</span>
+                        </div>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
                     </div>
                     <div id="short-info">
                         <h1>K.Rakuya</h1>
@@ -89,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="flex-center" style="margin-top: 20px;">
                         <button type="submit" class="btn-save">Save Changes</button>
                     </div>
@@ -98,4 +121,5 @@
         </div>
     </main>
 </body>
+
 </html>

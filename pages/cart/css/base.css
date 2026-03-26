@@ -1,15 +1,17 @@
 :root{
    --primary: #1d4ff5;
-    --primary-light: #e8ecff;
+    --primary-light: #e8ecff05;
     --text-dark: #202224;
     --text-gray: #8f95a0;
-    --bg-main: #f4f7fb;
+    --bg-main: #9ec8ff17;
     --bg-white: #ffffff;
     --danger: #eb5757;
     --success: #27ae60;
     --border-color: #eaedf1;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    --shadow: 0 0 2rem rgba(0, 0, 0, 0.11);
     --radius: 1.5rem;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05); /* Đổ bóng rộng và mờ */
+    --shadow-strong: 0 4px 12px rgba(29, 79, 245, 0.1); /* Bóng có chút màu primary */
 }
 
 
@@ -24,7 +26,8 @@ body {
     background-color: var(--bg-main);
     color: var(--text-dark);
     font-size: 1.6rem;
-
+    
+    font-family: 'Segoe UI', sans-serif;
 }
 
 html { font-size: 62.5%; } /* 1rem = 10px để dễ tính */
@@ -34,4 +37,7 @@ html { font-size: 62.5%; } /* 1rem = 10px để dễ tính */
     border-radius: var(--radius);
     padding:0.5rem 1.5rem;
     box-shadow: var(--shadow);
+}
+.hide{
+   display: none !important;
 }
