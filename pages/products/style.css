@@ -482,27 +482,11 @@ body {
     .modal {
         width: 280px;
     }
-    
-
 
 }
 /* TABLET */
 
 @media (min-width: 768px) {
-    .sidebar h3{
-        display: initial;
-        margin-bottom: 8px;
-    }
-    /* FIX */
-    .sidebar{
-        flex-direction: column;
-        width: 120px;
-    }
-    .sidebar li{
-        font-size: 15px;
-        margin: 3px;
-    }
-
     .header{
         padding: 8px 30px;
     }
@@ -532,9 +516,11 @@ body {
         flex-direction: row;
         align-items: stretch;
         padding: 20px 30px;
-    }
+    }    
 
     .sidebar{
+        flex-direction: column;
+        width: 120px;
         margin-top: 10px;
         padding: 10px;
         padding-bottom: 5px;
@@ -544,11 +530,15 @@ body {
     }
 
     .sidebar h3 {
+        display: initial;
         font-size: 16px;
         text-align: start;
+        margin-bottom: 8px;
     }
 
     .sidebar li {
+        margin-top: 3px;
+        font-size: 15px;
         margin-bottom: 10px;
         text-align: start;
     }
