@@ -54,10 +54,10 @@
         <aside class="sidebar">
             <h3>Danh mục</h3>
             <ul class="category-list">
-                <li data-category="All">Tất cả</li>
-                <li data-category="Cà Phê">Cafe</li>
-                <li data-category="Trà">Trà</li>
-                <li data-category="Đá Xay">Freeze</li>
+                <li class="option-category" data-category="All">Tất cả</li>
+                <li class="option-category" data-category="Cà Phê">Cafe</li>
+                <li class="option-category" data-category="Trà">Trà</li>
+                <li class="option-category" data-category="Đá Xay">Freeze</li>
             </ul>
         </aside>
 
@@ -107,8 +107,8 @@
                         </div>
                     </div>
                     <div class="container-btn">
-                        <button type="submit" id="confirm_Order_Btn">Xác nhận</button>
-                        <button type="button" id="close_Order_Btn">Hủy</button>
+                        <button class="btn-order-form" type="submit" id="confirm_Order_Btn">Xác nhận</button>
+                        <button class="btn-order-form" type="button" id="close_Order_Btn">Hủy</button>
                     </div>
                 </div>
             </form>
@@ -161,9 +161,8 @@
         </div>
     </footer>
 
-    <script type="module" src="./ReadAlldata/read_data.js"></script>
-    <script type="module" src="./Nav/nav.js"></script>
-    <script type="module" src="./Search_Products/search.js"></script>
+    <script type="module" src="./JS/main.js"></script>
+    <script type="module" src="./JS/nav.js"></script>
     <script>
         let btn_close_form = document.querySelector("#close_Order_Btn");
         btn_close_form.addEventListener("click", ()=>{

@@ -1,14 +1,15 @@
-import {allProducts} from "../ReadAlldata/read_data.js"
-import {showProductNeed} from "../ShowProduct/showPD.js"
-
+//HÀM BỎ DẤU 1 CHUỖI (BỎ DẤU KHI NGƯỜI DÙNG TÌM SẢN PHẨM)
 function removeVietnameseTones(str) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function searchProducts(products, keyword) {
+//HÀM TÌM SẢN PHẨM, TRUYỀN VÀO DANH SÁCH TẤT CẢ SẢN PHẨM VÀ TỪ KHÓA CỦA NGƯỜI DÙNG
+export function searchProducts(products, keyword) {
   let key = removeVietnameseTones(keyword);
   key = key.toLowerCase().trim().replace(/\s+/g, " ");
+  //CẮT KHOẢNG TRỐNG THỪA, BỎ DẤU
 
+  //LỌC SẢN PHẨM THEO TỪ KHÓA ĐÃ TÌM KIẾM
   return products.filter(product => {
     let name = removeVietnameseTones(product.name).toLowerCase();
     let category = removeVietnameseTones(product.category).toLowerCase();
@@ -17,19 +18,12 @@ function searchProducts(products, keyword) {
       category.includes(key)
     );
   });
+  //TRẢ VỀ 1 DANH SÁCH SẢN PHẨM NGƯỜI DÙNG CẦN
 }
 
-function getNameFromSearch(){
+//HÀM LẤY TÊN SẢN PHẨM TỪ NGƯỜI DÙNG
+export function getNameFromSearch(){
   const input = document.querySelector("#search-product");
-  let key = input.value;
-  let result = searchProducts(allProducts, key);
-  showProductNeed(result);
+  return input.value;
 }
 
-const inputFromUser = document.querySelector("#search-product");
-
-inputFromUser.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-        getNameFromSearch();
-    }
-});
