@@ -75,7 +75,7 @@ const updateHeaderInfo = () => {
         
         // Đổi link Logout
         if(actionUser) {
-            actionUser.textContent = "Log Out";
+            actionUser.textContent = "Logout";
             actionUser.href = "#";
             actionUser.onclick = (e) => {
                 e.preventDefault();
@@ -92,3 +92,4 @@ const updateHeaderInfo = () => {
 
 // Chạy khi trang load xong
 document.addEventListener('DOMContentLoaded', updateHeaderInfo);
+

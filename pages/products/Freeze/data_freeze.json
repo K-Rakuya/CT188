@@ -3,21 +3,21 @@
     "id": "fr_01",
     "name": "Oreo Đá Xay",
     "price": 40000,
-    "image": "./Freeze/freeze_oreo.jpg",
-    "category": "Đá Xay"
+    "image": "Freeze/freeze_oreo.jpg",
+    "category": "Freeze"
   },
   {
     "id": "fr_02",
     "name": "Matcha Đá Xay",
     "price": 40000,
-    "image": "./Freeze/freeze_matcha.jpg",
-    "category": "Đá Xay"
+    "image": "Freeze/freeze_matcha.jpg",
+    "category": "Freeze"
   },
   {
     "id": "fr_03",
     "name": "Choco Đá Xay",
     "price": 40000,
-    "image": "./Freeze/freeze_choco.png",
-    "category": "Đá Xay"
+    "image": "Freeze/freeze_choco.png",
+    "category": "Freeze"
   }
 ]

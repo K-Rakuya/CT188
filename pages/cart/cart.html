@@ -12,9 +12,43 @@
 
 <body>
    <div class="app-container ">
- 
+      <div class="sidebar">
+         <!-- logo -->
+         <div class="sidebar-logo">
+            Logo
+         </div>
+
+         <a href="/index.html" class="sidebar--home sidebar-item flex gap-10">
+            <i class="fa-solid fa-house"></i>
+            <h2>Home</h2>
+         </a>
+
+
+
+
+
+
+         <a href="" class="sidebar--contact sidebar-item flex gap-10">
+            <i class="fa-solid fa-phone"></i>
+            <h2>Contact Us !</h2>
+         </a>
+         <div class="sidebar-menu">
+            <!-- Các mục menu khác có thể thêm ở đây -->
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+            <div class="nav-item flex"></div>
+         </div>
+      </div>
+
       <div class="main-content">
          <header class="top-header">
+            <div class="search-bar ">
+               <i class="fa-solid fa-magnifying-glass"></i>
+               <input type="search" placeholder="nhập tìm kiếm">
+            </div>
+
+
+
             <button class="mobile-menu-btn">
                <i class="fa-solid fa-bars"></i>
             </button>
@@ -23,9 +57,6 @@
                <a class="nav-link" href="/pages/products/products.html">Product</a>
                <a class="nav-link" href="/pages/promotion/promotion.html">Promotion</a>
                <a class="nav-link" href="/pages/information/information.html">Contact</a>
-            </div>
-            <div class="title">
-               <!-- <h1>Vỏ Hàng</h1> -->
             </div>
             <div class="header-user gap-10 flex">
                <div class="header-avt gap-10 flex">
@@ -44,28 +75,23 @@
 
             <script src="js/nav.js"></script>
          </header>
-         <div class="cart-empty hide">
-            <i class="iconcart-empty">
 
-            </i>
-            <h1>Giỏ hàng trống</h1>
-            <span class="dmx">Không có sản phẩm nào trong giỏ hàng
-
-            </span>
-            <a href="/index.html" class="btn-backhome">Về trang chủ</a>
-            <p class="note-help">Khi cần trợ giúp vui lòng gọi 
-               <a style="color: #288ad6" href="">19312312</a>
-                hoặc 
-               <a style="color: #288ad6" href="tel:02836221060">312310</a> (8h00 - 21h30)
-            </p>
+         <div class="page-header" style="margin-top: 10px;">
+            <p>các bước thanh toán</p>
+            <div class="stepper">
+               <span class="step active" style="color: var(--primary-color, blue)"><b>1</b> Cart</span>
+               <span class="divider"></span>
+               <span class="step"><b>2</b> Address</span>
+               <span class="divider"></span>
+               <span class="step"><b>3</b> Payment</span>
+            </div>
          </div>
-
 
          <div class="content">
             <div class="checkout-grid">
                <section class="cart-section card">
-                  <h3 class="card-title"><i class="fa-solid fa-cart-shopping"></i> Vỏ Hàng Của Bạn (<span
-                        id="total-items">0</span> Sản Phẩm)</h3>
+                  <h3 class="card-title"><i class="fa-solid fa-cart-shopping"></i> My Cart (<span
+                        id="total-items">0</span> items)</h3>
                   <div class="cart-list" id="cartList"></div>
                </section>
             </div>
@@ -76,29 +102,16 @@
                   <div class="order-details card">
                      <h3 class="hide" style="margin-bottom: 10px;">Tổng details</h3>
                      <div class="detail-row "><span>Giá Gốc</span> <span id="total-price-old">0</span></div>
-                     <!-- <div class="detail-row "><span>Đã Giảm</span><span id="discount-sale">$0.00</span></div> -->
-                     <div class="coupon-section">
-                        <div class="coupon-input-group">
-                           <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá...">
-                           <button id="apply-coupon">Áp dụng</button>
-                        </div>
-                        <span class="coupon-msg"></span>
-                     </div>
-                     <div class="detail-row hide discount"><span>Coupon discount</span> <span>-$0.00</span></div>
-                    
+                     <div class="detail-row hide discount"><span>Coupon discount</span> <span>-$98.00</span></div>
+                     <!-- <div class="detail-row hide"><span>Order total</span> <span>$1100.00</span></div> -->
                      <!-- <div class="detail-row hide free"><span>Delivery charges <span class="badge">Free</span></span> <span>-$5.00</span></div> -->
-                     <div class="kk">
-                        <div class="detail-row total">
-                           <span id="total">Tổng Cộng</span> 
-                           <span id="total-price-new">$0.00</span>
-                           <div class="save">
-                              <span>Tiết Kiệm</span>
-                              <span id="discount-sale">$0.0</span>
-                           </div>
-                        </div>
-                        <button id="btn-place" class="btn-primary  w-100">Đặt Hàng</button>
-                     </div>
+
+                     <div class="detail-row total"><span>Total</span> <span id="total-price-new">$0.00</span></div>
+
+                     <button id="btn-place" class="btn-primary  w-100">Place Order</button>
                   </div>
+
+
                </section>
             </div>
          </div>

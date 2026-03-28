@@ -1,34 +1,13 @@
-function readMore() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
-
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Xem thêm";
-    moreText.style.display = "none";
-  } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Thu gọn";
-    moreText.style.display = "inline";
-  }
-}
-
-/* --- Slider Logic --- */
 let slides = document.querySelectorAll(".slide");
 let dots = document.querySelectorAll(".dot");
 let index = 0;
 
 function showSlide(i) {
-  if (slides.length === 0) return;
-
-  // Xóa class active cũ
   slides.forEach((s) => s.classList.remove("active"));
   dots.forEach((d) => d.classList.remove("active"));
 
-  // Thêm class active mới
   slides[i].classList.add("active");
-  if (dots[i]) dots[i].classList.add("active");
+  dots[i].classList.add("active");
 }
 
 function nextSlide() {
@@ -43,14 +22,15 @@ function prevSlide() {
   showSlide(index);
 }
 
-// Gán sự kiện click cho nút
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
+document.querySelector(".next").onclick = nextSlide;
+document.querySelector(".prev").onclick = prevSlide;
 
-if (nextBtn) nextBtn.onclick = nextSlide;
-if (prevBtn) prevBtn.onclick = prevSlide;
+dots.forEach((dot, i) => {
+  dot.onclick = () => {
+    index = i;
+    showSlide(index);
+  };
+});
 
-// Tự động chạy slide sau mỗi 3 giây
-setInterval(() => {
-  nextSlide();
-}, 3000);
+showSlide(index);
+setInterval(nextSlide, 3000);

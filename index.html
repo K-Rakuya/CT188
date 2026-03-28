@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi-vn">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MixDrink</title>
+    <title>Drite</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="pages/home/home.css">
     <script src="pages/home/home.js" defer></script>
     <script src="js/components/nav.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/assets/icons/fav.png">
 </head>
 
 <body>
@@ -43,24 +41,14 @@
                     <div id="avatar-wrapper" style="position: relative;">
                         <a href="/pages/Account/account.html"><img src="/assets/Avatar/avatar.png" alt="Avatar"></a>
 
-                        <div id="avatar-dropdown" class="dropdown-glass">
-                            <a href="/pages/account/account.html">Profile</a>
-                            <a href="#" id="logout-btn" class="text-danger">Logout</a>
+                        <div id="avatar-dropdown" class="dropdown-menu">
+                            <a href="/pages/account/account.html" class="dropdown-item">Profile</a>
+                            <a href="#" id="logout-btn" class="dropdown-item text-danger">Logout</a>
                         </div>
                     </div>
                 </div>
-                <button id="hamburger-btn" class="flex-center hidden"
-                    style="background: transparent; border: none; font-size: 24px; cursor: pointer; color: #333;">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
             </div>
         </nav>
-        <div id="dropdown-menu-links" class="dropdown-glass">
-            <a href="/index.html">Home</a>
-            <a href="/pages/products/products.html">Products</a>
-            <a href="/pages/promotion/promotion.html">Promotion</a>
-            <a href="/pages/information/information.html">Information</a>
-        </div>
     </header>
     <main id="main" class="flex-center flex-col row-gap">
         <div id="main-banner-wrapper" class="radius-all-md flyIn">
@@ -191,5 +179,4 @@
         </div>
     </footer>
 </body>
-
 </html>

@@ -3,30 +3,18 @@
         "bannerUrl": "assets/data/home/banner1.jpg",
         "itemUrl": "/assets/data/home/item1.png", 
         "title": "Sữa Tươi Đường Đen",
-        "Description": "Hòa quyện sữa tươi nguyên bản và trân châu đường đen",
-        "oldPrice": "55.000",
-        "newPrice": "49.000",
-        "name": "Sữa Tươi Đường Đen",
-        "img": "item1.png"
+        "Description": "Hòa quyện sữa tươi nguyên bản và trân châu đường đen"
     },
     {
         "bannerUrl": "assets/data/home/banner2.jpg",
         "itemUrl": "/assets/data/home/item2.png",
         "title": "Hồng Trà Trân Châu",
-        "Description": "Cốt hồng trà đậm đà truyền thống kết hợp trân châu đen dai giòn béo ngậy.",
-        "oldPrice": "55.000",
-        "newPrice": "49.000",
-        "name": "Hồng Trà Trân Châu",
-        "img": "item2.png"
+        "Description": "Cốt hồng trà đậm đà truyền thống kết hợp trân châu đen dai giòn béo ngậy."
     },
     {
         "bannerUrl": "assets/data/home/banner3.jpg",
         "itemUrl": "/assets/data/home/item3.png",
         "title": "Trà Sữa Xoài Tươi",
-        "Description": "Thanh mát vị xoài hạt lựu ngọt lịm cùng trà sữa trái cây giải nhiệt sảng khoái.",
-        "oldPrice": "55.000",
-        "newPrice": "49.000",
-        "name": "Trà Sữa Xoài Tươi",
-        "img": "item3.png"
+        "Description": "Thanh mát vị xoài hạt lựu ngọt lịm cùng trà sữa trái cây giải nhiệt sảng khoái."
     }
 ]
