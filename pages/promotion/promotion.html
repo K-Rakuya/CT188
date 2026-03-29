@@ -1,344 +1,178 @@
 <!DOCTYPE html>
-
 <html lang="vi">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Deal Hời Mỗi Ngày</title>
+    <title>Ưu đãi bất ngờ - MIXDRINK</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="promotion.css">
-    <script src="promotion.js" defer></script>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-
-
-    <nav class="navbar">
-
+    <header class="navbar">
         <div class="nav-container">
-
             <div class="nav-logo">
-
-                <img src="https://cdn-icons-png.flaticon.com/512/924/924514.png" alt="Logo">
-
-                <span>MIXI COFFEE</span>
-
+                <a href="../../index.html" class="logo-link">
+                    <img src="images/logo.png" alt="Logo">
+                    <span>MIXDRINK</span>
+                </a>
             </div>
-
-
 
             <div class="nav-search">
-
-                <input type="text" placeholder="Tìm kiếm sản phẩm...">
-
+                <input type="text" id="searchInput" placeholder="Tìm kiếm ưu đãi...">
                 <button><i class="fa-solid fa-magnifying-glass"></i></button>
-
             </div>
-
-
 
             <ul class="nav-menu">
-
-                <li><a href="/index.html" class="active">Trang chủ</a></li>
-
-                <li><a href="/pages/products/products.html">Sản phẩm</a></li>
-
-                <li><a href="/pages/cart/cart.html">Giỏ hàng</a></li>
-
-                <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
-
+                <li><a href="../../index.html" class="nav-link">Trang chủ</a></li>
+                <li><a href="../products/products.html" class="nav-link">Sản phẩm</a></li>
+                <li><a href="promotion.html" class="nav-link active">Khuyến mãi</a></li>
+                <li><a href="../cart/cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="../Account/account.html" class="nav-link user-avatar"><i
+                            class="fa-solid fa-circle-user"></i></a></li>
             </ul>
-
         </div>
-
-    </nav>
-
-
+    </header>
 
     <section class="banner-section">
-
         <div class="banner-content">
-
-            <span class="banner-tag">HOT DEAL</span>
-
-            <h1>SỮA TƯƠI ĐƯỜNG ĐEN</h1>
-
-            <p>Hòa quyện sữa tươi nguyên bản và trân châu đường đen thủ công</p>
-
+            <span class="banner-tag">SPECIAL OFFER</span>
+            <h1>THƯỞNG THỨC VỊ NGUYÊN BẢN</h1>
+            <p>Ưu đãi độc quyền dành riêng cho khách hàng MIXDRINK trong tháng này</p>
             <div class="banner-buttons">
-
-                <button class="btn-primary">SĂN NGAY DEAL 20%</button>
-
-                <button class="btn-outline">TÌM HIỂU THÊM</button>
-
+                <button class="btn-primary" onclick="window.location.href='../products/products.html'">MUA NGAY</button>
+                <button class="btn-outline" onclick="giveRandomGift()">
+                    <i class="fa-solid fa-gift"></i> NHẬN QUÀ BẤT NGỜ
+                </button>
             </div>
-
         </div>
-
     </section>
 
-
-
-    <div class="main-layout container">
+    <main class="main-layout container">
 
         <aside class="sidebar">
-
-            <div class="sidebar-header">
-
-                <i class="fa-solid fa-bars"></i> DANH MỤC SẢN PHẨM
-
-            </div>
-
+            <div class="sidebar-header"><i class="fa-solid fa-filter"></i> LỌC ƯU ĐÃI</div>
             <ul class="sidebar-menu">
-
-                <li class="has-submenu">
-
-                    <span><i class="fa-solid fa-percentage"></i> KHUYẾN MÃI SỐC</span>
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-                    <ul class="submenu">
-
-                        <li><a href="#">Mua 1 Tặng 1</a></li>
-
-                        <li><a href="#">Giảm giá 20%</a></li>
-
-                        <li><a href="#">Combo Tiết Kiệm</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li class="has-submenu">
-
-                    <span><i class="fa-solid fa-mug-hot"></i> CÀ PHÊ TRUYỀN THỐNG</span>
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-                    <ul class="submenu">
-
-                        <li><a href="#">Cà Phê Đen</a></li>
-
-                        <li><a href="#">Cà Phê Sữa</a></li>
-
-                        <li><a href="#">Bạc Xỉu</a></li>
-
-                        <li><a href="#">Cà Phê Muối</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li class="has-submenu">
-
-                    <span><i class="fa-solid fa-leaf"></i> TRÀ TRÁI CÂY</span>
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-                    <ul class="submenu">
-
-                        <li><a href="#">Trà Đào Cam Sả</a></li>
-
-                        <li><a href="#">Trà Vải Sen</a></li>
-
-                        <li><a href="#">Trà Dâu Đông Du</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li class="has-submenu">
-
-                    <span><i class="fa-solid fa-blender"></i> ĐÁ XAY SPECIAL</span>
-
-                    <i class="fa-solid fa-chevron-right"></i>
-
-                    <ul class="submenu">
-
-                        <li><a href="#">Matcha Đá Xay</a></li>
-
-                        <li><a href="#">Cookie Cream</a></li>
-
-                    </ul>
-
-                </li>
-
-                <li><span>SỮA CHUA & MACCHIATO</span><i class="fa-solid fa-chevron-right"></i></li>
-
-                <li><span>BÁNH NGỌT NHÀ LÀM</span><i class="fa-solid fa-chevron-right"></i></li>
-
+                <li onclick="filterPromo('all')">Tất cả khuyến mãi <i class="fa-solid fa-chevron-right"></i></li>
+                <li onclick="filterPromo('HOT')">Mua 1 Tặng 1 <i class="fa-solid fa-chevron-right"></i></li>
+                <li onclick="filterPromo('-20%')">Giảm giá 20% <i class="fa-solid fa-chevron-right"></i></li>
+                <li onclick="filterPromo('FREEZE')">Ưu đãi Freeze <i class="fa-solid fa-chevron-right"></i></li>
             </ul>
-
         </aside>
 
-
-
         <section class="content-wrapper">
+            <div class="promo-grid" id="promoGrid">
 
-            <div class="breadcrumb">
-
-                <a href="/index.html">Trang chủ</a> / <span>Khuyến mãi</span>
-
-            </div>
-
-
-
-            <div class="promo-grid">
-
-                <div class="card">
-
+                <article class="card" data-type="HOT">
                     <div class="promo-badge">HOT</div>
-
                     <div class="image-box">
-
-                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500" alt="Cafe">
-
+                        <img src="images/cfsua.jpg" alt="Cafe Sữa">
                     </div>
-
                     <div class="card-body">
-
-                        <div class="card-title">MUA 1 TẶNG 1 - THƯỞNG THỨC CÀ PHÊ SÁNG</div>
-
-                        <button class="btn-detail">Xem chi tiết</button>
-
+                        <h3>MUA 1 TẶNG 1 CAFE SỮA</h3>
+                        <p>Áp dụng cho khung giờ vàng 7h-9h sáng hằng ngày.</p>
+                        <button class="btn-detail"
+                            onclick="openPromo('MUA 1 TẶNG 1', 'images/cfsua.jpg', 'Chương trình áp dụng khi mua Cafe Đen/Sữa size L, tặng ngay 1 ly cùng loại.')">Chi
+                            tiết</button>
                     </div>
+                </article>
 
-                </div>
-
-
-
-                <div class="card">
-
+                <article class="card" data-type="-20%">
                     <div class="promo-badge">-20%</div>
-
                     <div class="image-box">
-
-                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=500" alt="Cafe">
-
+                        <img src="images/caphemuoi.jpg" alt="Cafe Muối">
                     </div>
-
                     <div class="card-body">
-
-                        <div class="card-title">ƯU ĐÃI GIẢM GIÁ 20% CÀ PHÊ MUỐI MỚI</div>
-
-                        <button class="btn-detail">Xem chi tiết</button>
-
+                        <h3>GIẢM 20% CÀ PHÊ MUỐI</h3>
+                        <p>Thưởng thức hương vị đậm đà với mức giá cực ưu đãi.</p>
+                        <button class="btn-detail"
+                            onclick="openPromo('GIẢM 20% CAFE MUỐI', 'images/caphemuoi.jpg', 'Giảm trực tiếp 20% trên tổng hóa đơn khi đặt từ 2 ly Cà phê muối.')">Chi
+                            tiết</button>
                     </div>
+                </article>
 
-                </div>
-
-
-
-                <div class="card">
-
-                    <div class="promo-badge">GIFT</div>
-
+                <article class="card" data-type="FREEZE">
+                    <div class="promo-badge">HOT</div>
                     <div class="image-box">
-
-                        <img src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=500" alt="Cafe">
-
+                        <img src="images/freeze.png" alt="Freeze">
                     </div>
-
                     <div class="card-body">
-
-                        <div class="card-title">TẶNG KÈM BÁNH NGỌT KHI MUA COMBO</div>
-
-                        <button class="btn-detail">Xem chi tiết</button>
-
+                        <h3>FREE TOPPING ĐÁ XAY</h3>
+                        <p>Thêm thạch/trân châu miễn phí cho dòng Freeze.</p>
+                        <button class="btn-detail"
+                            onclick="openPromo('FREE TOPPING', 'images/freeze.png', 'Miễn phí 01 loại topping tự chọn khi mua Matcha Freeze hoặc Choco Freeze.')">Chi
+                            tiết</button>
                     </div>
-
-                </div>
+                </article>
 
             </div>
-
         </section>
-
-    </div>
-
-
+    </main>
 
     <footer class="footer">
-
         <div class="footer-container">
-
             <div class="footer-col">
-
-                <h3>Mixi Coffee.</h3>
-
+                <h3>MIXDRINK</h3>
                 <p>Khởi nguồn từ đam mê, mang đến trải nghiệm tuyệt vời cho hành trình của bạn.</p>
-
                 <div class="social-links">
-
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
-
                     <a href="#"><i class="fa-brands fa-tiktok"></i></a>
-
                 </div>
-
             </div>
 
             <div class="footer-col">
-
                 <h3>Liên Kết</h3>
-
                 <ul>
-
-                    <li><a href="#">Trang Chủ</a></li>
-
-                    <li><a href="#">Sản Phẩm</a></li>
-
-                    <li><a href="#">Về Chúng Tôi</a></li>
-
+                    <li><a href="../../index.html">Trang Chủ</a></li>
+                    <li><a href="../products/products.html">Sản Phẩm</a></li>
+                    <li><a href="../information/information.html">Về Chúng Tôi</a></li>
                 </ul>
-
             </div>
 
             <div class="footer-col">
-
                 <h3>Liên Hệ</h3>
-
                 <ul>
-
-                    <li><i class="fa-solid fa-location-dot"></i> 123 Đường Coffee, TP.HCM</li>
-
+                    <li><i class="fa-solid fa-location-dot"></i> 123 Đường ABC, TP.HCM</li>
                     <li><i class="fa-solid fa-phone"></i> +84 123 456 789</li>
-
                 </ul>
-
             </div>
 
             <div class="footer-col">
-
                 <h3>Góp Ý</h3>
-
-                <form class="feedback-form">
-                    <input type="text" placeholder="Tên của bạn">
-                    <textarea placeholder="Lời nhắn..."></textarea>
-                    <button type="submit">Gửi <i class="fa-solid fa-paper-plane"></i></button>
+                <form id="feedbackForm" class="feedback-form">
+                    <input type="text" placeholder="Tên của bạn" required>
+                    <textarea placeholder="Lời nhắn..." required></textarea>
+                    <button type="submit">Gửi tin nhắn <i class="fa-solid fa-paper-plane"></i></button>
                 </form>
-
             </div>
-
         </div>
-
         <div class="footer-bottom">
-
-            <p>&copy; 2026 Mixi Coffee. All rights reserved.</p>
-
+            <p>&copy; 2026 MIXDRINK. All rights reserved.</p>
         </div>
-
     </footer>
 
+    <div id="promoModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePromo()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="Detail">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDesc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    <script src="promotion.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 export function isLoggedIn() {
-    const user = localStorage.getItem('users');
+    const user = localStorage.getItem('loggedInId');
     if (user == null)  {
         return false;
     }

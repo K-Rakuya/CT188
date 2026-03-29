@@ -139,7 +139,7 @@ let banner_items_img = [
     "/assets/data/home/item3.png",
 ];
 
-// lấy dữ liệu JSON
+// Đi lấy dữ liệu JSON
 fetch("assets/data/home/banner.json")
     .then(res => res.json())
     .then(data => {
@@ -255,26 +255,6 @@ function change_banner_item(bannerIndex) {
 }
 
 
-const bannerItemContainer = document.getElementById("banner-item");
-
-if (bannerItemContainer) {
-    bannerItemContainer.addEventListener('click', (e) => {
-        if (e.target && e.target.id === "banner-buy-btn") {
-            const selectedItem = banner_items[bannerIndex];
-
-            if (selectedItem) {
-                addToCart(selectedItem);
-                setTimeout(() => {
-                    e.target.style.transform = "scale(1)";
-                }, 100);
-                // showToast("Lỗi: Logic chưa hoàn thiện!", "error");
-            } else {
-                showToast("Lỗi: Logic chưa hoàn thiện!", "error");
-            }
-        }
-    });
-}
-
 
 // Add banner item
 
@@ -315,8 +295,8 @@ function renderItems(grid_items) {
                     </div>
                     <h3>${item.name}</h3>
                     <div class="relative flex gap-4 price">
-                        <span class="before-sale">${item.oldPrice}đ</span>
-                        <span class="after-sale">${item.newPrice}d</span>
+                        <span class="before-sale">${item.oldPrice}$</span>
+                        <span class="after-sale">${item.newPrice}$</span>
                     </div>
                     <div class="flex gap-12" style="width: 85%;">
                         <button class="item-buy-btn btn-background radius-all-sm btn-shadow" style="font-weight: 600;" data-name="${item.name}">Buy</button>
@@ -346,7 +326,7 @@ grid.addEventListener("mouseover", e => {
 grid.addEventListener("mouseleave", e => {
     const btn = e.target.closest(".item-buy-btn");
     if (!btn) return;
-    if (btn.classList.contains("success-added") || btn.classList.contains("failed-add")) return;
+    if (btn.classList.contains("success-added")) return;
     btn.textContent = "Buy";
 }, true);
 
@@ -406,27 +386,16 @@ grid.addEventListener("click", (e) => {
     if (e.target.classList.contains("item-buy-btn")) {
         const name = e.target.getAttribute("data-name");
         const selectedItem = grid_items.find(i => i.name === name);
-        if (addToCart(selectedItem)) {
-            e.target.textContent = "Added ✓";
-            e.target.classList.add("success-added");
-            e.target.style.background = "#38d75d";
+        addToCart(selectedItem);
+        e.target.textContent = "Added ✓";
+        e.target.classList.add("success-added");
+        e.target.style.background = "#38d75d"; 
 
-            setTimeout(() => {
-                e.target.classList.remove("success-added");
-                e.target.style.background = "";
-                e.target.textContent = "Buy";
-            }, 1000);
-        } else {
-            e.target.textContent = "Failed ✓";
-            e.target.classList.add("failed-add");
-            e.target.style.background = "#38d75d";
-
-            setTimeout(() => {
-                e.target.classList.remove("failed-add");
-                e.target.style.background = "";
-                e.target.textContent = "Buy";
-            }, 1000);
-        }
+        setTimeout(() => {
+            e.target.classList.remove("success-added");
+            e.target.style.background = ""; 
+            e.target.textContent = "Buy";
+        }, 1000);
     }
 });
 
@@ -445,7 +414,10 @@ function showToast(message, type = 'success') {
 
     const icon = type === 'success' ? '<i class="fa-solid fa-circle-check"></i>' : '<i class="fa-solid fa-circle-exclamation"></i>';
 
-    toast.innerHTML = `${icon}<span class="toast-msg">${message}</span>`;
+    toast.innerHTML = `
+        ${icon}
+        <span class="toast-msg">${message}</span>
+    `;
     toastContainer.appendChild(toast);
     setTimeout(() => toast.classList.add('show'), 10);
 
@@ -456,7 +428,6 @@ function showToast(message, type = 'success') {
 }
 
 function addToCart(product) {
-    let addSuccess = 0;
     let currentUser = getCurrentUser();
 
     if (!currentUser) {
@@ -471,7 +442,6 @@ function addToCart(product) {
 
     if (existingProduct) {
         existingProduct.quantity += 1;
-        addSuccess = 1;
     } else {
         cart.push({
             name: product.name,
@@ -480,12 +450,10 @@ function addToCart(product) {
             oldPrice: Number(product.oldPrice),
             quantity: 1
         });
-        addSuccess = 1;
     }
 
     saveCurrentUser(currentUser);
     showToast(`Đã thêm <b>${product.name}</b> vào giỏ!`, "success");
-    return addSuccess;
 }
 
 // Filter Logic
@@ -558,8 +526,6 @@ logOutBtn.addEventListener('click', () => {
     localStorage.removeItem("loggedInId");
     isLoged = 0;
     setLoggedUI(isLoged);
-    if (avatarPreview) avatarPreview.src = "/assets/Avatar/avatar.png";
-    location.reload();
 })
 
 // Cart Btn
@@ -594,8 +560,8 @@ function showProductDetail(product) {
                     <h2>${product.name}</h2>
                     <p class="detail-desc">${product.Description}</p>
                     <div class="detail-pricing">
-                        <span class="old">${product.oldPrice}đ</span>
-                        <span class="new">${product.newPrice}đ</span>
+                        <span class="old">${product.oldPrice}$</span>
+                        <span class="new">${product.newPrice}$</span>
                     </div>
                     <button class="add-to-cart-big" data-name="${product.name}">Thêm vào giỏ hàng</button>
                 </div>
@@ -619,11 +585,11 @@ function showProductDetail(product) {
         addToCart(product);
         const originalText = bigBuyBtn.textContent;
         bigBuyBtn.textContent = "Đã thêm vào giỏ ✓";
-        bigBuyBtn.style.background = "#28a745";
+        bigBuyBtn.style.background = "#28a745"; 
 
         setTimeout(() => {
             bigBuyBtn.textContent = originalText;
-            bigBuyBtn.style.background = "";
+            bigBuyBtn.style.background = ""; 
         }, 1500);
     };
 }
@@ -635,45 +601,8 @@ grid.addEventListener('click', (e) => {
 
     if (card && !buyBtn) {
         const productName = card.querySelector('h3').innerText;
-        // Tìm dữ liệu sản phẩm từ mảng grid_items
+        // Tìm dữ liệu sản phẩm từ mảng grid_items của bạn
         const product = grid_items.find(item => item.name === productName);
         if (product) showProductDetail(product);
-    }
-});
-
-// Avatar logic
-
-document.addEventListener('DOMContentLoaded', () => {
-    const avatarPreview = document.querySelector("#avatar-wrapper img"); 
-    let currentUser = getCurrentUser();
-    if (currentUser && currentUser.avatar && avatarPreview) {
-        avatarPreview.src = currentUser.avatar;
-    }
-});
-
-// Nav mobile
-
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const dropdownMenuLinks = document.getElementById('dropdown-menu-links');
-
-    if (hamburgerBtn && dropdownMenuLinks) {
-        hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdownMenuLinks.classList.toggle('show');
-            const icon = hamburgerBtn.querySelector('i');
-            if (dropdownMenuLinks.classList.contains('show')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars';
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!dropdownMenuLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-                dropdownMenuLinks.classList.remove('show');
-                hamburgerBtn.querySelector('i').className = 'fa-solid fa-bars';
-            }
-        });
     }
 });

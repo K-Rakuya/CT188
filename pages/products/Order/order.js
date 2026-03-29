@@ -1,71 +1,82 @@
 import { isLoggedIn } from "../CheckUser/isLogged.js";
-
-let currentProduct = null;
+let currentCard = null;
 
 export function add_Event_order_btn(product_grid) {
-    const orderForm = document.querySelector("#order-form");
-    if (!product_grid || !orderForm) return;
+  const List_of_cards = product_grid.querySelectorAll(".product-card");
+  const order_table = document.querySelector("#order-form");
 
-    product_grid.addEventListener("click", (e) => {
-        const btn = e.target.closest(".btn-order, .item-buy-btn");
-        if (!btn) return;
+  List_of_cards.forEach(card => {
+    const btn_order = card.querySelector(".btn-order");
 
-        e.preventDefault();
-        if (!isLoggedIn()) return window.location.href = "/pages/login/login.html";
+    btn_order.addEventListener("click", () => {
+      if (!isLoggedIn()) {
+        window.location.href = "Register/register.html";
+      } 
+      else {
+        order_table.classList.add("toggle");
+        currentCard = card;
+        console.log(currentCard)
 
-        const card = btn.closest(".item-card, .product-card");
-        currentProduct = {
-            name: card.querySelector("h3, .pd-name").textContent.trim(),
-            img: card.querySelector("img").getAttribute("src").replace("/assets/images/", ""),
-            newPrice: card.querySelector(".after-sale, .price").textContent.replace(/[^0-9.]/g, ""),
-            oldPrice: card.querySelector(".before-sale")?.textContent.replace(/[^0-9.]/g, "") || 0
-        };
-        orderForm.classList.add("toggle");
-        const containerImg = orderForm.querySelector(".img-order-form");
-        if (containerImg) containerImg.innerHTML = `<img src="/assets/images/${currentProduct.img}" style="max-width: 100px; border-radius: 8px;">`;
+        let img = card.querySelector("img").src;   
+        let container_img = order_table.querySelector(".img-order-form");
+        container_img.innerHTML = `<img src=${img}>`;
+      }
     });
-    orderForm.onsubmit = (e) => {
-        e.preventDefault();
-        const qty = parseInt(new FormData(orderForm).get("quantity")) || 1;
+  });
 
-        if (addToCart(currentProduct, qty)) {
-            orderForm.classList.remove("toggle");
-            orderForm.reset();
-        }
-    };
+  order_table.onsubmit = (e) => {
+    //Ngăn reload trang
+    e.preventDefault();
+
+    //lấy dữ liệu từ form, trả về 1 object
+    const data = new FormData(order_table);
+    const quantity = data.get("quantity");
+    console.log(quantity)
+
+    addProduct(currentCard, quantity);
+
+    alert("ĐÃ THÊM SẢN PHẨM VÀO GIỎ HÀNG");
+
+    order_table.classList.remove("toggle");
+  };
 }
 
-// --- QUẢN LÝ USER & GIỎ HÀNG 
 
-const getStorage = (key) => JSON.parse(localStorage.getItem(key)) || [];
+function addProduct(card, number){
+  const quantity = Number(number);
+  let list_products = JSON.parse(localStorage.getItem('products')) || [];
+  const id = card.id;
+  console.log(id);
 
-function addToCart(product, quantityToAdd = 1) {
-    const loggedInId = localStorage.getItem('loggedInId');
-    const users = getStorage('users');
-    const user = users.find(u => u.id === loggedInId);
+  let index_pd = existence(id, list_products);
+  if(index_pd != -1){
+    list_products[index_pd].quantity += quantity;
+    localStorage.setItem("products", JSON.stringify(list_products));
+    return;
+  }
 
-    if (!user) {
-        if (window.showToast) showToast("Vui lòng đăng nhập!", "error");
-        return false;
+  let name = card.querySelector(".pd-name").textContent;
+  let price = card.querySelector(".price").textContent;
+  price = Number(price.replace(/\D/g, ""));
+  let image = card.querySelector("img").src;       
+
+  const product = {
+    id: id,
+    name: name,
+    price: price,
+    image: image,
+    quantity: quantity
+  }
+  
+  list_products.push(product);
+  localStorage.setItem("products", JSON.stringify(list_products));
+}
+
+function existence(id_product, list_product){
+  for(let i = 0; i < list_product.length; i++){
+    if(list_product[i].id === id_product){
+      return i;
     }
-
-    if (!user.cart) user.cart = [];
-    const existing = user.cart.find(item => item.name === product.name);
-
-    if (existing) {
-        existing.quantity += quantityToAdd;
-    } else {
-        user.cart.push({ ...product, 
-            newPrice: Number(product.newPrice), 
-            oldPrice: Number(product.oldPrice), 
-            quantity: quantityToAdd 
-        });
-    }
-
-    localStorage.setItem('users', JSON.stringify(users));
-    
-    if (window.showToast) showToast(`Đã thêm <b>${product.name}</b>`, "success");
-    else alert("Đã thêm vào giỏ hàng!");
-    
-    return true;
+  }
+  return -1;
 }

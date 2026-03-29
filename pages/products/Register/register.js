@@ -25,15 +25,15 @@ button_register.addEventListener('click',(e)=>{
             alert('Email không hợp lệ, vui lòng nhập lại');
         }
         else{
-            const users = {
+            const user = {
                 username: username,
                 password: password,
                 email: email
             }
 
-            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem('user', JSON.stringify(user));
             alert('Đăng ký thành công');
-            window.location.href = "../products.html";
+            window.location.href = "../index.html";
         }
     }
 } )

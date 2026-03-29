@@ -5,9 +5,9 @@ const Card = document.getElementById("button-card");
 const Avt = document.getElementById("avatar");
 const login = document.getElementById("login");
 const register = document.getElementById("register");
-let isLoged = 0;
 
 const auth = (() => {
+    let isLoged = 0;
 
     function updateUI() {
         setLoggedUI(isLoged);
@@ -24,15 +24,11 @@ const auth = (() => {
     };
 })();
 
-
-login.addEventListener("click", e => {
-    e.preventDefault();
-    window.location.href = "pages/login/login.html";
-});
-
-register.addEventListener("click", e => {
-    e.preventDefault();
-    window.location.href = "pages/register/register.html";
+[login, register].forEach(btn => {
+    btn.addEventListener("click", e => {
+        e.preventDefault();
+        auth.login();
+    });
 });
 
 
@@ -48,12 +44,6 @@ function setLoggedUI(isLoged) {
         Card.classList.add("hidden");
     }
 }
-
-window.addEventListener('load', () => {
-    let currentUser = getCurrentUser();
-    if (currentUser) isLoged = 1;
-    setLoggedUI(isLoged);
-})
 
 // Search 
 const searchBtn = document.getElementById("searchBtn");
@@ -130,31 +120,6 @@ function loadUserData() {
     }
 }
 
-// Hàm tạo Toast Notification
-function showToast(message, type = 'success') {
-    let toastContainer = document.getElementById('toast-container');
-    if (!toastContainer) {
-        toastContainer = document.createElement('div');
-        toastContainer.id = 'toast-container';
-        document.body.appendChild(toastContainer);
-    }
-
-    // Tạo thẻ div
-    const toast = document.createElement('div');
-    toast.classList.add('custom-toast', `toast-${type}`);
-
-    const icon = type === 'success' ? '<i class="fa-solid fa-circle-check"></i>' : '<i class="fa-solid fa-circle-exclamation"></i>';
-
-    toast.innerHTML = `${icon}<span class="toast-msg">${message}</span>`;
-    toastContainer.appendChild(toast);
-    setTimeout(() => toast.classList.add('show'), 10);
-
-    setTimeout(() => {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
-
 userForm.addEventListener("submit", function (e) {
     e.preventDefault();
     let currentUser = getCurrentUser();
@@ -167,7 +132,7 @@ userForm.addEventListener("submit", function (e) {
 
     saveCurrentUser(currentUser);
 
-    showToast("Đã lưu thông tin người dùng", 'success')
+    alert("Đã lưu thông tin tài khoản thành công!");
 
     // Cập nhật lại UI hiển thị tên
     const shortInfoName = document.querySelector("#short-info h1");
@@ -209,99 +174,3 @@ function saveCurrentUser(updatedUser) {
     // Lưu lại
     localStorage.setItem('users', JSON.stringify(users));
 }
-
-// upload avatar logic
-
-const avatarContainer = document.getElementById("avatar-container");
-const avatarUpload = document.getElementById("avatar-upload");
-const avatarPreview = avatarContainer.querySelector("img");
-const navAvatar = document.querySelector("#avatar-wrapper > a > img");
-
-avatarContainer.addEventListener("click", () => {
-    avatarUpload.click();
-});
-
-avatarUpload.addEventListener("change", function (event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-        const base64Image = e.target.result;
-        avatarPreview.src = base64Image;
-        navAvatar.src = base64Image;
-
-
-        // Lưu vào thông tin của user đang đăng nhập
-        let user = getCurrentUser() || {};
-        user.avatar = base64Image;
-
-        try {
-            saveCurrentUser(user);
-        } catch (error) {
-            alert("Ảnh quá nặng, không thể lưu vào localStorage!");
-        }
-    };
-
-    reader.readAsDataURL(file);
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    let currentUser = getCurrentUser();
-    if (currentUser) {
-        avatarPreview.src = currentUser.avatar;
-        navAvatar.src = currentUser.avatar;
-    }
-})
-
-// Logout Btn
-
-const logOutBtn = document.querySelector("#logout-btn");
-logOutBtn.addEventListener('click', () => {
-    localStorage.removeItem("loggedInId");
-    isLoged = 0;
-    setLoggedUI(isLoged);
-})
-
-
-// Address logic
-const deleteAddress = document.querySelector("#user-information-form > div:nth-child(4) > div > div > button");
-
-deleteAddress.addEventListener('click', () => {
-    addressInput.value = "";
-})
-
-
-// Nav mobile
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const dropdownMenuLinks = document.getElementById('dropdown-menu-links');
-
-    if (hamburgerBtn && dropdownMenuLinks) {
-        hamburgerBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dropdownMenuLinks.classList.toggle('show');
-            const icon = hamburgerBtn.querySelector('i');
-            if (dropdownMenuLinks.classList.contains('show')) {
-                icon.className = 'fa-solid fa-xmark';
-            } else {
-                icon.className = 'fa-solid fa-bars';
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!dropdownMenuLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-                dropdownMenuLinks.classList.remove('show');
-                hamburgerBtn.querySelector('i').className = 'fa-solid fa-bars';
-            }
-        });
-    }
-});
-
-// Cart Btn
-
-const cartBtn = document.querySelector("#button-cart_img");
-cartBtn.addEventListener('click', () => {
-    window.location.href = "/pages/cart/cart.html"
-})

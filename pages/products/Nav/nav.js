@@ -8,12 +8,10 @@ burger_btn.addEventListener('click', () => {
 const user_icon = document.querySelector(".user-cart");
 user_icon.addEventListener("click", ()=>{
   if(isLoggedIn()){
-    window.location.href = "/pages/Account/account.html";
+    window.location.href = "/pages/account/account.html";
   }
   else{
     window.location.href ="/pages/login/login.html";
   }
 })
-
-
 
