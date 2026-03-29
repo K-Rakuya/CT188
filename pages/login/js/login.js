@@ -1,80 +1,60 @@
-
-
-// const usernameLogin = localStorage.getItem('account-Name');
-// const passwdLogin = localStorage.getItem('account-Passwd');
-
-// const username = document.querySelector("#username");
-// const password = document.querySelector("#password");
-// const form = document.querySelector(".form-login");
-
-// localStorage.setItem('login' ,window.location.href );
-
-// const authentication = () => {
-
-//     if(username.value === usernameLogin && password.value === passwdLogin){
-//       localStorage.setItem('isLoggedIn','true');
-//       localStorage.setItem('username' , usernameLogin);
-//         alert("đăng nhập thành công");
-//         const redirect = localStorage.getItem('redirectURL');
-//         localStorage.removeItem('redirectURL')
-//         if(redirect) window.location.href = redirect;
-//         window.location.href = '/vohangtemp/index.html'
-
-//     }else{
-//         alert("đăng nhập không thành công! sai tên hoặc sai passwd");
-//     }
-// }
-
-
-// if(form){
-//     form.addEventListener('submit',(e)=>{
-//         e.preventDefault(); 
-//         authentication();
-//     });
-// }
-
-// Hàm lấy danh sách tất cả users
+//LẤY DỮ LIỆU TỪ LOCALSTORAGE
 function getAllUsers() {
+    // Lấy chuỗi JSON từ localStorage
     return JSON.parse(localStorage.getItem('users')) || [];
 }
 
+// Lấy các phần tử giao diện cần thiết
 const form = document.querySelector(".form-login");
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
 
+/*HÀM XỬ LÝ XÁC THỰC */
 const authentication = () => {
-    const users = getAllUsers();
-    const valUser = usernameInput.value.trim();
-    const valPass = passwordInput.value.trim();
+    const users = getAllUsers(); // Lấy danh sách toàn bộ user đã đăng ký
+    const valUser = usernameInput.value.trim(); // Lấy tên đăng nhập/SĐT (xóa khoảng trắng thừa)
+    const valPass = passwordInput.value.trim(); // Lấy mật khẩu
 
-    // Tìm user có username (hoặc SĐT) và password khớp
+    // Dùng hàm để tìm 1 user duy nhất khớp với thông tin nhập vào
     const user = users.find(u =>
+        // Khớp Username HOẶC số điện thoại VÀ phải khớp đúng Mật khẩu
         (u.username === valUser || u.phone === valUser) && u.password === valPass
     );
 
     if (user) {
+        // Nếu tìm thấy: Lưu ID của user vào localStorage đe đánh dấu "Đã đăng nhập"
         localStorage.setItem('loggedInId', user.id);
-        alert("Đăng nhập thành công!");
-        window.location.href = '/index.html'; // Phi thẳng về trang chủ
+        
+        alert("Đăng nhập thành công! Chào mừng Duy quay trở lại.");
+        
+        // Chuyển hướng về trang chủ
+        window.location.href = '/index.html'; 
     }
     else {
-        alert("Tài khoản/mật khẩu không khớp");
+        // Nếu không tìm thấy hoặc sai thông tin
+        alert("Tài khoản hoặc mật khẩu không đúng. Kiểm tra lại nhé!");
     }
 };
 
+//LẮNG NGHE SỰ KIỆN SUBMIT FORM 
 if (form) {
     form.addEventListener('submit', (e) => {
+        // Ngăn chặn hành động load lại trang
         e.preventDefault();
         authentication();
     });
 }
 
+/*TÍNH NĂNG ẨN/HIỆN MẬT KHẨU */
 const togglePassword = document.querySelector("#togglePassword");
 if (togglePassword) {
     togglePassword.addEventListener('click', () => {
+        // Kiểm tra loại input hiện tại, nếu là password thì đổi thành text và ngược lại
         const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
         passwordInput.setAttribute("type", type);
+        
+        // Thay đổi icon con mắt sang icon ổ khóa hoặc mắt gạch chéo
         togglePassword.classList.toggle("fa-eye");
-        togglePassword.classList.toggle("fa-lock");
+        togglePassword.classList.toggle("fa-lock"); 
     });
 }

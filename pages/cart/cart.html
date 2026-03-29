@@ -1,108 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Vỏ Hàng</title>
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/cart.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-   <div class="app-container ">
- 
-      <div class="main-content">
-         <header class="top-header">
-            <button class="mobile-menu-btn">
-               <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="nav-container" id="mobileNav">
-               <a class="nav-link" href="/index.html">Home</a>
-               <a class="nav-link" href="/pages/products/products.html">Product</a>
-               <a class="nav-link" href="/pages/promotion/promotion.html">Promotion</a>
-               <a class="nav-link" href="/pages/information/information.html">Contact</a>
+   <div class="app-container">
+      <!-- HEADER -->
+      <header class="top-header">
+         <button class="mobile-menu-btn">
+            <i class="fa-solid fa-bars"></i>
+         </button>
+         <nav class="nav-container" id="mobileNav">
+            <a class="nav-link" href="/index.html">Home</a>
+            <a class="nav-link" href="/pages/products/products.html">Product</a>
+            <a class="nav-link" href="/pages/promotion/promotion.html">Promotion</a>
+            <a class="nav-link" href="/pages/information/information.html">Contact</a>
+         </nav>
+         <div class="title">
             </div>
-            <div class="title">
-               <!-- <h1>Vỏ Hàng</h1> -->
-            </div>
-            <div class="header-user gap-10 flex">
-               <div class="header-avt gap-10 flex">
-                  <div class="avt-user">
-                     <img id="img-avt-user" src="" alt="">
-                  </div>
-                  <div class="log-out flex-collum">
-                     <div class="name-wrapper">
-                        <h3 id="name-user" class="name-user"></h3>
-                        <!-- <div class="name-tooltip">Bùi Nhựt Duy</div> -->
+         <div class="header-user gap-10 flex">
+            <div class="header-avt gap-10 flex">
+               <div class="avt-user">
+                  <img id="img-avt-user" src="" alt="">
+               </div>
+               <div class="log-out flex-collum">
+                  <div class="name-wrapper">
+                     <h3 id="name-user" class="name-user"></h3>
                      </div>
-                     <a href="#" class="action-user"></a>
-                  </div>
+                  <a href="#" class="action-user"></a>
                </div>
             </div>
-
-            <script src="js/nav.js"></script>
-         </header>
+         </div>
+         <script src="js/nav.js"></script>
+      </header>
+      <!-- MAIN -->
+      <main class="main">
+         <!-- CART EMPTY -->
          <div class="cart-empty hide">
-            <i class="iconcart-empty">
-
-            </i>
+            <i class="iconcart-empty"></i>
             <h1>Giỏ hàng trống</h1>
-            <span class="dmx">Không có sản phẩm nào trong giỏ hàng
-
-            </span>
+            <span class="dmx">Không có sản phẩm nào trong giỏ hàng</span>
             <a href="/index.html" class="btn-backhome">Về trang chủ</a>
-            <p class="note-help">Khi cần trợ giúp vui lòng gọi 
+            <p class="note-help">Khi cần trợ giúp vui lòng gọi
                <a style="color: #288ad6" href="">19312312</a>
-                hoặc 
+               hoặc
                <a style="color: #288ad6" href="tel:02836221060">312310</a> (8h00 - 21h30)
             </p>
          </div>
-
-
+         <!-- HAS CARD -->
          <div class="content">
+            <!-- HIỂN THỊ SẢN PHẨM CÓ TRONG VỎ HÀNG -->
             <div class="checkout-grid">
                <section class="cart-section card">
-                  <h3 class="card-title"><i class="fa-solid fa-cart-shopping"></i> Vỏ Hàng Của Bạn (<span
-                        id="total-items">0</span> Sản Phẩm)</h3>
+                  <h3 class="card-title">
+                     <i class="fa-solid fa-cart-shopping"></i> Vỏ Hàng Của Bạn (<span id="total-items">0</span> Sản Phẩm)
+                  </h3>
                   <div class="cart-list" id="cartList"></div>
                </section>
             </div>
-            <div class="payload">
-               <section class="summary-section">
-                  <!-- <div class="saving-alert">You are saving $103.00 on this order</div> -->
 
+            <!-- HIỂN THỊ PHẦN TIỀN -->
+            <aside class="payload">
+               <section class="summary-section">
                   <div class="order-details card">
                      <h3 class="hide" style="margin-bottom: 10px;">Tổng details</h3>
-                     <div class="detail-row "><span>Giá Gốc</span> <span id="total-price-old">0</span></div>
-                     <!-- <div class="detail-row "><span>Đã Giảm</span><span id="discount-sale">$0.00</span></div> -->
+                     <div class="detail-row">
+                        <span>Giá Gốc</span>
+                        <span id="total-price-old">0</span>
+                     </div>
+                     
                      <div class="coupon-section">
                         <div class="coupon-input-group">
-                           <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá...">
+                           <label for="coupon-code" class="sr-only">Nhập mã giảm giá</label> <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá...">
                            <button id="apply-coupon">Áp dụng</button>
                         </div>
                         <span class="coupon-msg"></span>
                      </div>
-                     <div class="detail-row hide discount"><span>Coupon discount</span> <span>-$0.00</span></div>
-                    
-                     <!-- <div class="detail-row hide free"><span>Delivery charges <span class="badge">Free</span></span> <span>-$5.00</span></div> -->
-                     <div class="kk">
+
+                     <div class="detail-row hide discount">
+                        <span>Coupon discount</span>
+                        <span>-$0.00</span>
+                     </div>
+
+                     <div class="summary-total">
                         <div class="detail-row total">
-                           <span id="total">Tổng Cộng</span> 
+                           <span id="total">Tổng Cộng</span>
                            <span id="total-price-new">$0.00</span>
                            <div class="save">
                               <span>Tiết Kiệm</span>
                               <span id="discount-sale">$0.0</span>
                            </div>
                         </div>
-                        <button id="btn-place" class="btn-primary  w-100">Đặt Hàng</button>
+                        <button id="btn-place" class="btn-primary w-100">Đặt Hàng</button>
                      </div>
                   </div>
                </section>
-            </div>
+            </aside>
          </div>
-      </div>
+      </main>
    </div>
    <script src="js/cart.js"></script>
    <script src="js/user_action.js"></script>

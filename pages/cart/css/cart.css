@@ -12,13 +12,32 @@
     margin-bottom: 5px;
     padding: 5px 5px 5px 0;
 }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 
 .container-item{
    padding: 1rem 0;
    border-bottom: 1px solid var(--border-color);
 }
+.detail-row.total{
+display: grid;
+grid-template-columns: 1fr 1fr;
+row-gap: 10px;
+font-size: 1.8rem;
+}
 
-
+#total-price-new{
+   text-align: end;
+}
 .container-item:last-child {
     border-bottom: none;
 }
@@ -40,7 +59,7 @@
 
 
 
-.price .current { font-weight: 700; font-size: 1.6rem; }
+.price .current { font-size: 130%; font-weight: bold;}
 .price .old { color: var(--text-gray); text-decoration: line-through; }
 
 
@@ -171,4 +190,30 @@
     flex-direction: column;
     align-items: flex-end; 
 
+}
+
+
+.btn-delete {
+    position: relative; 
+    color: #ff4d4f;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+font-size: 1.5rem;
+}
+
+/* Tạo vùng click ảo bằng Pseudo-element */
+.btn-delete::before {
+    content: ""; 
+    position: absolute;
+     /* Mở rộng vùng click ra xung quanh  */
+    top: -10px; 
+    bottom: -10px;
+    left: -15px;
+    right: -15px;
+
+    z-index: 1; 
 }

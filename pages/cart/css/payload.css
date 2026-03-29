@@ -1,15 +1,16 @@
-.payload{
+/* KHỐI BAO NGOÀI  */
+.payload {
     border-radius: 9px;
-   background-color: var(--bg-white);
-   border: 1px solid var(--border-color);
-   min-width: 287px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    min-width: 287px;
 }
 
-.content{
-   border-radius: 15px;
+.content {
+    border-radius: 15px;
 }
 
-
+/*  THÔNG BÁO & TRẠNG THÁI */
 .saving-alert {
     background-color: #e6f6ee;
     color: var(--success);
@@ -20,28 +21,44 @@
     margin-bottom: 2rem;
 }
 
+/* DÒNG CHI TIẾT  */
 .detail-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
-    
+    margin: 8px 0 1.5rem 0; 
+    font-size: 1.4rem;        
     color: var(--text-gray);
 }
 
-.detail-row.discount { color: var(--success); }
-.save {
-    display: none;
+.detail-row.discount { 
+    color: var(--success); 
 }
+
 .detail-row.total {
     border-top: 1px dashed var(--border-color);
     padding-top: 1.5rem;
     font-weight: 700;
-    justify-content: space-between;
     color: var(--text-dark);
-
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
 }
 
+/* CÁC THÀNH PHẦN CON TRONG DÒNG TIỀN */
+.price {
+    font-size: 1.6rem;
+}
 
+#total-price-new {
+    text-align: end;
+}
+
+.save {
+    color: #dc3545;
+    grid-column: span 2; /* Chiếm hết chiều ngang*/
+}
+
+/*NÚT BẤM CHÍNH (PRIMARY BUTTON) */
 .btn-primary {
     background-color: var(--primary);
     color: white;
@@ -51,30 +68,23 @@
     font-weight: 600;
     cursor: pointer;
     width: 100%;
-    height: 100%;
     font-size: 1.5rem;
-    transition: transform 0.5s ease;
+    transition: all 0.5s ease;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: transparent;
     color: #2A83E9;
-    border: 1px solid ;
-    box-shadow: 0 0 2rem rgba(29, 79, 245, 0.267);
-    transform:  translateY(1px);
+    border: 1px solid #2A83E9;
+    box-shadow: 0 0 2rem rgba(29, 79, 245, 0.27);
+    transform: translateY(1px);
 }
-.gift-card { background-color: #eef2ff; margin-top: 2rem;}
 
-
-
-
-
-/* input coupon */
-/* Container cho phần mã giảm giá */
+/* PHẦN MÃ GIẢM GIÁ (COUPON) */
 .coupon-section {
     margin: 1rem 0;
     padding-top: 1rem;
     border-top: 1px dashed var(--border-color);
-
 }
 
 .coupon-input-group {
@@ -93,8 +103,9 @@
     font-weight: bold;
     text-transform: uppercase;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
 }
+
 #coupon-code::placeholder {
     text-transform: none;      
     font-weight: normal;       
@@ -117,9 +128,6 @@
     transition: opacity 0.3s;
 }
 
-.coupon-input-group button:hover {
-    opacity: 0.9;
-}
 .coupon-msg {
     display: block;
     font-weight: 500;
@@ -127,7 +135,7 @@
     font-size: 1.4rem;
     line-height: 1.5rem;
     margin-top: 4px; 
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-3px); 
@@ -137,31 +145,23 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-
 }
 
 .coupon-msg.error { color: var(--danger); }
 .coupon-msg.success { color: var(--success); }
 
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 8px 0;
-    font-size: 1.4rem;
-}
-
+/*  TRẠNG THÁI INPUT  */
 .input-success {
     border: 2px solid #28a745 !important;
     background-color: #f8fff9; 
 }
-
 
 .input-error {
     border: 2px solid #dc3545 !important;
     background-color: #fffafb;
 }
 
-
-#coupon-code {
-    transition: all 0.3s ease;
+.gift-card { 
+    background-color: #eef2ff; 
+    margin-top: 2rem;
 }
