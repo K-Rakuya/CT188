@@ -31,7 +31,7 @@ const filterPromo = (category) => {
 // 4. Quà tặng ngẫu nhiên 
 const giveRandomGift = () => {
     const gifts = [
-        { name: "GIẢM 50% TRÀ TRÁI CÂY", info: "Mã: MIXI50. Áp dụng cho các loại trà size L.", img: "images/tratraicay.jpg" },
+        { name: "GIẢM 50% TRÀ TRÁI CÂY", info: "Mã: MIXDRINK50. Áp dụng cho các loại trà size L.", img: "images/tratraicay.jpg" },
         { name: "FREE TOPPING FREEZE", info: "Tặng trân châu trắng cho đơn hàng Freeze bất kỳ.", img: "images/freeze.png" },
         { name: "VOUCHER 0 ĐỒNG", info: "Tặng 01 ly Cafe Đen cho khách hàng mới.", img: "images/cfden.jpg" }
     ];
@@ -45,7 +45,7 @@ const giveRandomGift = () => {
 // 5. Gửi form
 document.getElementById('feedbackForm')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Cảm ơn bạn đã góp ý! Mixi Coffee sẽ phản hồi sớm nhất.');
+    alert('Cảm ơn bạn đã góp ý! MIXDRINK sẽ phản hồi sớm nhất.');
     e.target.reset();
 });
 
