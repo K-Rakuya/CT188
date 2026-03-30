@@ -142,30 +142,28 @@ const renderCart = () => {
     productData.forEach((product) => {
         const imageSrc = product.img.startsWith('http') ? product.img : `/${product.img}`;
         htmlContent += `
-        <div class="container-item">
-            <div class="cart-item">
-                <img src="/assets/images/${imageSrc}" alt="${product.name}">
-                <div class="item-main">
-                    <h4>${product.name}</h4>
-                    <div class="qty-control">
-                        <button onclick="decreateQty('${product.id}')">-</button>
-                        <input id="qty-${product.id}" type="number" value="${product.quantity}" readonly>
-                        <button onclick="increateQty('${product.id}')">+</button>
+        <article class="cart-item">
+            <img src="/assets/images/${imageSrc}" alt="${product.name}">
+            <div class="item-main">
+                <h4>${product.name}</h4>
+                <div class="qty-control">
+                    <button onclick="decreateQty('${product.id}')">-</button>
+                    <input id="qty-${product.id}" type="number" value="${product.quantity}" readonly>
+                    <button onclick="increateQty('${product.id}')">+</button>
+                </div>
+                <div class="item-details">
+                    <div class="price">
+                        <span class="current">$${Number(product.newPrice).toFixed(2)}</span> 
+                        <span class="old">$${Number(product.oldPrice || product.newPrice).toFixed(2)}</span>
                     </div>
-                    <div class="item-details">
-                        <div class="price">
-                            <span class="current">$${Number(product.newPrice).toFixed(2)}</span> 
-                            <span class="old">$${Number(product.oldPrice || product.newPrice).toFixed(2)}</span>
-                        </div>
-                        <div class="item-remove">
-                            <button class="btn-delete" onclick="removeItem('${product.id}')">
-                                <i class="fa-regular fa-trash-can"></i> Delete
-                            </button>
-                        </div>
+                    <div class="item-remove">
+                        <button class="btn-delete" onclick="removeItem('${product.id}')">
+                            <i class="fa-regular fa-trash-can"></i> Delete
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>`;
+        </article>`;
     });
 
     cartListContainer.innerHTML = htmlContent;

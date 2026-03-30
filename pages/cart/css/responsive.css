@@ -152,7 +152,9 @@
     #total-price-new { 
         font-size: 1.7rem; 
     }
-
+    .cart-item{
+        padding: 1rem 0!important;
+    }
     .cart-item img { 
         height: 100px; 
     }

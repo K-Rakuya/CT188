@@ -1,6 +1,6 @@
 /*LẤY DỮ LIỆU TỪ LOCALSTORAGE */
 function getAllUsers() {
-    // Chuyển chuỗi JSON từ localStorage thành mảng Object, nếu chưa có thì trả về mảng rỗng []
+    // Chuyển chuỗi JSON từ localStorage thành mảng , nếu chưa có thì trả về mảng rỗng []
     return JSON.parse(localStorage.getItem('users')) || [];
 }
 
@@ -58,7 +58,7 @@ if (registerForm) {
             return;
         }
 
-        // Bước 4: Tạo Object User mới với các trường dữ liệu cần thiết
+        // Bước 4: Tạo User mới với các trường dữ liệu cần thiết
         const newUser = {
             // Tạo ID duy nhất bằng cách kết hợp chữ và thời gian hiện tại 
             id: "user_" + Date.now(), 
@@ -74,9 +74,6 @@ if (registerForm) {
         // Bước 5: Thêm vào mảng và lưu lại vào LocalStorage
         users.push(newUser);
         localStorage.setItem('users', JSON.stringify(users));
-
-        alert("Đăng ký thành công! Hệ thống sẽ chuyển bạn sang trang Đăng nhập.");
-        
         // Chuyển hướng người dùng sang trang login
         window.location.href = '../login/login.html'; 
     });

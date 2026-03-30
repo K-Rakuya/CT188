@@ -24,9 +24,6 @@ const authentication = () => {
     if (user) {
         // Nếu tìm thấy: Lưu ID của user vào localStorage đe đánh dấu "Đã đăng nhập"
         localStorage.setItem('loggedInId', user.id);
-        
-        alert("Đăng nhập thành công! Chào mừng Duy quay trở lại.");
-        
         // Chuyển hướng về trang chủ
         window.location.href = '/index.html'; 
     }

@@ -46,6 +46,10 @@ font-size: 1.8rem;
    font-size: 2rem;
 }
 
+.cart-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
 .cart-item img {
 
     width: 100%;
@@ -183,6 +187,7 @@ font-size: 1.8rem;
 .qty-control{
    grid-area: action;
    justify-content: start;
+   max-width:120px;
 }
 .item-details {
     grid-area: delete;
