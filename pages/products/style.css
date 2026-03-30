@@ -491,13 +491,9 @@ body {
 
 @media (min-width: 768px) {
     .header{
-        padding: 8px 30px;
+        padding: 5px 30px;
     }
 
-    .logo img{
-        height: 60px;
-        object-fit: cover;
-    }
 
     .nav{
         grid-template-columns: 1fr 2fr 1fr;
@@ -637,7 +633,7 @@ body {
 /* LAPTOP */
 @media (min-width: 1024px) {
     .header {
-        padding: 10px 40px;
+        padding: 5px 40px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -647,9 +643,10 @@ body {
     .burger-menu{
         display: none;
     }
-
+    .logo img{
+        height: 67px;
+    }
     .features{
-        
         display: flex;
         gap: 30px;
     }
@@ -671,6 +668,7 @@ body {
     }
 
     .feature{
+        font-size: 18px;
         margin: 0;
         color: white;
         border-bottom: 0px;
