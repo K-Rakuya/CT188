@@ -119,8 +119,12 @@ body {
 }
 
 .burger-menu{
-    background-color: #000;
+    background-color: black;
     text-align: start;
+}
+
+.burger-menu img{
+    width: 15px;
 }
 
 .user-cart{
@@ -465,6 +469,9 @@ body {
     }
     .search-bar{
         min-width: 170px;
+    }
+    .burger-menu img{
+        width: 20px;
     }
 
     .product-grid{
